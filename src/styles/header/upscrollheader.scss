@@ -1,0 +1,203 @@
+@import "../global.scss";
+
+.up-scroll-header-wrapper {
+  width: 100%;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.14) inset, 0px 0px 100px 0px rgba(0, 0, 0, 0.1) inset;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0rem;
+  padding-left: 160px;
+  padding-right: 160px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: upScrollHeader 0.4s ease-in-out forwards normal;
+  @keyframes upScrollHeader {
+    0% {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-container-up-scroll {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center;
+    row-gap: 8px;
+
+    .top-logo-and-language {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo-apar {
+        width: 120px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .language-selector {
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        left: 9px;
+        select {
+          width: 74px;
+          height: 30px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 28px;
+          letter-spacing: 0.01em;
+          text-align: left;
+          text-transform: capitalize;
+          @include Poppins();
+          cursor: pointer;
+          color: rgba(33, 33, 33, 1) !important;
+          transition: 200ms ease-out;
+          background-color: transparent;
+          background-image: url("../dovnblack.svg");
+          background-repeat: no-repeat;
+          background-size: auto;
+          background-position-x: 40px;
+          background-position-y: center;
+          appearance: none !important;
+          -webkit-appearance: none !important;
+          -moz-appearance: none !important;
+
+          option {
+            background-color: black;
+            color: #fff;
+          }
+        }
+        select:hover {
+          color: rgb(238, 88, 33) !important;
+        }
+      }
+    }
+
+    .bottom-fields-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .scrol-logo {
+        width: 120px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        gap: 44px;
+        .header-item {
+          @include Poppins();
+          font-size: 16px;
+          font-weight: 600;
+          text-decoration: none;
+          color: rgba(33, 33, 33, 1);
+          transition: 150ms ease-in-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        .header-item:hover {
+          color: #ff6600 !important;
+        }
+
+        .vehicles-dropdown {
+          position: absolute;
+          padding: 0px 24px;
+          border-radius: 6px;
+          width: 236px;
+          height: 128px;
+          left: 0;
+          top: 2.2rem;
+          background: #E1E1E1BF;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          gap: 32px;
+
+          flex-direction: column;
+          animation: opacity 200ms ease-in-out;
+          @keyframes opacity {
+            from {
+              transform: translateY(-10px);
+              opacity: 0;
+            }
+            to {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+
+          .e-bcycle-title,
+          .bcycle-title {
+            width: 100%;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 500;
+            color: #000000;
+            transition: 300ms ease-out;
+          }
+
+          .e-bcycle-title:hover {
+            color: #ff6600;
+          }
+          .bcycle-title:hover {
+            color: #ff6600;
+          }
+        }
+        .vehicles-dropdown::after {
+          content: "";
+          position: absolute;
+          width: 80%;
+          height: 1px;
+          background-color: #212121;
+        }
+      }
+    }
+  }
+}

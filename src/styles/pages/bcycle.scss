@@ -1,0 +1,335 @@
+@import "../global.scss";
+
+.e-bcycle {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  .top-content-bcycle {
+    width: 100%;
+    height: 870px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: translateY(-5.1rem);
+    img, video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text {
+      width: 100%;
+      position: absolute;
+      top: 15rem;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .title {
+        width: 100%;
+        height: auto;
+        @include flexible;
+        h1 {
+          text-transform: uppercase;
+          color: #fff;
+          @include AmericanCaptain();
+          font-size: 128px;
+          font-weight: 400;
+          line-height: 112px;
+          letter-spacing: 0.01em;
+          text-align: center;
+        }
+      }
+
+      .paragraph {
+        max-width: 1840px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-right: 350px;
+        padding-left: 350px;
+        padding-top: 48px;
+        p {
+          text-align: center;
+          font-size: 28px;
+          font-weight: 400;
+          letter-spacing: -0.02em;
+          text-align: center;
+          color: #fff;
+          padding-left: 160px;
+          padding-right: 160px;
+        }
+      }
+    }
+  }
+
+  .specifications {
+    padding-left: 160px;
+    padding-right: 160px;
+    width: 100%;
+    min-height: 800px;
+    background: #171717;
+    position: relative;
+    bottom: 5.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 90px;
+    padding-top: 80px;
+
+    .title {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      h1 {
+        text-transform: uppercase;
+        text-align: center;
+        @include AmericanCaptain();
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 72px;
+        text-shadow: 0px 0px 8px #03D64FB2;
+        -webkit-text-stroke: 1px;
+        -webkit-text-stroke-color: #03D64FB2;
+      }
+    }
+
+    .content {
+      width: auto;
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 120px;
+
+      .left,
+      .right {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 60px;
+        padding-bottom: 5rem;
+        .property-box {
+          width: 100%;
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          justify-content: space-between;
+          border-bottom: 1px solid #ffffffb9;
+          span {
+            @include AmericanCaptain();
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 52px;
+            letter-spacing: 0.015em;
+            text-align: left;
+            color: #fff;
+          }
+          p {
+            font-size: 14px;
+            font-weight: 275;
+            line-height: 27px;
+            letter-spacing: 0.015em;
+            text-align: right;
+            color: #ffffffb9;
+          }
+        }
+      }
+    }
+  }
+
+  @include GlobalBlog();
+  @include DownloadTheApp();
+  .download-the-app {
+    margin-top: 80px;
+  }
+  .blog {
+    height: 510px;
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+.bcycle {
+     width: 100%;
+     height: auto;
+     background-color: transparent;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+
+     flex-direction: column;
+     .top-content-bcycle {
+       width: 100%;
+       height: 870px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+       transform: translateY(-5.1rem);
+       img, video {
+         width: 100%;
+         height: 100%;
+         object-fit: fill;
+       }
+   
+       .text {
+         width: 100%;
+         position: absolute;
+         top: 15rem;
+         height: auto;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         .title {
+           width: 100%;
+           height: auto;
+           @include flexible;
+           h1 {
+             text-transform: uppercase;
+             color: #fff;
+             @include AmericanCaptain();
+             font-size: 128px;
+             font-weight: 400;
+             line-height: 112px;
+             letter-spacing: 0.01em;
+             text-align: center;
+           }
+         }
+   
+         .paragraph {
+          max-width: 1840px;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding-right: 350px;
+          padding-left: 350px;
+          padding-top: 48px;
+          p {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: #fff;
+            padding-left: 160px;
+            padding-right: 160px;
+          }
+        }
+       }
+     }
+   
+     .specifications {
+      padding-left: 160px;
+      padding-right: 160px;
+       width: 100%;
+       min-height: 800px;
+       background: #171717;
+       position: relative;
+       bottom: 5.1rem;
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       flex-direction: column;
+       gap: 90px;
+       padding-top: 80px;
+   
+       .title {
+         width: 100%;
+         height: auto;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         h1 {
+           text-transform: uppercase;
+           text-align: center;
+           @include AmericanCaptain();
+           font-size: 72px;
+           font-weight: 400;
+           line-height: 72px;
+           text-shadow: 0px 0px 8px #FF6600B2;
+           -webkit-text-stroke: 1px;
+           -webkit-text-stroke-color: #FF6600B2;
+         }
+       }
+   
+       .content {
+         width: auto;
+         height: auto;
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 120px;
+   
+         .left,
+         .right {
+           width: 100%;
+           height: auto;
+           display: flex;
+           align-items: flex-start;
+           justify-content: flex-start;
+           flex-direction: column;
+           gap: 60px;
+           padding-bottom: 5rem;
+           .property-box {
+             width: 100%;
+             min-height: 60px;
+             display: flex;
+             align-items: center;
+             gap: 40px;
+             justify-content: space-between;
+             border-bottom: 1px solid #ffffffb9;
+             span {
+               @include AmericanCaptain();
+               font-size: 48px;
+               font-weight: 400;
+               line-height: 52px;
+               letter-spacing: 0.015em;
+               text-align: left;
+               color: #fff;
+             }
+             p {
+               font-size: 14px;
+               font-weight: 275;
+               line-height: 27px;
+               letter-spacing: 0.015em;
+               text-align: right;
+               color: #ffffffb9;
+             }
+           }
+         }
+       }
+     }
+   
+     @include GlobalBlog();
+     @include DownloadTheApp();
+     .download-the-app {
+      margin-top: 80px;
+    }
+    .blog {
+      height: 510px;
+      margin-top: 0;
+    }
+   }
+   

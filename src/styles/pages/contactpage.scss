@@ -1,0 +1,234 @@
+@import "../global.scss";
+
+.contact-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  .contact-page-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .contact-page-topcontent {
+      width: 100%;
+      height: 850px;
+      background-color: transparent;
+      transform: translateY(-5.1rem);
+      position: relative;
+      z-index: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 857px;
+        object-fit: fill;
+      }
+
+      .wrapper-findus {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-left: 160px;
+        padding-right: 160px;
+        margin-top: 180px;
+        top: 13%;
+          h1 {
+            text-transform: uppercase;
+            @include AmericanCaptain();
+            font-size: 128px;
+            font-weight: 400;
+            line-height: 112px;
+            letter-spacing: 0.01em;
+            text-align: left;
+            color: #212121;
+          }
+      }
+    
+   }
+
+    .nav-and-contents {
+      width: 100%;
+
+      .navigators {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 160px;
+        padding-right: 160px;
+        gap: 30px;
+  
+        .nav-item {
+          text-align: center;
+          width: 100%;
+          color: #fff;
+          border: 1px solid #ff6600;
+          border-radius: 8px;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: 200ms ease-in-out;
+          span {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 27px;
+            letter-spacing: 0.01em;
+            text-align: center;
+            user-select: none;
+            color: #ff6600;
+          }
+        }
+        .active-item {
+          background-color: #ff6600;
+          span {
+            color: #fff;
+          }
+        }
+  
+        .nav-item:hover {
+          background-color: #ff6600;
+          span {
+            color: #fff;
+          }
+        }
+        .nav-item:active {
+          transform: translateY(2px);
+        }
+      }
+  
+      .content {
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+  
+        .title,
+        .description {
+          width: 100%;
+          height: auto;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding-left: 160px;
+          padding-right: 160px;
+          h1 {
+            animation: swipe 0.7s ease-out forwards normal;
+            color: #212121;
+            @include AmericanCaptain();
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 52px;
+            letter-spacing: 0.015em;
+            text-align: left;
+          }
+  
+          p {
+            animation: swipe 1.5s ease-out forwards normal;
+            padding-top: 1rem;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+            letter-spacing: 0.01em;
+            text-align: left;
+            color: #242424;
+          }
+  
+          @keyframes swipe {
+            from {
+              transform: translateX(-10px);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .socials {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 5rem;
+      .social-container {
+        padding: 60px;
+        width: 60%;
+        min-height: 400px;
+        background: #f3fbf5;
+        border-radius: 30px;
+        display: grid;
+        column-gap: 30px;
+        row-gap: 60px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: flex-start;
+        .link-item {
+          gap: 10px;
+          text-decoration: none;
+          height: 150px;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          .image-wrapper {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: scale-down;
+            }
+          }
+
+          .titles {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            article {
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 27px;
+              letter-spacing: 0.01em;
+              text-align: left;
+              color: #212121;
+            }
+            span {
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 21px;
+              letter-spacing: 0.015em;
+              text-align: left;
+              color: #212121;
+            }
+          }
+        }
+      }
+    }
+  }
+}

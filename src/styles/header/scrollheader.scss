@@ -1,0 +1,116 @@
+@import "../global.scss";
+.scroll-header {
+  animation: scrollheader 0.4s ease-in-out forwards normal;
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.14) inset, 0px 0px 100px 0px rgba(0, 0, 0, 0.1) inset;
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 160px;
+  padding-right: 160px;
+  border-bottom: 1px solid #21212123;
+  @keyframes scrollheader {
+    0% {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .logo-black {
+    width: 110px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    gap: 44px;
+    .header-item {
+      @include Poppins();
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #303030;
+      transition: 150ms ease-in-out;
+    }
+    .header-item:hover {
+      color: #ff6600 !important;
+    }
+
+    .vehicles-dropdown {
+      position: absolute;
+      padding: 0px 24px;
+      border-radius: 6px;
+      width: 236px;
+      height: 128px;
+      left: 0;
+      top: 2.6rem;
+      background: #E1E1E1BF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 32px;
+
+      flex-direction: column;
+      animation: opacity 200ms ease-in-out;
+      @keyframes opacity {
+        from {
+          transform: translateY(-10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .e-bcycle-title,
+      .bcycle-title {
+        width: 100%;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 600;
+        color: #212121;
+        transition: 300ms ease-out;
+      }
+
+      .e-bcycle-title:hover {
+        color: #ff6600;
+      }
+      .bcycle-title:hover {
+        color: #ff6600;
+      }
+    }
+    .vehicles-dropdown::after {
+      content: "";
+      position: absolute;
+      width: 80%;
+      height: 1px;
+      background-color: #21212177;
+    }
+   
+  }
+}

@@ -1,0 +1,249 @@
+@import "../global.scss";
+
+@media only screen and (max-width: 1366px) and (min-width: 1000px) {
+  .about-us .about-us-wrapper .top-our-advantages {
+    gap: 250px !important;
+  }
+  .about-us .about-us-wrapper .top-our-advantages .right-our .experience-box {
+    min-width: 250px !important;
+  }
+}
+
+.about-us {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .about-us-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .top-our-advantages {
+      margin-top: 140px;
+      padding-left: 160px;
+      padding-right: 160px;
+      margin-bottom: 3rem;
+      width: auto;
+      height: auto;
+      display: grid;
+      gap: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      .left-our {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 24px;
+        .ouradvantagestitle {
+          @include AmericanCaptain();
+          font-size: 96px;
+          font-weight: 400;
+          line-height: 88px;
+          text-align: left;
+          max-width: 350px;
+          color: #ff6600;
+        }
+        .show-experience-data {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+          gap: 24px;
+          span {
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 52px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            color: #212121;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+          }
+          p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 27px;
+            letter-spacing: 0.01em;
+            text-align: left;
+            color: #212121;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            line-clamp: 8;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .right-our {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        align-items: center;
+        justify-items: flex-end;
+        .experience-box {
+          cursor: pointer;
+          user-select: none;
+          transition: 60ms ease-in-out;
+          width: 100%;
+          height: 250px;
+          border-radius: 8px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          gap: 25px;
+          .logo-wrapper {
+            width: 64px;
+            height: 64px;
+            background-color: #fff;
+            border-radius: 50%;
+            @include flexible;
+            overflow: hidden;
+            margin-left: 20px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: scale-down;
+            }
+          }
+
+          .text {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding-left: 20px;
+            padding-right: 10px;
+            h1 {
+              font-size: 24px;
+              font-weight: 600;
+              line-height: 36px;
+              letter-spacing: 0.015em;
+              text-align: left;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+
+            p {
+              font-size: 16px;
+              font-weight: 300;
+              line-height: 24px;
+              letter-spacing: 0.015em;
+              text-align: left;
+              color: #212121;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+          &:active {
+            transform: scale(0.95);
+          }
+          &.selected-exp {
+            background: rgb(176, 197, 164);
+            box-shadow: rgba(0, 0, 0, 0.714) 5px 5px 0px 0px;
+          }
+        }
+      }
+    }
+
+    .our-collective-section {
+      margin-top: 5rem;
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      .title {
+        width: 100%;
+        height: auto;
+        @include flexible;
+        h1 {
+          @include AmericanCaptain();
+          font-size: 72px;
+          font-weight: 400;
+          line-height: 72px;
+          text-align: left;
+          color: #ff6600;
+        }
+      }
+
+      .collective-grid {
+        margin-top: 126px;
+        padding-left: 160px;
+        padding-right: 160px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        column-gap: 20px;
+        row-gap: 98px;
+
+        .collective-items {
+          overflow: hidden;
+          width: 100%;
+          height: 164px;
+          box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+
+          .left .image-wrapper {
+            width: 174px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            img {
+              position: absolute;
+              width: 100%;
+              max-height: 170px;
+              bottom: 0;
+            }
+          }
+
+          .right {
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            h3 {
+              color: rgba(255, 255, 255, 1);
+              font-weight: 600;
+              font-size: 20px;
+              letter-spacing: -0.5px;
+            }
+            span {
+              color: rgba(255, 255, 255, 1);
+              font-weight: 300;
+              font-size: 14px;
+              letter-spacing: -0.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

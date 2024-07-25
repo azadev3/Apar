@@ -1,0 +1,1188 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@font-face {
+  font-family: "AmericanCaptain";
+  src: url("../american_captain/American Captain.otf") format("opentype");
+}
+.font-example {
+  font-family: "AmericanCaptain", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  overflow-x: hidden !important;
+}
+
+.download-the-app-mobile {
+  width: 100%;
+  height: 313px;
+  background: rgba(230, 248, 235, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-the-app-mobile .text-area {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.download-the-app-mobile .text-area .download-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.download-the-app-mobile .text-area .download-text h1 {
+  font-family: "AmericanCaptain";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  color: rgb(33, 33, 33);
+}
+.download-the-app-mobile .text-area .download-text img {
+  width: 40.99px;
+  height: 40.01px;
+  animation-name: rotateing;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotateing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.download-the-app-mobile .text-area p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  color: rgb(29, 29, 29);
+  width: 330px;
+  margin-top: 13.63px;
+}
+.download-the-app-mobile .text-area .buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+.download-the-app-mobile .text-area .buttons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 7px 26px 7px 26px;
+  background-color: #ff6600;
+  border-radius: 100px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: rgb(254, 254, 254);
+}
+.download-the-app-mobile .text-area .buttons .images {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 238px;
+  height: 39px;
+}
+.download-the-app-mobile .text-area .buttons .images img {
+  width: 115.48px;
+  height: 38.79px;
+}
+.download-the-app-mobile .girl {
+  width: 215px;
+  height: 313px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-the-app-mobile .girl img {
+  width: 215px;
+  height: 313px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (max-width: 568px) and (min-width: 348px) {
+  .download-the-app-mobile .girl img {
+    width: 150px;
+    height: auto;
+  }
+  .download-the-app-mobile .girl {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .download-the-app-mobile {
+    position: relative;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .download-the-app-mobile .text-area .download-text h1 {
+    font-size: 30px;
+  }
+  .download-the-app-mobile .text-area .download-text img {
+    width: 30px;
+    height: 35px;
+  }
+  .download-the-app-mobile .text-area .download-text .text-wrap {
+    gap: 0px !important;
+  }
+  .download-the-app-mobile .text-area p {
+    font-size: 13px;
+    line-height: 16px;
+    width: 200px;
+    margin-top: 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .download-the-app-mobile .text-area .buttons span {
+    padding: 7px 10px 7px 10px;
+    font-size: 13px;
+    gap: 7px;
+  }
+  .download-the-app-mobile .text-area .buttons {
+    margin-top: 15px;
+  }
+  .download-the-app-mobile .text-area .buttons .images img {
+    width: 85.48px;
+    height: 32.54px;
+  }
+  .download-the-app-mobile .text-area {
+    padding-right: 100px;
+  }
+}
+@media screen and (max-width: 348px) and (min-width: 248px) {
+  .download-the-app-mobile .girl img {
+    width: 110px;
+    height: auto;
+  }
+  .download-the-app-mobile .girl {
+    width: 110px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .download-the-app-mobile {
+    position: relative;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .download-the-app-mobile .text-area .download-text h1 {
+    font-size: 30px;
+  }
+  .download-the-app-mobile .text-area .download-text img {
+    width: 20px;
+    height: 20px;
+  }
+  .download-the-app-mobile .text-area .download-text .text-wrap {
+    gap: 0px !important;
+  }
+  .download-the-app-mobile .text-area p {
+    font-size: 13px;
+    line-height: 16px;
+    width: 200px;
+    margin-top: 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .download-the-app-mobile .text-area .buttons span {
+    padding: 7px 10px 7px 10px;
+    font-size: 12px;
+    gap: 7px;
+  }
+  .download-the-app-mobile .text-area .buttons {
+    margin-top: 15px;
+  }
+  .download-the-app-mobile .text-area .buttons .images img {
+    width: 85.48px;
+    height: 32.54px;
+  }
+  .download-the-app-mobile .text-area {
+    padding-right: 60px;
+  }
+}
+.homepage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.homepage .top-content-provider {
+  width: 100%;
+  position: relative;
+}
+.homepage .top-content-provider .googleplay-and-appstore-for-mobile {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 10000000 !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: transparent;
+  gap: 10px;
+  bottom: calc(50% + 60px);
+  left: 24px;
+}
+.homepage .top-content-provider .googleplay-and-appstore-for-mobile .googleplaylogo, .homepage .top-content-provider .googleplay-and-appstore-for-mobile .appstorelogo {
+  width: 105px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 400ms ease-out;
+}
+.homepage .top-content-provider .googleplay-and-appstore-for-mobile .googleplaylogo img, .homepage .top-content-provider .googleplay-and-appstore-for-mobile .appstorelogo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.homepage .top-content-provider .googleplay-and-appstore-for-mobile .googleplaylogo:hover {
+  transform: scale(1.1);
+}
+.homepage .top-content-provider .googleplay-and-appstore-for-mobile .appstorelogo:hover {
+  transform: scale(1.1);
+}
+.homepage .top-content {
+  width: 100%;
+  height: 850px;
+  background-color: transparent;
+  transform: translateY(-5.1rem);
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+.homepage .top-content img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homepage .top-content .text-content-top-content {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-left: 160px;
+  padding-right: 160px;
+  margin-top: 260px;
+}
+.homepage .top-content .text-content-top-content h1 {
+  font-family: "AmericanCaptain";
+  font-size: 128px;
+  font-weight: 400;
+  line-height: 112px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  text-wrap: wrap;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.homepage .top-content .googleplay-and-appstore {
+  width: 100%;
+  height: auto;
+  margin-top: 43px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: transparent;
+  gap: 16px;
+}
+.homepage .top-content .googleplay-and-appstore .googleplaylogo, .homepage .top-content .googleplay-and-appstore .appstorelogo {
+  width: 113px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 400ms ease-out;
+}
+.homepage .top-content .googleplay-and-appstore .googleplaylogo img, .homepage .top-content .googleplay-and-appstore .appstorelogo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.homepage .top-content .googleplay-and-appstore .googleplaylogo:hover {
+  transform: scale(1.1);
+}
+.homepage .top-content .googleplay-and-appstore .appstorelogo:hover {
+  transform: scale(1.1);
+}
+.homepage .feel-the-difference-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 160px;
+  padding-right: 160px;
+  position: relative;
+}
+.homepage .feel-the-difference-container .ellipse1 {
+  position: absolute;
+  width: 700px;
+  left: 0;
+  top: -12rem;
+}
+.homepage .feel-the-difference-container .ellipse2 {
+  position: absolute;
+  width: 600px;
+  right: 0rem;
+  bottom: -12rem;
+}
+.homepage .feel-the-difference-container .text-content-area-feel-the-difference {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.homepage .feel-the-difference-container .text-content-area-feel-the-difference .top-text {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.homepage .feel-the-difference-container .text-content-area-feel-the-difference .top-text h1 {
+  font-family: "AmericanCaptain";
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  color: #ff6600;
+  text-transform: uppercase;
+  text-wrap: wrap;
+}
+.homepage .feel-the-difference-container .text-content-area-feel-the-difference .paragraph {
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+.homepage .feel-the-difference-container .text-content-area-feel-the-difference .paragraph p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #232323;
+}
+@media only screen and (max-width: 768px) and (min-width: 268px) {
+  .homepage .feel-the-difference-container .text-content-area-feel-the-difference .paragraph {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.homepage .feel-the-difference-container .left-right-pages {
+  width: 100%;
+  margin-top: 60px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle,
+.homepage .feel-the-difference-container .left-right-pages .bcycle {
+  text-decoration: none;
+  width: 360px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle h1,
+.homepage .feel-the-difference-container .left-right-pages .bcycle h1 {
+  text-transform: uppercase;
+  font-family: "AmericanCaptain";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0.015em;
+  text-align: center;
+  color: #424242;
+  transition: 200ms ease-in-out;
+}
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle img,
+.homepage .feel-the-difference-container .left-right-pages .bcycle img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  filter: grayscale(100%);
+}
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle:hover h1 {
+  color: #ff6600;
+}
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle:hover img {
+  filter: grayscale(0);
+}
+.homepage .feel-the-difference-container .left-right-pages .bcycle:hover h1 {
+  color: #ff6600;
+}
+.homepage .feel-the-difference-container .left-right-pages .bcycle:hover img {
+  filter: grayscale(0);
+}
+.homepage .how-to-ride-section {
+  width: 100%;
+  height: 500px;
+  background: #fff7f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 97px;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered {
+  margin-left: 160px;
+  margin-right: 160px;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .left {
+  width: 50%;
+  gap: 20px;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+  color: #ff6600;
+  font-family: "AmericanCaptain";
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: left;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .left p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #282828;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding-right: 60px;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right {
+  width: 50%;
+  height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right .video-wrapper {
+  border-radius: 12px;
+  width: 100%;
+  height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right .video-wrapper video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right .video-wrapper .play-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 3.5rem;
+  z-index: 100;
+  transition: 200ms ease-in-out;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right .video-wrapper .play-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right .video-wrapper .back-wrapper-video {
+  border-radius: 12px;
+  width: 100%;
+  position: absolute;
+  height: 430px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .right .video-wrapper .back-wrapper-video .background-video {
+  width: 100%;
+  height: 110%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+@media only screen and (max-width: 1080px) and (min-width: 568px) {
+  .homepage .app .how-to-ride-section {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered {
+    margin-left: 24px;
+    margin-right: 24px;
+    flex-direction: column;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left {
+    width: 100%;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .right {
+    width: 100%;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left p {
+    padding: 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 568px) and (min-width: 268px) {
+  .homepage .app .how-to-ride-section {
+    height: auto;
+    margin-bottom: 2.5rem;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered {
+    margin-left: 24px;
+    margin-right: 24px;
+    flex-direction: column;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left {
+    width: 100%;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .right {
+    width: 100%;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 55px;
+  }
+  .homepage .why-ride-page .how-to-ride-section .how-to-ride-section-wrappered .left {
+    gap: 0;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left p {
+    padding: 0;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+  }
+  .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .right {
+    height: 250px;
+  }
+}
+.homepage .why-ride-section {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.homepage .why-ride-section .title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .why-ride-section .title h1 {
+  text-align: center;
+  text-wrap: wrap;
+  font-family: "AmericanCaptain";
+  font-size: 72px;
+  font-weight: 400;
+  color: #ff6600;
+}
+.homepage .why-ride-section .why-ride-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding-left: 160px;
+  padding-right: 160px;
+  justify-items: center;
+  margin-top: 35px;
+}
+.homepage .why-ride-section .why-ride-box .box-item {
+  width: 360px;
+  height: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #7c7c7c;
+  gap: 24px;
+  border-radius: 12px;
+}
+.homepage .why-ride-section .why-ride-box .box-item h1 {
+  position: relative;
+  z-index: 100;
+  color: #000000;
+  font-size: 32px;
+  font-weight: 400;
+  width: 50%;
+  height: 30px;
+  line-height: 34px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  font-family: "AmericanCaptain";
+  text-transform: uppercase;
+}
+.homepage .why-ride-section .why-ride-box .box-item .image-wrapper {
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.homepage .why-ride-section .why-ride-box .box-item .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+.homepage .why-ride-section .why-ride-box .box-item p {
+  width: 100%;
+  padding-left: 18px;
+  padding-right: 18px;
+  text-transform: capitalize;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.homepage .blog {
+  width: 100%;
+  height: 717px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 160px;
+  padding-right: 160px;
+  background: #fafafa;
+  margin-top: 84px;
+}
+.homepage .blog .title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .blog .title h1 {
+  text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  font-family: "AmericanCaptain";
+  color: #ff6600;
+}
+.homepage .blog .blog-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.homepage .blog .blog-container .blog-item {
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  height: 340px;
+  background-color: #fff;
+  border: 1px solid #424242;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 100px;
+  flex-direction: column;
+  transition: 500ms ease-in-out;
+  gap: 2px;
+}
+.homepage .blog .blog-container .blog-item .image-wrapper {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 100px;
+  overflow: hidden;
+}
+.homepage .blog .blog-container .blog-item .image-wrapper img {
+  height: 230px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 16px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  filter: grayscale(100%);
+}
+.homepage .blog .blog-container .blog-item .titl,
+.homepage .blog .blog-container .blog-item .paragraph,
+.homepage .blog .blog-container .blog-item .date {
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.homepage .blog .blog-container .blog-item .titl h1,
+.homepage .blog .blog-container .blog-item .paragraph h1,
+.homepage .blog .blog-container .blog-item .date h1 {
+  transition: 300ms ease-in-out;
+  font-family: "AmericanCaptain";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #212121;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.homepage .blog .blog-container .blog-item .titl p,
+.homepage .blog .blog-container .blog-item .paragraph p,
+.homepage .blog .blog-container .blog-item .date p {
+  transition: 300ms ease-in-out;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  color: #252525;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.homepage .blog .blog-container .blog-item .titl span,
+.homepage .blog .blog-container .blog-item .paragraph span,
+.homepage .blog .blog-container .blog-item .date span {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 275;
+  line-height: 24px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  color: #7e7e7e;
+}
+.homepage .blog .blog-container .blog-item:hover {
+  background-color: rgba(255, 134, 53, 0.1725490196);
+}
+.homepage .blog .blog-container .blog-item:hover h1,
+.homepage .blog .blog-container .blog-item:hover p {
+  color: #ff6600;
+}
+.homepage .blog .blog-container .blog-item:hover img {
+  filter: grayscale(0);
+}
+.homepage .blog .button {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .blog .button .more-btn {
+  transition: 500ms ease-in-out;
+  border: 2px solid #ff6600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  padding: 8px 35px;
+  border-radius: 50px;
+  color: #ff6600;
+}
+.homepage .blog .button .more-btn img {
+  transition: 500ms ease-in-out;
+}
+.homepage .blog .button .more-btn span {
+  transition: 500ms ease-in-out;
+}
+.homepage .blog .button .more-btn:hover {
+  background-color: rgba(255, 102, 0, 0.3215686275);
+}
+.homepage .blog .button .more-btn:hover img {
+  transform: translateX(10px);
+}
+.homepage .blog .button .more-btn:hover span {
+  transform: translateX(-10px);
+}
+.homepage .map-container {
+  width: 100%;
+  height: 800px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 160px;
+  padding-right: 160px;
+  margin-top: 80px;
+  flex-direction: column;
+  gap: 10px;
+}
+.homepage .map-container .title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .map-container .title h1 {
+  font-family: "AmericanCaptain";
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  color: #ff6600;
+}
+.homepage .map-container .description {
+  width: 100%;
+  height: auto;
+  padding-left: 180px;
+  padding-right: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .map-container .description p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #242424;
+}
+.homepage .map-container .map-container-wrappered {
+  width: 100%;
+  height: 488px;
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.homepage .map-container .map-container-wrappered .map-wrapper {
+  width: 1120px;
+  height: 488px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.homepage .map-container .map-container-wrappered .map-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homepage .our-partners {
+  width: 100%;
+  height: 510px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.homepage .our-partners .partner-ellipse {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.homepage .our-partners .title-our-partners {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .our-partners .title-our-partners h1 {
+  font-family: "AmericanCaptain";
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  color: #ff6600;
+}
+.homepage .our-partners .slick-carousel {
+  margin-top: 130px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.homepage .our-partners .slick-carousel .div-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+}
+.homepage .our-partners .slick-carousel .div-content .image-content {
+  width: 230px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.homepage .our-partners .slick-carousel .div-content .image-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+.homepage .our-partners .slick-carousel .slick-list {
+  width: 100%;
+}
+.homepage .download-the-app {
+  width: 100%;
+  min-height: 328px;
+  background: rgba(230, 248, 235, 0.5019607843);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .download-the-app .download-the-app-wrapper {
+  margin-left: 160px;
+  margin-right: 160px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .download-the-app .download-the-app-wrapper .left {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: transparent;
+  flex-direction: column;
+  gap: 15px;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .title-download {
+  gap: 5px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .title-download h1 {
+  font-family: "AmericanCaptain";
+  text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: left;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .title-download .capa {
+  width: 70px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: rotate;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.homepage .download-the-app .download-the-app-wrapper .left .paragraph-dapp {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .paragraph-dapp p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  padding-right: 100px;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .buttons .get-ride-btn {
+  width: auto;
+  height: auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #ff6600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .buttons .get-ride-btn:hover {
+  background-color: transparent;
+  border: 2px solid #ff6600;
+  color: #ff6600;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .buttons .images {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.homepage .download-the-app .download-the-app-wrapper .left .buttons .images .image1,
+.homepage .download-the-app .download-the-app-wrapper .left .buttons .images .image2 {
+  width: 120px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage .download-the-app .download-the-app-wrapper .right {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.homepage .download-the-app .download-the-app-wrapper .right .girl-wrapper {
+  width: auto;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.homepage .download-the-app .download-the-app-wrapper .right .girl-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=homepage.css.map */
