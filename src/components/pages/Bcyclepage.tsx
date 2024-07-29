@@ -7,8 +7,12 @@ import { EbcycleType, Specifications } from "./EbcyclePage";
 import { api, option } from "../../Api";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslateApi } from "../../context/GetTranslateContext";
 
 const BcyclePage = () => {
+
+  const { translatesWord } = useTranslateApi();
+
   const { selectedLanguage } = useLang();
   const [ebcycledata, setData] = React.useState<EbcycleType[]>([]);
 
@@ -55,7 +59,7 @@ const BcyclePage = () => {
 
       <div className="specifications">
         <div className="title">
-          <h1>specifications</h1>
+          <h1>{translatesWord['specifications_title']}</h1>
         </div>
 
         <div className="content">
