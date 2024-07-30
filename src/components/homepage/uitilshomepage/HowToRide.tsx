@@ -29,7 +29,7 @@ const HowToRide = () => {
   };
 
   const { selectedLanguage } = useLang();
-  const [howtoridedata, setData] = React.useState<HowToRideType[]>([]);
+  const [howtoridedatas, setData] = React.useState<HowToRideType[]>([]);
 
   const { data: howTorideData } = useQuery({
     queryKey: ["howTorideData", selectedLanguage],
@@ -124,7 +124,7 @@ const HowToRide = () => {
             ? "#FFF7F1"
             : "",
       }}>
-      {howtoridedata.map((item: HowToRideType, i: number) => (
+      {howtoridedatas.map((item: HowToRideType, i: number) => (
         <div className="how-to-ride-section-wrappered" key={i} id="how-toride">
           <div className="left">
             <h1
