@@ -116,7 +116,7 @@ const AboutPage = () => {
 
         <div className="our-collective-section">
           <div className="title">
-            <h1>our collective</h1>
+            <h1>{translatesWord['our_collective_title']}</h1>
           </div>
 
           <div className="collective-grid">
