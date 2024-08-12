@@ -10,6 +10,7 @@ import { api, option } from "../../Api";
 import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType } from "../header/Header";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslateApi } from "../../context/GetTranslateContext";
 
 type NavContentType = {
   id: number;
@@ -111,6 +112,8 @@ const ContactPage = () => {
 
   const { logo } = useLogo();
 
+  const { translatesWord } = useTranslateApi();
+
   return (
     <div className="contact-page">
       <div className="contact-page-wrapper">
@@ -121,19 +124,7 @@ const ContactPage = () => {
 
           <div className="wrapper-findus">
             <h1 style={{ textTransform: "uppercase" }}>
-              {selectedLanguage === "az" ? (
-                <>
-                  bizi tapa <br /> bilərsən
-                </>
-              ) : selectedLanguage === "ru" ? (
-                <>
-                  ты можешь <br /> найти нас
-                </>
-              ) : (
-                <>
-                  you can <br /> find us
-                </>
-              )}
+              {translatesWord['contact_page_title_find_us']}
             </h1>
           </div>
         </div>

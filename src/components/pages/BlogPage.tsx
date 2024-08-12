@@ -210,7 +210,7 @@ const BlogPage = () => {
                 <aside className="sidebar">
                   {blogs?.map((box: Boxtype, i: number) => (
                     <div key={i} className="sidebar-item">
-                      <h1>{i === 0 && box.title}</h1>
+                      <h1>{translatesWord['top_blogs_title']}</h1>
                       <div 
                       onClick={() => {
                         getSingleBlogId(box.id);

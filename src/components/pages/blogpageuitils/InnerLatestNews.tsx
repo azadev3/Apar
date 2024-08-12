@@ -11,7 +11,7 @@ import { api, option } from "../../../Api";
 import axios from "axios";
 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -76,7 +76,12 @@ const InnerLatestNews = () => {
 
         {innerBlogItem?.images?.length !== 0 ? (
           <React.Fragment>
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <Swiper 
+             autoplay={{
+              delay: 5000,
+              pauseOnMouseEnter: false,
+            }}
+            loop={true} navigation={true} modules={[Navigation, Autoplay]} className="mySwiper">
               {innerBlogItem?.images?.map((image: Images, i: number) => (
                 <SwiperSlide key={i}>
                   <img src={image.image} alt="" />

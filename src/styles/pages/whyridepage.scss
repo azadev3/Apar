@@ -69,20 +69,25 @@
         .navigators {
           max-width: 400px;
           height: auto;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: flex-start;
+          align-items: flex-start;
           gap: 10px;
           .nav-li {
+            width: 100%;
+            height: 100%;
             padding: 8px 24px;
             color: #ff6600;
+            text-wrap: nowrap;
             border-radius: 50px;
             font-size: 16px;
             font-weight: 600;
             line-height: 24px;
             letter-spacing: 0.015em;
-            text-align: right;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
             border: 1px solid #ff6600;
             transition: 200ms ease-in-out;
             cursor: pointer;

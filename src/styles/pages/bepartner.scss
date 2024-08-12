@@ -382,10 +382,11 @@
       .item-adversiment {
         width: 100%;
         transition: background-color 300ms ease-in-out;
-        height: 350px;
+        height: auto;
+        padding: 12px 0px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 30px;
         flex-direction: column;
         background: #f3fbf5;
@@ -510,7 +511,7 @@
           height: 250px;
           display: flex;
           align-items: flex-start;
-          justify-content: center;
+          justify-content: flex-start;
           flex-direction: column;
           gap: 30px;
           .image-wrapper {

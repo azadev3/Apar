@@ -70,7 +70,6 @@ const WhyRidePage = () => {
     setSelectedNavDetails(navData[index]);
     localStorage.setItem("selectedNavItemIndex", index.toString());
     localStorage.setItem("selectedNavDetails", JSON.stringify(navData[index]));
-    // Resim değişikliğini sağlamak için resmi yükleyin
     const image = new Image();
     image.src = navData[index].image;
     image.onload = () => {
