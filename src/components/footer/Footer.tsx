@@ -37,11 +37,11 @@ const Footer = () => {
   const { selectedLanguage } = useLang();
 
   const Product: LinkType[] = [
-    {
-      id: 1,
-      title: `${translatesWord["transport_nav"]}`,
-      to: "/",
-    },
+    // {
+    //   id: 1,
+    //   title: `${translatesWord["transport_nav"]}`,
+    //   to: "/",
+    // },
     {
       id: 2,
       title: `${translatesWord["why_ride_nav"]}`,

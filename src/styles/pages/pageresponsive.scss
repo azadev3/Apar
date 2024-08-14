@@ -1551,6 +1551,10 @@
 
 }
 @media screen and (max-width: 1360px) and (min-width: 968px) {
+  .about-us .about-us-wrapper .top-our-advantages .left-our .ouradvantagestitle {
+    font-size: 70px !important;
+    line-height: 70px !important;
+  }
   .about-us .about-us-wrapper .our-collective-section .collective-grid {
     padding-left: 30px;
     padding-right: 30px;
@@ -2121,5 +2125,11 @@
   }
   .latest-news-section {
     margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 1430px) and (min-width: 968px) {
+  .about-us .about-us-wrapper .top-our-advantages .left-our .ouradvantagestitle {
+    font-size: 70px !important;
+    line-height: 70px !important;
   }
 }

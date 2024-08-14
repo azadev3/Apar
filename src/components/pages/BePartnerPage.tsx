@@ -119,23 +119,14 @@ const BePartnerPage = () => {
 
           <div className="form-and-text">
             <div className="left" style={{ marginBottom: "8rem" }}>
-              {selectedLanguage === "az" ? (
-                <h1 style={{ textTransform: "uppercase" }}>
-                  fərqi <br /> hiss et
-                </h1>
-              ) : selectedLanguage === "ru" ? (
-                <h1
-                  style={{
-                    textTransform: "uppercase",
-                    fontSize: selectedLanguage === "ru" && !changeBlogpage ? "100px" : "",
-                  }}>
-                  Почувствуйте <br /> разницу
-                </h1>
-              ) : (
-                <h1 style={{ textTransform: "uppercase" }}>
-                  feel the <br /> difference
-                </h1>
-              )}
+              <h1>
+              <h1>
+              {translatesWord ? (
+        <span>{translatesWord["contact_page_title_find_us"]}</span>
+    ) : ""}
+</h1>
+
+              </h1>
               <p>{translatesWord["be_partner_text"]}</p>
             </div>
 

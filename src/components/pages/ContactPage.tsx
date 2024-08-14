@@ -123,8 +123,12 @@ const ContactPage = () => {
 
           <div className="wrapper-findus">
             <h1 style={{ textTransform: "uppercase" }}>
-              <span>{translatesWord["contact_page_title_find_us"].split(" ")[0]}</span>
-              <span>{translatesWord["contact_page_title_find_us"].split(" ").slice(1).join(" ")}</span>
+              {translatesWord ? (
+                <>
+                <span>{translatesWord["contact_page_title_find_us"]?.split(" ")[0]}</span>
+                <span>{translatesWord["contact_page_title_find_us"]?.split(" ")?.slice(1)?.join(" ")}</span>
+                </>
+              ) : ""}
             </h1>
           </div>
         </div>

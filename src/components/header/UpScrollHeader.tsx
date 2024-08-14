@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLang } from "../../context/SelectedLanguage";
 import { AccordingChangeColorToLocation } from "./ChangeHeaderLinkColor";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import LanguageSelector from "./LanguageSelector";
 
 const UpScrollHeader = () => {
   const { logo } = useLogo();
@@ -78,11 +79,12 @@ const UpScrollHeader = () => {
             ))}
           </Link>
 
+            <div className="navleft">
           <nav className="navbar">
             {HeaderItem.map((item: HeaderTitleType, i: number) => (
               <Link
                 to={item.to}
-                className="header-item"
+                className={`header-item ${location.pathname === "/blog" ? "header-item-blog" : ""}`}
                 onClick={(e) => {
                   item.id === 1 ? setDropdownVehicles((prev) => !prev) : ()=>{}
                   item.id === 1  ? e.preventDefault() : ""
@@ -112,6 +114,11 @@ const UpScrollHeader = () => {
               </div>
             )}
           </nav>
+
+<LanguageSelector />
+            </div>
+
+          
         </div>
       </div>
     </div>

@@ -10,14 +10,15 @@ const LanguageSelector = () => {
   const location = useLocation();
 
   return (
-    <div className='language-selector'>
+    <div className={`language-selector ${location.pathname === "/blog" ? "lang-selector-blog" : ""}`}>
      <select name="" id=""
      style={{color:
       location.pathname === "/whyride" ||
       location.pathname === "/about" ||
       location.pathname === "/contact" || isScrolled
         ? "#000000"
-        : "#fff",}}
+        : "#fff",
+      }}
      onChange={(e) => handleSelectLanguage(e.target.value)}
      value={selectedLanguage}
      >

@@ -3,8 +3,8 @@
 .up-scroll-header-wrapper {
   width: 100%;
   height: auto;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.14) inset, 0px 0px 100px 0px rgba(0, 0, 0, 0.1) inset;
   backdrop-filter: blur(10px);
@@ -107,8 +107,8 @@
       align-items: center;
       justify-content: space-between;
       .scrol-logo {
-        width: 120px;
-        height: auto;
+        width: 81px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -119,87 +119,149 @@
           object-fit: contain;
         }
       }
-      .navbar {
+      .navleft {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        position: relative;
         gap: 44px;
-        .header-item {
-          @include Poppins();
-          font-size: 16px;
-          font-weight: 600;
-          text-decoration: none;
-          color: rgba(33, 33, 33, 1);
-          transition: 150ms ease-in-out;
+        
+        .navbar {
           display: flex;
           align-items: center;
-          justify-content: center;
-          gap: 12px;
-          img {
-            width: 15px;
-            height: 15px;
-          }
-        }
-        .header-item:hover {
-          color: #ff6600 !important;
-        }
-
-        .vehicles-dropdown {
-          position: absolute;
-          padding: 0px 24px;
-          border-radius: 6px;
-          width: 236px;
-          height: 128px;
-          left: 0;
-          top: 2.2rem;
-          background: #E1E1E1BF;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          display: flex;
-          align-items: flex-start;
-          justify-content: center;
-          gap: 32px;
-
-          flex-direction: column;
-          animation: opacity 200ms ease-in-out;
-          @keyframes opacity {
-            from {
-              transform: translateY(-10px);
-              opacity: 0;
-            }
-            to {
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
-
-          .e-bcycle-title,
-          .bcycle-title {
-            width: 100%;
+          justify-content: flex-end;
+          position: relative;
+          gap: 44px;
+          .header-item {
+            @include Poppins();
             font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            color: rgba(33, 33, 33, 1);
+            transition: 150ms ease-in-out;
             display: flex;
             align-items: center;
-            text-decoration: none;
-            font-weight: 500;
-            color: #000000;
-            transition: 300ms ease-out;
+            justify-content: center;
+            gap: 12px;
+            img {
+              width: 15px;
+              height: 15px;
+            }
+            &.header-item-blog {
+              color: white;
+            }
           }
-
-          .e-bcycle-title:hover {
-            color: #ff6600;
+          .header-item:hover {
+            color: #ff6600 !important;
           }
-          .bcycle-title:hover {
-            color: #ff6600;
+  
+          .vehicles-dropdown {
+            position: absolute;
+            padding: 0px 24px;
+            border-radius: 6px;
+            width: 236px;
+            height: 128px;
+            left: 0;
+            top: 2.2rem;
+            background: #E1E1E1BF;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 32px;
+  
+            flex-direction: column;
+            animation: opacity 200ms ease-in-out;
+            @keyframes opacity {
+              from {
+                transform: translateY(-10px);
+                opacity: 0;
+              }
+              to {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+  
+            .e-bcycle-title,
+            .bcycle-title {
+              width: 100%;
+              font-size: 16px;
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              font-weight: 500;
+              color: #000000;
+              transition: 300ms ease-out;
+            }
+  
+            .e-bcycle-title:hover {
+              color: #ff6600;
+            }
+            .bcycle-title:hover {
+              color: #ff6600;
+            }
+          }
+          .vehicles-dropdown::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            background-color: #212121;
           }
         }
-        .vehicles-dropdown::after {
-          content: "";
-          position: absolute;
-          width: 80%;
-          height: 1px;
-          background-color: #212121;
+  
+        
+      .language-selector {
+        
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        select {
+          width: 74px;
+          height: 30px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+          text-align: left;
+          text-transform: capitalize;
+          @include Poppins();
+          color: #212121 !important;
+          cursor: pointer;
+          transition: 200ms ease-in;
+          background-color: transparent;
+          background-image: url("../bo.svg");
+          background-repeat: no-repeat;
+          background-size: auto;
+          background-position-x: 40px;
+          background-position-y: center;
+          appearance: none !important;
+          -webkit-appearance: none !important;
+          -moz-appearance: none !important;
+  
+          option {
+            background-color: black;
+            color: #fff;
+          }
+        }
+        select:hover {
+          color: #ff6600 !important;
+        }
+        &.lang-selector-blog {
+          select {
+            color: white !important;
+            background-image: url("../down.svg") !important;
+          }
         }
       }
+
+      }
+
     }
   }
 }
