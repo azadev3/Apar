@@ -1,29 +1,17 @@
 import React from "react";
-import "../../../styles/pages/blogpage.scss";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link, useNavigate } from "react-router-dom";
-import { useLang } from "../../../context/SelectedLanguage";
 import axios from "axios";
-import { api, option } from "../../../Api";
 import { useQuery } from "@tanstack/react-query";
-import { useTranslateApi } from "../../../context/GetTranslateContext";
+import { useLang } from "../context/SelectedLanguage";
+import { api, option } from "../Api";
+import { useTranslateApi } from "../context/GetTranslateContext";
+import { BlogType } from "./homepage/uitilshomepage/Blog";
 
-type LatestNewsType = {
-  id: number;
-  title: string;
-  description: string;
-  created_at: string;
-  image: string;
-};
-
-const LatestNews = () => {
-
+const BlogCarousel = () => {
   const { translatesWord } = useTranslateApi();
 
   //if 768 small screens set new morebutton
@@ -47,27 +35,26 @@ const LatestNews = () => {
   }, []);
 
   const { selectedLanguage } = useLang();
-  const [latestData, setData] = React.useState<LatestNewsType[]>([]);
 
-  const { data: latest_datas } = useQuery({
-    queryKey: ["latest_datas", selectedLanguage],
+  const [blogs, setBlogs] = React.useState<BlogType[]>([]);
+
+  const { data: blogsData } = useQuery({
+    queryKey: ["blogsData", selectedLanguage],
     queryFn: async () => {
-      const response = await axios.get(api.latest_news, option(selectedLanguage));
+      const response = await axios.get(api.blog, option(selectedLanguage));
       return response.data;
     },
-    staleTime: 500000,
+    staleTime: 550000,
   });
 
   React.useEffect(() => {
-    if (latest_datas) {
-      setData(latest_datas);
+    if (blogsData) {
+      setBlogs(blogsData);
     }
-  }, [latest_datas]);
+  }, [blogsData]);
 
-  const navigate = useNavigate();
-
-  const getSingleLatestNewId = async (blogid: number) => {
-    const response = await axios.get(`https://coming.166tech.az/api/news_single/${blogid}`);
+  const getSingleBlogId = async (blogid: number) => {
+    const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
     try {
       if (response.data) {
         console.log(response.data, "salama");
@@ -79,13 +66,15 @@ const LatestNews = () => {
     }
   };
 
+  const navigate = useNavigate();
+
   return (
-    <div className="latest-news-section">
-      <div className="title-latest-news">
-        <h1>{translatesWord['latest_news_title']}</h1>
+    <div className="blog-carousel-section">
+      <div className="title-blog-carousel">
+        <h1>{translatesWord["blog"]}</h1>
       </div>
 
-      <div className="swiper-area">
+      <div className="swiper-area-blog-carousel">
         <Swiper
           pagination={{ clickable: true, type: "bullets" }}
           spaceBetween={16}
@@ -107,24 +96,25 @@ const LatestNews = () => {
             pauseOnMouseEnter: false,
           }}
           className="mySwiper">
-          {latestData.map((item: LatestNewsType, i: number) => (
-            <SwiperSlide
-              key={i}
-              onClick={() => {
-                getSingleLatestNewId(item.id);
-                navigate(`/news_single/${i}`);
-              }}>
-              <div className="image-wrapper">
-                <img src={item.image} alt="" style={{ filter: getMoreBtn ? "grayscale(0)" : "" }} />
-              </div>
+          {blogs &&
+            blogs?.length > 0 &&
+            blogs?.map((item: BlogType, i: number) => (
+              <SwiperSlide
+                key={i}
+                onClick={() => {
+                  getSingleBlogId(item?.id), navigate(`/blog_single/${i}`);
+                }}>
+                <div className="image-wrapper">
+                  <img src={item.image} alt="" style={{ filter: getMoreBtn ? "grayscale(0)" : "" }} />
+                </div>
 
-              <div className="text">
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
-              </div>
-              <article>{item.created_at}</article>
-            </SwiperSlide>
-          ))}
+                <div className="text">
+                  <h1>{item.title}</h1>
+                  <p>{item.description}</p>
+                </div>
+                <article>{item.created_at}</article>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
 
@@ -140,4 +130,4 @@ const LatestNews = () => {
   );
 };
 
-export default LatestNews;
+export default BlogCarousel;

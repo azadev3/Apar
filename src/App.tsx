@@ -18,7 +18,6 @@ import { useQR } from "./context/QrContext";
 import QrModal from "./QrModal";
 import "./styles/qrmodal.scss";
 import InnerLatestNews from "./components/pages/blogpageuitils/InnerLatestNews";
-import WinsOfTheMounthInner from "./components/pages/blogpageuitils/WinsOfTheMounthInner";
 
 const App = () => {
 
@@ -151,7 +150,7 @@ const App = () => {
             <React.Fragment>
               <Topheader />
               <Header />
-              <WinsOfTheMounthInner />
+              {/* <WinsOfTheMounthInner /> */}
               <Footer />
             </React.Fragment>
           }

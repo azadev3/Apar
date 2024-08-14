@@ -15,30 +15,6 @@ export type BlogType = {
   image: string;
 };
 
-// const BlogItem: BlogType[] = [
-//   {
-//     id: 1,
-//     title: "hero of the month",
-//     description: "With Our Industry-Leading Net-Zero Target Validated Our Hard Work",
-//     date: "17 January, 2024",
-//     image: "../blogimage.png",
-//   },
-//   {
-//     id: 2,
-//     title: "hero of the month",
-//     description: "With Our Industry-Leading Net-Zero Target Validated Our Hard Work",
-//     date: "17 January, 2024",
-//     image: "../blogimage.png",
-//   },
-//   {
-//     id: 3,
-//     title: "hero of the month",
-//     description: "With Our Industry-Leading Net-Zero Target Validated Our Hard Work",
-//     date: "17 January, 2024",
-//     image: "../blogimage.png",
-//   },
-// ];
-
 const Blog = () => {
   //if 768 small screens set new WhyRide section
   const [changeBlog, setChangeBlog] = React.useState<boolean>(false);
@@ -102,7 +78,7 @@ const Blog = () => {
                   <img src={item.image} alt="" />
                 </div>
                 <div className="descriptions">
-                <div className="titl">
+                <div className="titl" title={item?.title}>
                   <h1>{item.title}</h1>
                 </div>
                 <div className="paragraph">

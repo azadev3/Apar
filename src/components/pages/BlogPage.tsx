@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/pages/blogpage.scss";
 import { IoEyeOutline } from "react-icons/io5";
 import LatestNews from "./blogpageuitils/LatestNews";
-import WinsOfTheMounth from "./blogpageuitils/WinsOfTheMounth";
 import Howtorideflag from "./whyridepageuitils/Howtorideflag";
 import HowToRide from "../homepage/uitilshomepage/HowToRide";
 import DownloadApp from "../homepage/uitilshomepage/DownloadApp";
@@ -208,9 +207,9 @@ const BlogPage = () => {
                 </div>
 
                 <aside className="sidebar">
+                  <h1>{translatesWord['top_blogs_title']}</h1>
                   {blogs?.map((box: Boxtype, i: number) => (
                     <div key={i} className="sidebar-item">
-                      <h1>{translatesWord['top_blogs_title']}</h1>
                       <div 
                       onClick={() => {
                         getSingleBlogId(box.id);
@@ -238,7 +237,7 @@ const BlogPage = () => {
         </React.Fragment>
 
         <LatestNews />
-        <WinsOfTheMounth />
+        {/* <WinsOfTheMounth /> */}
         {!changeBlogpage && <Howtorideflag />}
         {!changeBlogpage && <HowToRide />}
         <DownloadApp />

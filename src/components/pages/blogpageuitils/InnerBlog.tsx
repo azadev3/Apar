@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { Boxtype, Images } from "../BlogPage";
 import { IoEyeOutline } from "react-icons/io5";
 import LatestNews from "./LatestNews";
-import WinsOfTheMounth from "./WinsOfTheMounth";
 import DownloadApp from "../../homepage/uitilshomepage/DownloadApp";
 import { useLang } from "../../../context/SelectedLanguage";
 import { api, option } from "../../../Api";
@@ -19,6 +18,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useQuery } from "@tanstack/react-query";
+import BlogCarousel from "../../BlogCarousel";
 
 const InnerBlog = () => {
   const { selectedLanguage } = useLang();
@@ -105,8 +105,9 @@ const InnerBlog = () => {
           </div>
         )}
       </div>
+      <BlogCarousel />
       <LatestNews />
-      <WinsOfTheMounth />
+      {/* <WinsOfTheMounth /> */}
       <DownloadApp />
     </React.Fragment>
   );

@@ -3,7 +3,6 @@ import "../../styles/pages/contactpage.scss";
 import { Link } from "react-router-dom";
 import LatestNews from "./blogpageuitils/LatestNews";
 import DownloadApp from "../homepage/uitilshomepage/DownloadApp";
-import WinsOfTheMounth from "./blogpageuitils/WinsOfTheMounth";
 import { useLang } from "../../context/SelectedLanguage";
 import axios from "axios";
 import { api, option } from "../../Api";
@@ -124,7 +123,8 @@ const ContactPage = () => {
 
           <div className="wrapper-findus">
             <h1 style={{ textTransform: "uppercase" }}>
-              {translatesWord['contact_page_title_find_us']}
+              <span>{translatesWord["contact_page_title_find_us"].split(" ")[0]}</span>
+              <span>{translatesWord["contact_page_title_find_us"].split(" ").slice(1).join(" ")}</span>
             </h1>
           </div>
         </div>
@@ -182,7 +182,7 @@ const ContactPage = () => {
         </div>
 
         <LatestNews />
-        {changeFindus && <WinsOfTheMounth />}
+        {/* {changeFindus && <WinsOfTheMounth />} */}
         <DownloadApp />
       </div>
     </div>

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { Boxtype, Images } from "../BlogPage";
 import { IoEyeOutline } from "react-icons/io5";
 import LatestNews from "./LatestNews";
-import WinsOfTheMounth from "./WinsOfTheMounth";
 import DownloadApp from "../../homepage/uitilshomepage/DownloadApp";
 import { useLang } from "../../../context/SelectedLanguage";
 import { api, option } from "../../../Api";
@@ -104,7 +103,7 @@ const WinsOfTheMounthInner = () => {
         )}
       </div>
       <LatestNews />
-      <WinsOfTheMounth />
+      {/* <WinsOfTheMounth /> */}
       <DownloadApp />
     </React.Fragment>
   );

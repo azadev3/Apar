@@ -544,6 +544,11 @@
     letter-spacing: 0.01em;
     text-align: left;
     @include Poppins();
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .top-content-blog-page-mobile .content .left-in-content .date-and-views .date {
     font-weight: 200;
@@ -814,6 +819,11 @@
     letter-spacing: 0.01em;
     text-align: left;
     @include Poppins();
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .top-content-blog-page-mobile .content .left-in-content .date-and-views .date {
     font-weight: 200;
@@ -1088,6 +1098,11 @@
     letter-spacing: 0.01em;
     text-align: left;
     @include Poppins();
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .top-content-blog-page-mobile .content .left-in-content .date-and-views .date {
     font-weight: 200;
