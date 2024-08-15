@@ -1,8 +1,5 @@
 import "../../../styles/responsive.scss";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Autoplay } from "swiper/modules";
@@ -12,42 +9,12 @@ import { api, option } from "../../../Api";
 import axios from "axios";
 import { BlogType } from "./Blog";
 import { useQuery } from "@tanstack/react-query";
-
-// type BlogType = {
-//   id: number;
-//   title: string;
-//   description: string;
-//   date: string;
-//   image: string;
-// };
-
-// const BlogItem: BlogType[] = [
-//   {
-//     id: 1,
-//     title: "hero of the month",
-//     description: "With Our Industry-Leading Net-Zero Target Validated Our Hard Work",
-//     date: "17 January, 2024",
-//     image: "../blogimage.png",
-//   },
-//   {
-//     id: 2,
-//     title: "hero of the month",
-//     description: "With Our Industry-Leading Net-Zero Target Validated Our Hard Work",
-//     date: "17 January, 2024",
-//     image: "../blogimage.png",
-//   },
-//   {
-//     id: 3,
-//     title: "hero of the month",
-//     description: "With Our Industry-Leading Net-Zero Target Validated Our Hard Work",
-//     date: "17 January, 2024",
-//     image: "../blogimage.png",
-//   },
-// ];
+import { useTranslateApi } from "../../../context/GetTranslateContext";
 
 const BlogMobile = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { translatesWord } = useTranslateApi();
 
   const [controlSize, setControl] = React.useState<boolean>(false);
   React.useEffect(() => {
@@ -88,7 +55,7 @@ const BlogMobile = () => {
 
   return (
     <div className="blog-mobile" style={{background: controlSize && location.pathname === '/' ? '#FAFAFA' : '', paddingTop: controlSize && location.pathname === '/'  ? '3rem' :'', paddingBottom: controlSize && location.pathname === '/' ? '3rem' : ''}}>
-      <h1>blog</h1>
+      <h1>{translatesWord['blog']}</h1>
 
       <Swiper
         className="mySwiper"
@@ -123,8 +90,8 @@ const BlogMobile = () => {
       </Swiper>
 
       <div className="more-btn">
-        <Link to="/blog" className="more">
-          More
+        <Link style={{textTransform: "capitalize"}} to="/blog" className="more">
+          {translatesWord['more_button']}
           <img src="../bbb.svg" alt="more-arrow-icon" />
         </Link>
       </div>

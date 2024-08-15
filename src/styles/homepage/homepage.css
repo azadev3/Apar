@@ -53,9 +53,19 @@
   text-align: left;
   color: rgb(33, 33, 33);
 }
-.download-the-app-mobile .text-area .download-text img {
-  width: 40.99px;
-  height: 40.01px;
+.download-the-app-mobile .text-area .download-text .text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-the-app-mobile .text-area .download-text .capa1,
+.download-the-app-mobile .text-area .download-text .capa2 {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   animation-name: rotateing;
   animation-duration: 12s;
   animation-iteration-count: infinite;
@@ -68,6 +78,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+.download-the-app-mobile .text-area .download-text .capa1 img,
+.download-the-app-mobile .text-area .download-text .capa2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 .download-the-app-mobile .text-area p {
   font-size: 14px;
@@ -149,10 +166,6 @@
   .download-the-app-mobile .text-area .download-text h1 {
     font-size: 30px;
   }
-  .download-the-app-mobile .text-area .download-text img {
-    width: 30px;
-    height: 35px;
-  }
   .download-the-app-mobile .text-area .download-text .text-wrap {
     gap: 0px !important;
   }
@@ -162,12 +175,12 @@
     width: 200px;
     margin-top: 0px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
   .download-the-app-mobile .text-area .buttons span {
-    padding: 7px 10px 7px 10px;
+    padding: 7px 25px 7px 25px;
     font-size: 13px;
     gap: 7px;
   }
@@ -180,6 +193,13 @@
   }
   .download-the-app-mobile .text-area {
     padding-right: 100px;
+  }
+  .download-the-app-mobile .text-area .download-text .capa1,
+  .download-the-app-mobile .text-area .download-text .capa2 {
+    height: 27px;
+    width: 27px;
+    position: relative;
+    bottom: 3px;
   }
 }
 @media screen and (max-width: 348px) and (min-width: 248px) {
@@ -203,10 +223,6 @@
   .download-the-app-mobile .text-area .download-text h1 {
     font-size: 30px;
   }
-  .download-the-app-mobile .text-area .download-text img {
-    width: 20px;
-    height: 20px;
-  }
   .download-the-app-mobile .text-area .download-text .text-wrap {
     gap: 0px !important;
   }
@@ -216,12 +232,12 @@
     width: 200px;
     margin-top: 0px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
   .download-the-app-mobile .text-area .buttons span {
-    padding: 7px 10px 7px 10px;
+    padding: 7px 25px 7px 25px;
     font-size: 12px;
     gap: 7px;
   }
@@ -235,7 +251,71 @@
   .download-the-app-mobile .text-area {
     padding-right: 60px;
   }
+  .download-the-app-mobile .text-area .download-text .capa1,
+  .download-the-app-mobile .text-area .download-text .capa2 {
+    height: 27px;
+    width: 27px;
+    position: relative;
+    bottom: 3px;
+  }
 }
+.how-to-ride-flag-mobile {
+  background-color: rgb(255, 102, 0);
+  width: 100%;
+  height: 64px;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 1rem;
+}
+.how-to-ride-flag-mobile .partners {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 89px;
+  animation-name: slideranim;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes slideranim {
+  from {
+    transform: translateX(0rem);
+  }
+  to {
+    transform: translateX(-100rem);
+  }
+}
+.how-to-ride-flag-mobile .partners h1 {
+  color: rgb(255, 255, 255);
+  font-family: "AmericanCaptain";
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-wrap: nowrap;
+}
+.how-to-ride-flag-mobile .partners img {
+  width: 44px;
+  height: 44px;
+}
+@media screen and (max-width: 500px) and (min-width: 268px) {
+  .how-to-ride-flag-mobile .partners {
+    gap: 10px;
+  }
+  .how-to-ride-flag-mobile .partners img {
+    width: 30px;
+    height: 30px;
+  }
+  .how-to-ride-flag-mobile .partners h1 {
+    font-size: 38px;
+  }
+}
+
+.blog-mobile .swiper-slide .blog-container .bottom-content .titl h1, .blog-mobile .swiper-slide .blog-container .bottom-content .paragraph h1, .blog-mobile .swiper-slide .blog-container .bottom-content .date h1 {
+  font-size: 24px !important;
+}
+
 .homepage {
   width: 100%;
   height: auto;
@@ -258,7 +338,7 @@
   justify-content: flex-start;
   background-color: transparent;
   gap: 10px;
-  bottom: calc(50% + 60px);
+  bottom: calc(40% + 60px);
   left: 24px;
 }
 .homepage .top-content-provider .googleplay-and-appstore-for-mobile .googleplaylogo, .homepage .top-content-provider .googleplay-and-appstore-for-mobile .appstorelogo {
@@ -297,7 +377,13 @@
 }
 .homepage .top-content img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homepage .top-content video {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -372,7 +458,7 @@
   position: absolute;
   width: 700px;
   left: 0;
-  top: -12rem;
+  top: 0;
 }
 .homepage .feel-the-difference-container .ellipse2 {
   position: absolute;
@@ -402,6 +488,7 @@
   font-size: 72px;
   font-weight: 400;
   line-height: 72px;
+  max-width: 350px;
   text-align: center;
   color: #ff6600;
   text-transform: uppercase;
@@ -434,9 +521,9 @@
 .homepage .feel-the-difference-container .left-right-pages {
   width: 100%;
   margin-top: 60px;
-  height: 450px;
+  height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 15px;
 }
@@ -486,11 +573,10 @@
 .homepage .how-to-ride-section {
   width: 100%;
   height: 500px;
-  background: #fff7f1;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 97px;
 }
 .homepage .how-to-ride-section .how-to-ride-section-wrappered {
   margin-left: 160px;
@@ -588,7 +674,6 @@
 @media only screen and (max-width: 1080px) and (min-width: 568px) {
   .homepage .app .how-to-ride-section {
     height: auto;
-    padding-top: 50px;
     padding-bottom: 50px;
   }
   .homepage .app .how-to-ride-section .how-to-ride-section-wrappered {
@@ -635,6 +720,11 @@
   .homepage .why-ride-page .how-to-ride-section .how-to-ride-section-wrappered .left {
     gap: 0;
   }
+  .homepage .why-ride-page .how-to-ride-section {
+    margin-top: 0 !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 40px;
+  }
   .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .left p {
     padding: 0;
     font-size: 16px;
@@ -643,6 +733,7 @@
     text-align: center;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
   .homepage .app .how-to-ride-section .how-to-ride-section-wrappered .right {
     height: 250px;
@@ -787,6 +878,7 @@
   flex-direction: column;
   transition: 500ms ease-in-out;
   gap: 2px;
+  border-top: none;
 }
 .homepage .blog .blog-container .blog-item .image-wrapper {
   width: 100%;
@@ -807,21 +899,26 @@
   border-bottom-left-radius: 0;
   filter: grayscale(100%);
 }
-.homepage .blog .blog-container .blog-item .titl,
-.homepage .blog .blog-container .blog-item .paragraph,
-.homepage .blog .blog-container .blog-item .date {
+.homepage .blog .blog-container .blog-item .descriptions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+.homepage .blog .blog-container .blog-item .descriptions .titl,
+.homepage .blog .blog-container .blog-item .descriptions .paragraph,
+.homepage .blog .blog-container .blog-item .descriptions .date {
   width: 100%;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.homepage .blog .blog-container .blog-item .titl h1,
-.homepage .blog .blog-container .blog-item .paragraph h1,
-.homepage .blog .blog-container .blog-item .date h1 {
+.homepage .blog .blog-container .blog-item .descriptions .titl h1,
+.homepage .blog .blog-container .blog-item .descriptions .paragraph h1,
+.homepage .blog .blog-container .blog-item .descriptions .date h1 {
   transition: 300ms ease-in-out;
   font-family: "AmericanCaptain";
   font-size: 32px;
@@ -832,13 +929,14 @@
   color: #212121;
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.homepage .blog .blog-container .blog-item .titl p,
-.homepage .blog .blog-container .blog-item .paragraph p,
-.homepage .blog .blog-container .blog-item .date p {
-  transition: 300ms ease-in-out;
+.homepage .blog .blog-container .blog-item .descriptions .titl p,
+.homepage .blog .blog-container .blog-item .descriptions .paragraph p,
+.homepage .blog .blog-container .blog-item .descriptions .date p {
+  transition: 400ms ease-in-out;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -848,12 +946,13 @@
   color: #252525;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.homepage .blog .blog-container .blog-item .titl span,
-.homepage .blog .blog-container .blog-item .paragraph span,
-.homepage .blog .blog-container .blog-item .date span {
+.homepage .blog .blog-container .blog-item .descriptions .titl span,
+.homepage .blog .blog-container .blog-item .descriptions .paragraph span,
+.homepage .blog .blog-container .blog-item .descriptions .date span {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 275;
@@ -863,11 +962,16 @@
   color: #7e7e7e;
 }
 .homepage .blog .blog-container .blog-item:hover {
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1568627451);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.1764705882);
   background-color: rgba(255, 134, 53, 0.1725490196);
 }
-.homepage .blog .blog-container .blog-item:hover h1,
-.homepage .blog .blog-container .blog-item:hover p {
+.homepage .blog .blog-container .blog-item:hover .descriptions h1 {
   color: #ff6600;
+}
+.homepage .blog .blog-container .blog-item:hover .descriptions p {
+  font-size: 14.2px;
+  font-weight: 500;
 }
 .homepage .blog .blog-container .blog-item:hover img {
   filter: grayscale(0);
@@ -894,19 +998,33 @@
   color: #ff6600;
 }
 .homepage .blog .button .more-btn img {
-  transition: 500ms ease-in-out;
+  transition: 400ms ease-in-out;
 }
 .homepage .blog .button .more-btn span {
-  transition: 500ms ease-in-out;
+  transition: 400ms ease-in-out;
 }
 .homepage .blog .button .more-btn:hover {
-  background-color: rgba(255, 102, 0, 0.3215686275);
+  background-color: #ff6600;
+  position: relative;
+  padding: 8px 80px;
+  z-index: 0;
 }
 .homepage .blog .button .more-btn:hover img {
-  transform: translateX(10px);
+  display: none;
 }
 .homepage .blog .button .more-btn:hover span {
-  transform: translateX(-10px);
+  transform: translateX(-60px);
+  font-weight: 500;
+  color: #fff;
+}
+.homepage .blog .button .more-btn:hover ::after {
+  content: url(../moree.svg);
+  position: absolute;
+  left: 5rem;
+  z-index: 1000;
+}
+.homepage .blog .button .more-btn-az ::after {
+  left: 7rem !important;
 }
 .homepage .map-container {
   width: 100%;
@@ -928,11 +1046,12 @@
   align-items: center;
   justify-content: center;
 }
-.homepage .map-container .title h1 {
+.homepage .map-container .title .wherefindustitle {
   font-family: "AmericanCaptain";
   font-size: 72px;
   font-weight: 400;
   line-height: 72px;
+  max-width: 350px;
   text-align: center;
   color: #ff6600;
 }
@@ -1045,6 +1164,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 .homepage .download-the-app .download-the-app-wrapper {
   margin-left: 160px;
@@ -1065,7 +1186,6 @@
   gap: 15px;
 }
 .homepage .download-the-app .download-the-app-wrapper .left .title-download {
-  gap: 5px;
   width: 100%;
   height: auto;
   display: flex;
@@ -1080,9 +1200,10 @@
   line-height: 72px;
   text-align: left;
 }
-.homepage .download-the-app .download-the-app-wrapper .left .title-download .capa {
-  width: 70px;
-  height: 100px;
+.homepage .download-the-app .download-the-app-wrapper .left .title-download .capa,
+.homepage .download-the-app .download-the-app-wrapper .left .title-download .capa2 {
+  width: 57px;
+  height: 57px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1099,6 +1220,13 @@
     transform: rotate(360deg);
   }
 }
+.homepage .download-the-app .download-the-app-wrapper .left .title-download .capa img,
+.homepage .download-the-app .download-the-app-wrapper .left .title-download .capa2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .homepage .download-the-app .download-the-app-wrapper .left .paragraph-dapp {
   width: 100%;
   height: auto;
@@ -1109,6 +1237,7 @@
 .homepage .download-the-app .download-the-app-wrapper .left .paragraph-dapp p {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
@@ -1136,6 +1265,7 @@
   justify-content: center;
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: #fff;
@@ -1147,9 +1277,7 @@
   transition: 200ms ease-in-out;
 }
 .homepage .download-the-app .download-the-app-wrapper .left .buttons .get-ride-btn:hover {
-  background-color: transparent;
-  border: 2px solid #ff6600;
-  color: #ff6600;
+  background-color: rgba(255, 102, 0, 0.8470588235);
 }
 .homepage .download-the-app .download-the-app-wrapper .left .buttons .images {
   display: flex;
@@ -1185,4 +1313,32 @@
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  z-index: 1;
+  position: relative;
+}
+.homepage .download-the-app-wrapper::after {
+  content: "";
+  border: 40px solid #fff;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: -4rem;
+  top: -3rem;
+  border-radius: 50%;
+}
+.homepage .download-the-app-wrapper::before {
+  content: "";
+  border: 80px solid #fff;
+  width: 40%;
+  height: 1050px;
+  border-radius: 50%;
+  position: absolute;
+  right: -22rem;
+  bottom: -58.5rem;
+  z-index: 1;
+}
+@media screen and (min-width: 1707px) and (max-width: 2221px) {
+  .homepage .download-the-app-wrapper::before {
+    width: 850px;
+  }
 }/*# sourceMappingURL=homepage.css.map */
