@@ -2,9 +2,11 @@
 
 @media screen and (max-width: 468px) {
   .provider-modal .qr-modal {
-    width: 300px !important;
-    height: 300px !important;
+    width: 360px !important;
+    height: auto !important;
     gap: 0px !important;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
   .provider-modal .qr-modal h1 {
     font-size: 32px !important;
@@ -20,6 +22,8 @@
 
   .provider-modal .qr-modal span {
     font-size: 16px !important;
+    line-height: 24px;
+    max-width: 260px;
   }
 }
 
@@ -710,6 +714,8 @@
   .mobile-footer {
     padding-bottom: 25px;
   }
+
+
 }
 
 @media only screen and (max-width: 1100px) and (min-width: 200px) {
@@ -1039,6 +1045,19 @@
 }
 
 @media screen and (max-width: 568px) and (min-width: 268px) {
+  .latest-news-section .swiper-area .swiper-slide:hover .text p {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+  }
+  .about-us .about-us-wrapper .top-our-advantages .left-our .ouradvantagestitle {
+    font-family: "AmericanCaptain";
+    font-size: 56px !important;
+    font-weight: 400;
+    line-height: 60px !important; 
+    text-align: left !important;
+    max-width: 350px !important;
+    overflow: hidden !important;
+  }
   .be-partner-page
     .be-partner-page-wrapper
     .top-content-bepartner-page
@@ -1089,6 +1108,27 @@
     .phone-number-input
     .right-phone-num {
     width: 55% !important;
+  }
+
+  .blog-carousel-section .swiper-area-blog-carousel .swiper-slide:hover {
+    border: 1px solid rgb(66, 66, 66) !important;
+  }
+  .blog-carousel-section .swiper-area-blog-carousel .swiper-slide:hover .text p {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+  }
+  .contact-page .contact-page-wrapper .nav-and-contents .navigators {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .blog-carousel-section .swiper-area-blog-carousel .swiper-slide .text h1 {
+    font-size: 21px !important;
+    -webkit-line-clamp: 1 !important; 
+    line-clamp: 1 !important;
+  }
+  .latest-news-section .swiper-area .swiper-slide .text h1 {
+    font-size: 21px !important;
+    -webkit-line-clamp: 1 !important; 
+    line-clamp: 1 !important;
   }
 }
 

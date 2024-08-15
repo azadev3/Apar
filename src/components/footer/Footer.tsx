@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/footer/footer.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MobileFooter from "./MobileFooter";
 import { useLang } from "../../context/SelectedLanguage";
 import axios from "axios";
@@ -119,15 +119,17 @@ const Footer = () => {
 
   const { logo } = useLogo();
 
-  const getScroll = () => {
-    document.getElementById("feel-the-difference")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const getScroll = () => {
+  //   document.getElementById("feel-the-difference")?.scrollIntoView({ behavior: "smooth" });
+  // };
   const getScroll2 = () => {
-    document.getElementById("how-toride")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("howtoridescrolling")?.scrollIntoView({ behavior: "smooth" });
   };
-  const getScroll3 = () => {
-    document.getElementById("whyride")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const getScroll3 = () => {
+  //   document.getElementById("whyride")?.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  const navigate = useNavigate();
 
   return (
     <React.Fragment>
@@ -152,13 +154,11 @@ const Footer = () => {
                       className="product-item"
                       key={i}
                       onClick={() => {
-                        if (item.id === 1) {
-                          getScroll();
-                        } else if (item.id === 2) {
+                        if (item.id === 3) {
                           getScroll2();
-                        } else if (item.id === 3) {
-                          getScroll3();
-                        }
+                        } else if (item.id === 2) {
+                          navigate("/whyride")
+                        }  
                       }}>
                       {item.title}
                     </span>

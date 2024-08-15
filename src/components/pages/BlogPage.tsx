@@ -14,6 +14,7 @@ import { useLang } from "../../context/SelectedLanguage";
 import { api, option } from "../../Api";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
+import BlogCarousel from "../BlogCarousel";
 
 export type Images = {
   id: number;
@@ -97,7 +98,7 @@ const BlogPage = () => {
           {changeBlogpage ? (
             <div className="top-content-blog-page-mobile">
               <div className="titleblog">
-                <h1>blog</h1>
+                <h1>{translatesWord['blog']}</h1>
               </div>
               <div className="content">
                 <div className="left-in-content">
@@ -135,7 +136,7 @@ const BlogPage = () => {
                   ))}
                 </div>
 
-                <h1 className="swiper-blog-title-main">{blogs?.find((_, index: number) => index === 0)?.title}</h1>
+                <h1 className="swiper-blog-title-main">{translatesWord['top_blogs_title']}</h1>
                 <Swiper 
                 className="mySwiper-blogpage" slidesPerView={1.5} spaceBetween={15}>
                   {blogs?.map((box: Boxtype, j: number) => (
@@ -236,6 +237,7 @@ const BlogPage = () => {
           )}
         </React.Fragment>
 
+        <BlogCarousel />
         <LatestNews />
         {/* <WinsOfTheMounth /> */}
         {!changeBlogpage && <Howtorideflag />}

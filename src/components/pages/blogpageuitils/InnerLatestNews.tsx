@@ -18,6 +18,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useQuery } from "@tanstack/react-query";
+import BlogCarousel from "../../BlogCarousel";
 
 const InnerLatestNews = () => {
   const { selectedLanguage } = useLang();
@@ -118,7 +119,9 @@ const InnerLatestNews = () => {
           </div>
         )}
       </div>
+      <BlogCarousel />
       <LatestNews />
+      
       {/* <WinsOfTheMounth /> */}
       <DownloadApp />
     </React.Fragment>

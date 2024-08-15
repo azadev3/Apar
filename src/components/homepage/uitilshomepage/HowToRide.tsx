@@ -87,6 +87,7 @@ const HowToRide = () => {
   return (
     <div
       className="how-to-ride-section"
+      id="howtoridescrolling"
       style={{
         background:
           location.pathname === "/whyride" ||
@@ -125,7 +126,7 @@ const HowToRide = () => {
             : "",
       }}>
       {howtoridedatas.map((item: HowToRideType, i: number) => (
-        <div className="how-to-ride-section-wrappered" key={i} id="how-toride">
+        <div className="how-to-ride-section-wrappered" key={i}>
           <div className="left">
             <h1
               style={{

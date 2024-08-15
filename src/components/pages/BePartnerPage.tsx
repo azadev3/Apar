@@ -412,9 +412,7 @@ const BePartnerPage = () => {
               <Swiper
                 modules={[Autoplay, Pagination]}
                 pagination={true}
-                autoplay={{
-                  delay: 2000,
-                }}
+              
                 className="mySwiper2"
                 spaceBetween={15}
                 slidesPerView={1.4}>

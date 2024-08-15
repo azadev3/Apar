@@ -533,6 +533,7 @@
           .bottomtext {
             width: 100%;
             height: auto;
+            min-height: 114px !important;
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;

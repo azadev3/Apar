@@ -36,26 +36,43 @@ const BlogMobile = () => {
 
   const { selectedLanguage } = useLang();
   const [blogs, setBlogs] = React.useState<BlogType[]>([]);
-  
-  const { data: blogsDataMobile } = useQuery({ 
-    queryKey: ['blogsDataMobile', selectedLanguage],
+
+  const { data: blogsDataMobile } = useQuery({
+    queryKey: ["blogsDataMobile", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.blog, option(selectedLanguage));
       return response.data;
     },
     staleTime: 550000,
-  })
+  });
 
   React.useEffect(() => {
-    if(blogsDataMobile) {
+    if (blogsDataMobile) {
       setBlogs(blogsDataMobile);
     }
   }, [blogsDataMobile]);
 
-
+  const getSingleBlogId = async (blogid: number) => {
+    const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
+    try {
+      if (response.data) {
+        console.log(response.data, "salama");
+      } else {
+        console.log(response.status);
+      }
+    } catch (error) {
+      console.log(error, "erorr");
+    }
+  };
   return (
-    <div className="blog-mobile" style={{background: controlSize && location.pathname === '/' ? '#FAFAFA' : '', paddingTop: controlSize && location.pathname === '/'  ? '3rem' :'', paddingBottom: controlSize && location.pathname === '/' ? '3rem' : ''}}>
-      <h1>{translatesWord['blog']}</h1>
+    <div
+      className="blog-mobile"
+      style={{
+        background: controlSize && location.pathname === "/" ? "#FAFAFA" : "",
+        paddingTop: controlSize && location.pathname === "/" ? "3rem" : "",
+        paddingBottom: controlSize && location.pathname === "/" ? "3rem" : "",
+      }}>
+      <h1>{translatesWord["blog"]}</h1>
 
       <Swiper
         className="mySwiper"
@@ -63,11 +80,16 @@ const BlogMobile = () => {
         modules={[Autoplay]}
         autoplay={{
           delay: 2000,
-          pauseOnMouseEnter: false
-        }}
-      >
+          pauseOnMouseEnter: false,
+        }}>
         {blogs.map((item: BlogType, i: number) => (
-          <SwiperSlide onClick={() => navigate(`/blog/${i}-${item.title}`)} key={i} className="blog-item">
+          <SwiperSlide
+            onClick={() => {
+              getSingleBlogId(item.id);
+              navigate(`/blog_single/${i}`);
+            }}
+            key={i}
+            className="blog-item">
             <div className="blog-container">
               <div className="image-wrapper">
                 <img src={item.image} alt="" style={{ filter: controlSize ? "grayscale(0)" : "" }} />
@@ -90,8 +112,8 @@ const BlogMobile = () => {
       </Swiper>
 
       <div className="more-btn">
-        <Link style={{textTransform: "capitalize"}} to="/blog" className="more">
-          {translatesWord['more_button']}
+        <Link style={{ textTransform: "capitalize" }} to="/blog" className="more">
+          {translatesWord["more_button"]}
           <img src="../bbb.svg" alt="more-arrow-icon" />
         </Link>
       </div>
