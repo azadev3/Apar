@@ -753,8 +753,8 @@
 
   .app .map-container {
     max-width: 1440px;
-    padding-left: 160px;
-    padding-right: 160px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .app .download-the-app .download-the-app-wrapper {
