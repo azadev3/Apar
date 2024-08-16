@@ -12,7 +12,7 @@ type MapType = {
 const Map = () => {
   const { translatesWord } = useTranslateApi();
 
-  const [map, setMap] = React.useState<MapType[]>([]);
+  const [_, setMap] = React.useState<MapType[]>([]);
 
   const { data: mapData } = useQuery({
     queryKey: ["mapData"],

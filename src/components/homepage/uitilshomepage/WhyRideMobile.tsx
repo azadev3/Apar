@@ -53,7 +53,7 @@ const WhyRideMobile = () => {
 
   return (
     <div className="mobile-whyride" id="mobile_whyride">
-     <h1 style={{lineHeight: '70px', fontSize: '54px'}}>{translatesWord['why_ride']}</h1>
+     <h1 style={{lineHeight: '50px', fontSize: '46px'}}>{translatesWord['why_ride']}</h1>
       <Swiper pagination={true} 
       slidesPerView={1.3}
       // autoplay = {{
