@@ -74,10 +74,11 @@ const ScrollHeader = () => {
           <Link
             to={item.to}
             className="header-item"
-            onClick={(e) => {
+            onMouseEnter={(e) => {
               item.id === 1 ? setDropdownVehicles((prev) => !prev) : () => {};
               item.id === 1 ? e.preventDefault() : "";
             }}
+            onMouseLeave={() => setDropdownVehicles(false)}
             style={{
               color:
                 item.id !== 1 ? AccordingChangeColorToLocation(item.id, location) : dropdownVehicles ? "#ff6600" : "",

@@ -154,9 +154,9 @@ const BlogPage = () => {
                               <img src={box.image} alt="" />
                             </div>
                           </div>
-                          <div className="left" style={{marginTop:'15px'}}>
-                            <h1>{box.title}</h1>
-                            <p>{box.description}</p>
+                          <div className="left" style={{marginTop:'15px', height: "145px"}}>
+                            <h1 style={{fontSize: "14px", lineClamp: '2', WebkitLineClamp: "2", lineHeight: "normal"}}>{box.title}</h1>
+                            <p style={{ fontSize: "14px", lineHeight: "normal" }}>{box.description}</p>
                             <article>{box.created_at}</article>
                           </div>
                         </SwiperSlide>

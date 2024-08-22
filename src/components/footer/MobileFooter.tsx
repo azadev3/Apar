@@ -2,9 +2,13 @@ import React from "react";
 import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType } from "../header/Header";
 import { LinkType } from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLang } from "../../context/SelectedLanguage";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { option } from "../../Api";
+import { SocialType } from "../pages/ContactPage";
 
 const MobileFooter: React.FC = () => {
   const { translatesWord } = useTranslateApi();
@@ -12,11 +16,11 @@ const MobileFooter: React.FC = () => {
   const { selectedLanguage } = useLang();
 
   const Product: LinkType[] = [
-    {
-      id: 1,
-      title: `${translatesWord["transport_nav"]}`,
-      to: "/",
-    },
+    // {
+    //   id: 1,
+    //   title: `${translatesWord["transport_nav"]}`,
+    //   to: "/",
+    // },
     {
       id: 2,
       title: `${translatesWord["why_ride_nav"]}`,
@@ -55,15 +59,35 @@ const MobileFooter: React.FC = () => {
     },
   ];
 
-  const getScroll = () => {
-    document.getElementById("feel-the-difference")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const getScroll = () => {
+  //   document.getElementById("feel-the-difference")?.scrollIntoView({ behavior: "smooth" });
+  // };
   const getScroll2 = () => {
-    document.getElementById("how-toride")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("howtoridescrolling")?.scrollIntoView({ behavior: "smooth" });
   };
-  const getScroll3 = () => {
-    document.getElementById("mobile_whyride")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const getScroll3 = () => {
+  //   document.getElementById("whyride")?.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  const navigate = useNavigate();
+
+  const [socials, setSocials] = React.useState<SocialType[]>([]);
+
+  const { data: socialsData } = useQuery({
+    queryKey: ["socialsData", selectedLanguage],
+    queryFn: async () => {
+      const response = await axios.get("https://coming.166tech.az/api/footer_icons", option(selectedLanguage));
+      console.log(response?.data, "footer-icons");
+      return response.data;
+    },
+    staleTime: 550000,
+  });
+
+  React.useEffect(() => {
+    if (socialsData) {
+      setSocials(socialsData);
+    }
+  }, [selectedLanguage, socialsData]);
 
   return (
     <footer className="mobile-footer">
@@ -75,12 +99,10 @@ const MobileFooter: React.FC = () => {
               className="itemlink"
               key={i}
               onClick={() => {
-                if (item.id === 1) {
-                  getScroll();
-                } else if (item.id === 2) {
+                if (item.id === 3) {
                   getScroll2();
-                } else if (item.id === 3) {
-                  getScroll3();
+                } else if (item.id === 2) {
+                  navigate("/whyride");
                 }
               }}>
               {item.title}
@@ -140,18 +162,11 @@ const MobileFooter: React.FC = () => {
         </Link>
 
         <div className="right-social">
-          <Link to={translatesWord["footer_facebook_link"]} className="social-item">
-            <img src="../facewhite.png" alt="" />
-          </Link>
-          <Link to={translatesWord["footer_linkedin_link"]} className="social-item">
-            <img src="../linkedinwhite.png" alt="" />
-          </Link>
-          <Link to={translatesWord["footer_instagram_link"]} className="social-item">
-            <img src="../instawhite.png" alt="" />
-          </Link>
-          <Link to={translatesWord["footer_youtube_link"]} className="social-item">
-            <img src="../youtubewhite.png" alt="" />
-          </Link>
+          {socials?.map((item: SocialType, i: number) => (
+            <Link to={item.url ? item.url : ""} target="_blank" className="social-item" key={item?.id}>
+              <img src={item?.icon} alt={`${i}-icon`} />
+            </Link>
+          ))}
         </div>
       </div>
 

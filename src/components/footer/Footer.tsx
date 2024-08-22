@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import MobileFooter from "./MobileFooter";
 import { useLang } from "../../context/SelectedLanguage";
 import axios from "axios";
-import { api, option } from "../../Api";
+import { option } from "../../Api";
 import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType } from "../header/Header";
 import { useQuery } from "@tanstack/react-query";
@@ -22,13 +22,11 @@ export type LinkType = {
 // };
 
 type SocialType = {
-  id: number;
+  id: number,
   title: string;
-  account: string;
+  account: any;
   icon: string;
-  colorizeicon: string;
-  url?: string;
-  footer_icon: string;
+  url: string;
 };
 
 const Footer = () => {
@@ -85,7 +83,8 @@ const Footer = () => {
   const { data: socialsData } = useQuery({
     queryKey: ["socialsData", selectedLanguage],
     queryFn: async () => {
-      const response = await axios.get(api.social_medias, option(selectedLanguage));
+      const response = await axios.get("https://coming.166tech.az/api/footer_icons", option(selectedLanguage));
+      console.log(response?.data, "footer-icons");
       return response.data;
     },
     staleTime: 550000,
@@ -157,8 +156,8 @@ const Footer = () => {
                         if (item.id === 3) {
                           getScroll2();
                         } else if (item.id === 2) {
-                          navigate("/whyride")
-                        }  
+                          navigate("/whyride");
+                        }
                       }}>
                       {item.title}
                     </span>
@@ -214,10 +213,10 @@ const Footer = () => {
               </div>
 
               <div className="socials">
-                {socials.slice(0, 4).map((item: SocialType, i: number) => (
-                  <Link to={item.url ? item.url : ""} target="_blank" className="icon" key={i}>
+                {socials?.map((item: SocialType, i: number) => (
+                  <Link to={item.url ? item.url : ""} target="_blank" className="icon" key={item?.id}>
                     <div className="icon-wrapper">
-                      <img src={item.footer_icon} alt="" />
+                      <img src={item?.icon} alt={`${i}-icon`} />
                     </div>
                   </Link>
                 ))}

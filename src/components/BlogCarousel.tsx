@@ -121,8 +121,8 @@ const BlogCarousel = () => {
       {getMoreBtn && (
         <div className="buttonb">
           <Link to="/blog" className="more-btn">
-            More
-            <img src="../moreicon.png" alt="" />
+          <span style={{textTransform: 'capitalize'}}>{translatesWord['more_button']}</span>
+          <img src="../moreicon.png" alt="" />
           </Link>
         </div>
       )}

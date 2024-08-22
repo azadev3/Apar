@@ -12,6 +12,7 @@ import { useLang } from "../../../context/SelectedLanguage";
 import axios from "axios";
 import { api, option } from "../../../Api";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslateApi } from "../../../context/GetTranslateContext";
 
 type LatestNewsType = {
   id: number;
@@ -22,6 +23,8 @@ type LatestNewsType = {
 };
 
 const WinsOfTheMounth = () => {
+
+  const { translatesWord } = useTranslateApi();
   const navigate = useNavigate();
 
   const { selectedLanguage } = useLang();
@@ -129,8 +132,8 @@ const WinsOfTheMounth = () => {
       {getMoreBtn && (
         <div className="buttonb">
           <Link to="/blog" className="more-btn">
-            More
-            <img src="../moreicon.png" alt="" />
+          <span style={{textTransform: 'capitalize'}}>{translatesWord['more_button']}</span>
+          <img src="../moreicon.png" alt="" />
           </Link>
         </div>
       )}
