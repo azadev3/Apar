@@ -7,7 +7,6 @@ import { useMobile } from "../../context/MobilMenu";
 import { useLang } from "../../context/SelectedLanguage";
 import { useLogo } from "../../context/GetLogoContext";
 import axios from "axios";
-import { api, option } from "../../Api";
 import { SocialType } from "../pages/ContactPage";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
