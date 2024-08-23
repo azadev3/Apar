@@ -10,6 +10,7 @@ import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType } from "../header/Header";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import HowToRide from "../homepage/uitilshomepage/HowToRide";
 
 type NavContentType = {
   id: number;
@@ -185,6 +186,7 @@ const ContactPage = () => {
           </div>
         </div>
 
+        <HowToRide />
         <LatestNews />
         {/* {changeFindus && <WinsOfTheMounth />} */}
         <DownloadApp />

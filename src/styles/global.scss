@@ -700,10 +700,11 @@
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        height: auto !important;
+        max-height: 100px;
+        min-height: 100px;
         .image-content {
           width: 450px;
-          height: 60px;
+          height: auto;
           @include flexible;
           overflow: hidden;
           gap: 30px;
@@ -1724,4 +1725,10 @@
 }
 .adversiments-swiper .item-adversiment-swiper .adversiment-sw {
   justify-content: flex-start !important;
+}
+.toggle-menu .container-toggle .regulars {
+  gap: 6px !important;
+  text-wrap: nowrap;
+  letter-spacing: -0.6px;
+  justify-content: center !important;
 }

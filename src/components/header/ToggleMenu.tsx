@@ -106,11 +106,11 @@ const ToggleMenu = () => {
               <div className="vehicles-menu">
                 <Link to="/e-bcycle" className="links" onClick={() => setMobileMenu(false)}>
                   <span className="rectangle"></span>
-                  {selectedLanguage === "en" ? "E-bicycle" : selectedLanguage === "ru" ? "Э-велосипед" : "E-Velosiped"}
+                  {translatesWord['ebcycle_dropdown']}
                 </Link>
                 <Link to="/bcycle" className="links" onClick={() => setMobileMenu(false)}>
                   <span className="rectangle"></span>
-                  {selectedLanguage === "en" ? "Bicycle" : selectedLanguage === "ru" ? "Велосипед" : "Velosiped"}
+                  {translatesWord['bcycle_dropdown']}
                 </Link>
               </div>
             )}
@@ -167,15 +167,18 @@ const ToggleMenu = () => {
         </nav>
 
         <div className="regulars">
-          <Link to="" className="rule">
-            {selectedLanguage === "az" ? "Qaydalar" : selectedLanguage === "ru" ? "Правилa" : "Rules"}
-          </Link>
-          <Link to="" className="rule">
-            {selectedLanguage === "az" ? "Məxfilik" : selectedLanguage === "ru" ? "Конфиденци.." : "Privacy"}
-          </Link>
-          <Link to="" className="rule">
-            {selectedLanguage === "az" ? "Təhlükəsizlik" : selectedLanguage === "ru" ? "Безопасность" : "Security"}
-          </Link>
+        <Link
+                  to={translatesWord["footer_qaydalar_yonlendirme"]}
+                  className="rule"
+                  onClick={(e) => e.preventDefault()}>
+                  {translatesWord["footer_rules_nav"]}
+                </Link>
+                <Link
+                  to={translatesWord["footer_mexfilik_yonlendirme"]}
+                  className="rule"
+                  onClick={(e) => e.preventDefault()}>
+                  {translatesWord["footer_security_nav"]}
+                </Link>
         </div>
 
         <div className="socials">

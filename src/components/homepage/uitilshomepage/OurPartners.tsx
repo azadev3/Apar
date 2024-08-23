@@ -24,7 +24,7 @@ const OurPartners = () => {
   var settings = {
     dots: false,
     infinite: true,
-    slidesToShow: window.innerWidth > 1168 ? 5 : 3,
+    slidesToShow: window.innerWidth > 1168 ? 5 : 2,
     slidesToScroll: 1,
     autoplay: true,
     speed: 6000,
