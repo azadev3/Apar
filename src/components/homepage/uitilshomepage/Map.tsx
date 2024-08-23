@@ -43,18 +43,7 @@ const Map = () => {
 
       <div className="map-container-wrappered">
         <div className="map-wrapper" style={{ borderRadius: "16px" }}>
-            <img className="locone" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="loctwo" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locthree" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locfour" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locfive" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locsix" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locseven" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="loceight" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locnine" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="locten" src="/loc.svg" alt="location-icon" title="Location" />
-            <img className="loceleven" src="/loc.svg" alt="location-icon" title="Location" />
-          <video src="/mapvideo.mp4" title="Map" muted={true} autoPlay={true} loop={true} controls={false} />
+          <img src="../map.gif" alt="mapgif" />
         </div>
       </div>
     </div>
