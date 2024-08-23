@@ -131,7 +131,6 @@
     filter: brightness(0.6);
     position: relative;
     top: 4rem;
-    object-position: -900px 0px;
   }
 
   .homepage .top-content .text-content-top-content {
@@ -855,10 +854,6 @@
 
   .blog-inner-page-container .top-content-inner-blog .text-bloginner {
     max-width: 1440px;
-  }
-
-  .homepage .top-content img {
-    object-fit: fill;
   }
 
   .be-partner-page .be-partner-page-wrapper .partner-section {

@@ -68,9 +68,10 @@ const ToggleMenu = () => {
   const [socials, setSocials] = React.useState<SocialType[]>([]);
   
   const { data: socialsDataMobile } = useQuery({ 
-    queryKey: ['socialsData', selectedLanguage],
+    queryKey: ['socialsData'],
     queryFn: async () => {
-      const response = await axios.get(api.mobile_socials, option(selectedLanguage));
+      const response = await axios.get("https://coming.166tech.az/api/mobile_socials");
+      console.log(response?.data, 'mobile')
       return response.data;
     },
     staleTime: 350000,
@@ -81,7 +82,6 @@ const ToggleMenu = () => {
       setSocials(socialsDataMobile);
     }
   }, [socialsDataMobile]);
-
 
   return (
     <div className="toggle-menu">
@@ -182,7 +182,7 @@ const ToggleMenu = () => {
         <div className="socials">
           {socials.map((item: SocialType, i: number) => (
             <Link to={item.url ? item.url : ""} className="social-item">
-              <img src={item.colorizeicon} alt={`${i}-icon-social-media`} />
+              <img src={item?.colorizeicon} alt={`${i}-icon-social-media`} />
             </Link>
           ))}
         </div>

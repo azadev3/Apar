@@ -201,13 +201,6 @@ const Footer = () => {
                   className="rule"
                   style={{ cursor: "no-drop", color: "#CECECE38" }}
                   onClick={(e) => e.preventDefault()}>
-                  {translatesWord["footer_mexfilik_nav"]}
-                </Link>
-                <Link
-                  to={translatesWord["footer_tehlukesizlik_yonlendirme"]}
-                  className="rule"
-                  style={{ cursor: "no-drop", color: "#CECECE38" }}
-                  onClick={(e) => e.preventDefault()}>
                   {translatesWord["footer_security_nav"]}
                 </Link>
               </div>

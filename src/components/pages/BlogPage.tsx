@@ -48,6 +48,7 @@ const BlogPage = () => {
     queryKey: ["blogsDatass", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.blog, option(selectedLanguage));
+      console.log(response?.data, 'bloqlarrr')
       return response.data;
     },
     staleTime: 500000,
@@ -90,6 +91,7 @@ const BlogPage = () => {
       console.log(error, "erorr");
     }
   };
+
 
   return (
     <div className="blog-page">

@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 type HeroApiType = {
   id: number;
   image: string;
-  is_image: boolean;
+  is_image: any;
   title: string;
   video: string;
 };
@@ -52,6 +52,7 @@ const TopContent = () => {
       const response = await axios.get("https://coming.166tech.az/api/mains", option(selectedLanguage));
       return response.data;
     },
+    
     staleTime: 600000,
   });
 
@@ -109,7 +110,7 @@ const TopContent = () => {
       <div className="top-content">
         {hero.map((heroitem: HeroApiType, i: number) => (
           <React.Fragment key={i}>
-            {heroitem.is_image ? (
+            {heroitem.is_image === 1 ? (
               <img src={heroitem.image} alt={heroitem.title} loading="lazy" />
             ) : (
               <video src={heroitem.video} autoPlay={true} muted={true} loop={true} controls={false} playsInline />
