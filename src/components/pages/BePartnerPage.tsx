@@ -120,12 +120,7 @@ const BePartnerPage = () => {
           <div className="form-and-text">
             <div className="left" style={{ marginBottom: "8rem" }}>
               <h1>
-              <h1>
-              {translatesWord ? (
-        <span>{translatesWord["contact_page_title_find_us"]}</span>
-    ) : ""}
-</h1>
-
+                <h1>{translatesWord ? <span>{translatesWord["contact_page_title_find_us"]}</span> : ""}</h1>
               </h1>
               <p>{translatesWord["be_partner_text"]}</p>
             </div>
@@ -178,7 +173,7 @@ const BePartnerPage = () => {
                   <Form className="form-be-partner">
                     <ToastContainer transition={Zoom} autoClose={2500} />
                     <div className="title">
-                      <h1>{translatesWord['form_title']}</h1>
+                      <h1>{translatesWord["form_title"]}</h1>
                     </div>
 
                     <div className="email-input">
@@ -220,6 +215,7 @@ const BePartnerPage = () => {
                     )} */}
 
                         <Field name="operatorCode" id="operatorCode" as="select">
+                          <option value="" defaultChecked>--</option>
                           <option value="051">051</option>
                           <option value="055">055</option>
                           <option value="050">050</option>
@@ -413,7 +409,6 @@ const BePartnerPage = () => {
               <Swiper
                 modules={[Autoplay, Pagination]}
                 pagination={true}
-              
                 className="mySwiper2"
                 spaceBetween={15}
                 slidesPerView={1.4}>
