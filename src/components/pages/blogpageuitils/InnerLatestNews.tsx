@@ -41,14 +41,12 @@ const InnerLatestNews = () => {
 
   const { latestid } = useParams();
   if (latestid === undefined) {
-    console.log("undefined blogid");
     return null;
   }
 
   const parseID = parseInt(latestid);
 
   if (isNaN(parseID)) {
-    console.log("isnan parseid");
     return null;
   }
 

@@ -48,7 +48,6 @@ const BlogPage = () => {
     queryKey: ["blogsDatass", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.blog, option(selectedLanguage));
-      console.log(response?.data, 'bloqlarrr')
       return response.data;
     },
     staleTime: 500000,
@@ -83,7 +82,6 @@ const BlogPage = () => {
     const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
     try {
       if (response.data) {
-        console.log(response.data, "salama");
       } else {
         console.log(response.status);
       }

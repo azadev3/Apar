@@ -18,6 +18,7 @@ import { useQR } from "./context/QrContext";
 import QrModal from "./QrModal";
 import "./styles/qrmodal.scss";
 import InnerLatestNews from "./components/pages/blogpageuitils/InnerLatestNews";
+import { ToastContainer, Zoom } from "react-toastify";
 
 const App = () => {
 
@@ -53,6 +54,7 @@ const App = () => {
 
   return (
     <div className="app" ref={appref}>
+      <ToastContainer transition={Zoom} autoClose={2000}/>
       {/* QR MODAL */}
       {qrModal && (
         <div className="provider-modal" onKeyDown={handleKey} tabIndex={0}>

@@ -1709,7 +1709,7 @@
   width: 100%;
   height: 400px;
   filter: grayscale(100%);
-  object-fit: contain !important;
+  object-fit: cover !important;
   border-radius: 16px 0px 0px 16px;
 }
 .about-us .about-us-wrapper .our-collective-section .collective-grid {

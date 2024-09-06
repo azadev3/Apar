@@ -84,7 +84,6 @@ const Footer = () => {
     queryKey: ["socialsData", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get("https://coming.166tech.az/api/footer_icons", option(selectedLanguage));
-      console.log(response?.data, "footer-icons");
       return response.data;
     },
     staleTime: 550000,

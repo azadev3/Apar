@@ -43,7 +43,6 @@ const AboutPage = () => {
     queryKey: ["ouradvantages", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.our_advantages, option(selectedLanguage));
-      console.log(response.data, "our advantages data");
       return response.data;
     },
     staleTime: 500000,

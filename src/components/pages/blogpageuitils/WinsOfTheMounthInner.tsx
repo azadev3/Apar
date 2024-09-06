@@ -40,14 +40,12 @@ const WinsOfTheMounthInner = () => {
 
   const { wthmid } = useParams();
   if (wthmid === undefined) {
-    console.log("undefined blogid");
     return null;
   }
 
   const parseID = parseInt(wthmid);
 
   if (isNaN(parseID)) {
-    console.log("isnan parseid");
     return null;
   }
 

@@ -168,7 +168,23 @@ const ContactPage = () => {
         <div className="socials">
           <div className="social-container">
             {socials.map((item: SocialType, i: number) => (
-              <Link
+              i === 4 ? (
+                <a
+                href={`mailto:${item.url ? item.url : ""}`}
+                className="link-item"
+                key={i}
+                onMouseEnter={() => handleHover(i)}
+                onMouseLeave={() => handleLeave(i)}>
+                <div className="image-wrapper">
+                  <img src={hoverSocial[i] || changeFindus ? item?.colorizeicon : item?.icon} alt="" />
+                </div>
+                <div className="titles">
+                  <article>{item?.title}</article>
+                  <span>{item?.account}</span>
+                </div>
+              </a>
+              ) : (
+                <Link
                 to={item.url ? item.url : ""}
                 className="link-item"
                 key={i}
@@ -182,6 +198,7 @@ const ContactPage = () => {
                   <span>{item?.account}</span>
                 </div>
               </Link>
+              )
             ))}
           </div>
         </div>

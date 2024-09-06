@@ -153,8 +153,8 @@ const BePartnerPage = () => {
                             : "Your request has been sent successfully."
                         }`,
                         {
-                          position: "bottom-right",
-                          style: { background: "#FF9E5D", color: "#fff", fontWeight: "500", zIndex: "1000000000000" },
+                          position: "top-center",
+                          style: { background: "#fff", color: "#000", fontWeight: "500", zIndex: "1000000000000" },
                         }
                       );
                     }

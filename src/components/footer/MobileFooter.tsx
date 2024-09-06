@@ -77,7 +77,6 @@ const MobileFooter: React.FC = () => {
     queryKey: ["socialsData", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get("https://coming.166tech.az/api/footer_icons", option(selectedLanguage));
-      console.log(response?.data, "footer-icons");
       return response.data;
     },
     staleTime: 550000,
@@ -129,30 +128,22 @@ const MobileFooter: React.FC = () => {
           ))}
         </div>
       </div>
-
       <div className="rules">
-        <Link
-          to={translatesWord["footer_qaydalar_yonlendirme"]}
-          className="rule"
-          style={{ cursor: "no-drop", color: "#CECECE38" }}
-          onClick={(e) => e.preventDefault()}>
-          {translatesWord["footer_rules_nav"]}
-        </Link>
-        <Link
-          to={translatesWord["footer_mexfilik_yonlendirme"]}
-          className="rule"
-          style={{ cursor: "no-drop", color: "#CECECE38" }}
-          onClick={(e) => e.preventDefault()}>
-          {translatesWord["footer_mexfilik_nav"]}
-        </Link>
-        <Link
-          to={translatesWord["footer_tehlukesizlik_yonlendirme"]}
-          className="rule"
-          style={{ cursor: "no-drop", color: "#CECECE38" }}
-          onClick={(e) => e.preventDefault()}>
-          {translatesWord["footer_security_nav"]}
-        </Link>
-      </div>
+                <Link
+                  to={translatesWord["footer_qaydalar_yonlendirme"]}
+                  className="rule"
+                  style={{ cursor: "no-drop", color: "#CECECE38" }}
+                  onClick={(e) => e.preventDefault()}>
+                  {translatesWord["footer_rules_nav"]}
+                </Link>
+                <Link
+                  to={translatesWord["footer_mexfilik_yonlendirme"]}
+                  className="rule"
+                  style={{ cursor: "no-drop", color: "#CECECE38" }}
+                  onClick={(e) => e.preventDefault()}>
+                  {translatesWord["footer_security_nav"]}
+                </Link>
+              </div>
 
       <div className="logo-and-social">
         <Link to="/" className="left-logo">

@@ -35,7 +35,6 @@ const EbcyclePage = () => {
     queryKey: ["eb_cycle_datas", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.feel_the_difference, option(selectedLanguage));
-      console.log(response.data, "ebcycle data");
       return response.data;
     },
     staleTime: 500000,

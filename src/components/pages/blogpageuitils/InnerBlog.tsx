@@ -40,14 +40,12 @@ const InnerBlog = () => {
 
   const { blogid } = useParams();
   if (blogid === undefined) {
-    console.log("undefined blogid");
     return null;
   }
 
   const parseID = parseInt(blogid);
 
   if (isNaN(parseID)) {
-    console.log("isnan parseid");
     return null;
   }
 

@@ -57,7 +57,6 @@ const BlogCarousel = () => {
     const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
     try {
       if (response.data) {
-        console.log(response.data, "salama");
       } else {
         console.log(response.status);
       }
