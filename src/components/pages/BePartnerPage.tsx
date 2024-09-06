@@ -227,6 +227,7 @@ const BePartnerPage = () => {
                           <option value="077">077</option>
                           <option value="099">099</option>
                           <option value="010">010</option>
+                          <option value="010">060</option>
                         </Field>
                       </div>
 
