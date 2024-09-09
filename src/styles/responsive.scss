@@ -849,7 +849,8 @@
     height: auto;
   }
   .blog-inner-page-container .top-content-inner-blog .topimg-wrapper img {
-    object-fit: contain;
+    object-fit: cover 
+    !important;
   }
 
   .blog-inner-page-container .top-content-inner-blog .text-bloginner {

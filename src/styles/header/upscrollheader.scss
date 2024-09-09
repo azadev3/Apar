@@ -124,7 +124,7 @@
         align-items: center;
         justify-content: flex-end;
         gap: 44px;
-        
+
         .navbar {
           display: flex;
           align-items: center;
@@ -149,11 +149,23 @@
             &.header-item-blog {
               color: white;
             }
+            &.bloginner {
+              color: white;
+            }
+            &.header-item-bcycle {
+              color: white;
+            }
+            &.header-item-ebcycle {
+              color: white;
+            }
+            &.header-item-news-single {
+              color: white;
+            }
           }
           .header-item:hover {
             color: #ff6600 !important;
           }
-  
+
           .vehicles-dropdown {
             position: absolute;
             padding: 0px 24px;
@@ -162,13 +174,13 @@
             height: 128px;
             left: 0;
             top: 2.2rem;
-            background: #E1E1E1BF;
+            background: #e1e1e1bf;
             border: 1px solid rgba(255, 255, 255, 0.3);
             display: flex;
             align-items: flex-start;
             justify-content: center;
             gap: 32px;
-  
+
             flex-direction: column;
             animation: opacity 200ms ease-in-out;
             @keyframes opacity {
@@ -181,7 +193,7 @@
                 opacity: 1;
               }
             }
-  
+
             .e-bcycle-title,
             .bcycle-title {
               width: 100%;
@@ -193,7 +205,7 @@
               color: #000000;
               transition: 300ms ease-out;
             }
-  
+
             .e-bcycle-title:hover {
               color: #ff6600;
             }
@@ -209,59 +221,73 @@
             background-color: #212121;
           }
         }
-  
-        
-      .language-selector {
-        
-        width: auto;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        select {
-          width: 74px;
-          height: 30px;
-          background-color: transparent;
-          border: none;
-          outline: none;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 24px;
-          letter-spacing: 0.01em;
-          text-align: left;
-          text-transform: capitalize;
-          @include Poppins();
-          color: #212121 !important;
-          cursor: pointer;
-          transition: 200ms ease-in;
-          background-color: transparent;
-          background-image: url("../bo.svg");
-          background-repeat: no-repeat;
-          background-size: auto;
-          background-position-x: 40px;
-          background-position-y: center;
-          appearance: none !important;
-          -webkit-appearance: none !important;
-          -moz-appearance: none !important;
-  
-          option {
-            background-color: black;
-            color: #fff;
-          }
-        }
-        select:hover {
-          color: #ff6600 !important;
-        }
-        &.lang-selector-blog {
+
+        .language-selector {
+          width: auto;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
           select {
-            color: white !important;
-            background-image: url("../down.svg") !important;
+            width: 74px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0.01em;
+            text-align: left;
+            text-transform: capitalize;
+            @include Poppins();
+            color: #212121 !important;
+            cursor: pointer;
+            transition: 200ms ease-in;
+            background-color: transparent;
+            background-image: url("../bo.svg");
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position-x: 40px;
+            background-position-y: center;
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+
+            option {
+              background-color: black;
+              color: #fff;
+            }
+          }
+          select:hover {
+            color: #ff6600 !important;
+          }
+          &.lang-selector-blog {
+            select {
+              color: white !important;
+              background-image: url("../down.svg") !important;
+            }
+          }
+          &.lang-selector-blog-inner {
+            select {
+              color: white !important;
+              background-image: url("../down.svg") !important;
+            }
+          }
+          &.lang-item-bcycle {
+            select {
+              color: white !important;
+              background-image: url("../down.svg") !important;
+            }
+          }
+          &.lang-item-ebcycle {
+            select {
+              color: white !important;
+              background-image: url("../down.svg") !important;
+            }
           }
         }
       }
-
-      }
-
     }
   }
 }
