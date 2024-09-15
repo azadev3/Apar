@@ -3,14 +3,12 @@ import "../../styles/header/upscrollheader.scss";
 import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType, HeaderTitleType } from "./Header";
 import { Link, useLocation, useMatch } from "react-router-dom";
-import { useLang } from "../../context/SelectedLanguage";
 import { AccordingChangeColorToLocation } from "./ChangeHeaderLinkColor";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import LanguageSelector from "./LanguageSelector";
 
 const UpScrollHeader = () => {
   const { logo } = useLogo();
-  const { selectedLanguage } = useLang();
   const { translatesWord } = useTranslateApi();
 
   const HeaderItem: HeaderTitleType[] = [
