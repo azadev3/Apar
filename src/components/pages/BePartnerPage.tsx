@@ -229,14 +229,6 @@ const BePartnerPage = () => {
 
                       <div className="right-phone-num">
                         <Field
-                          style={{
-                            border:
-                              props.touched.phone && props.errors.phone
-                                ? "1px solid red"
-                                : props.values.phone
-                                ? "1px solid green"
-                                : "",
-                          }}
                           type="number"
                           name="phone"
                           id="phone"

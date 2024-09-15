@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useLang } from "../../../context/SelectedLanguage";
@@ -7,6 +6,9 @@ import axios from "axios";
 import { api, option } from "../../../Api";
 import { useTranslateApi } from "../../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 export type PartnersType = {
   id: number;
@@ -19,19 +21,8 @@ export const Partners: PartnersType[] = [
   { id: 3, image: "../bakcell.png" },
   { id: 4, image: "../bakcell.png" },
 ];
+
 const OurPartners = () => {
-
-  var settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: window.innerWidth > 1168 ? 5 : 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 6000,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-  };
-
   const { selectedLanguage } = useLang();
   const [partnerData, setPartnerData] = React.useState<PartnersType[]>([]);
   const { data: partnersDatas } = useQuery({
@@ -58,17 +49,41 @@ const OurPartners = () => {
         <h1 style={{ textTransform: "uppercase" }}>{translatesWord["our_partners_title_homepage"]}</h1>
       </div>
 
-      <Slider {...settings} className="slick-carousel">
-        {partnerData.map((item: PartnersType, i: number) => (
-          <div className="div-content" key={i}>
-            <div
-              className="image-content"
-              style={{ width: window.innerWidth < 890 ? "90px" : "", height: window.innerWidth < 890 ? "40px" : "" }}>
-              <img src={item.image} alt="" />
-            </div>
-          </div>
-        ))}
-      </Slider>
+      <div className="carousel-content">
+        <Swiper
+          loop={true}
+          spaceBetween={16}
+          breakpoints={{
+            200: {
+              slidesPerView: 1.2,
+            },
+            400: {
+              slidesPerView: 1.5,
+            },
+            568: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1400: {
+              slidesPerView: 3,
+            },
+          }}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 0,
+          }}
+          speed={3000}
+          className="mySwiper">
+          {partnerData && partnerData?.length > 0 ? partnerData?.map((data: PartnersType) => (
+            <SwiperSlide key={data?.id}>
+              <img  src={data?.image || ""} alt={`${data?.id}-logo`} />
+            </SwiperSlide>
+          )) : ""}
+    
+        </Swiper>
+      </div>
     </div>
   );
 };

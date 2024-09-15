@@ -3,6 +3,7 @@
 @font-face {
   font-family: "AmericanCaptain";
   src: url("../american_captain/American\ Captain.otf") format("opentype");
+  font-display: swap;
 }
 
 .font-example {
@@ -1731,4 +1732,12 @@
   text-wrap: nowrap;
   letter-spacing: -0.6px;
   justify-content: center !important;
+}
+
+.homepage .blog .blog-container .blog-item .image-wrapper img {
+  width: 100% !important;
+}
+
+.homepage .feel-the-difference-container .left-right-pages {
+  gap: 40px !important;
 }

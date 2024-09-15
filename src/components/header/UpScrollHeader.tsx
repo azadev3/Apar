@@ -78,43 +78,76 @@ const UpScrollHeader = () => {
           <div className="navleft">
             <nav className="navbar">
               {HeaderItem.map((item: HeaderTitleType, i: number) => (
-                <Link
-                  to={item.to}
-                  className={`header-item ${
-                    location.pathname === "/blog"
-                      ? "header-item-blog"
-                      : match || match2 || match3
-                      ? "bloginner"
-                      : location.pathname === "/bcycle"
-                      ? "header-item-bcycle"
-                      : location.pathname === "/e-bcycle"
-                      ? "header-item-ebcycle"
-                      : location.pathname === "/news_single" ? "header-item-news-single" : ""
-                  }`}
-                  onMouseEnter={() => {
-                    if (item.id === 1) {
-                      handleDropdownMenu(item?.id);
-                    }
-                  }}
-                  onMouseLeave={handleMouseLeave}
-                  style={{
-                    color:
-                      item.id !== 1
-                        ? AccordingChangeColorToLocation(item.id, location)
-                        : dropdownVehicles
-                        ? "#ff6600"
-                        : "",
-                  }}
-                  key={i}>
-                  {item.title}
-                  {item.id === 1 && (
+               <>
+                {item.id === 1 ? (
+                  <span
+                    className={`header-item ${
+                      location.pathname === "/blog"
+                        ? "header-item-blog"
+                        : match || match2 || match3
+                        ? "bloginner"
+                        : location.pathname === "/bcycle"
+                        ? "header-item-bcycle"
+                        : location.pathname === "/e-bcycle"
+                        ? "header-item-ebcycle"
+                        : location.pathname === "/news_single"
+                        ? "header-item-news-single"
+                        : ""
+                    }`}
+                    onMouseEnter={() => handleDropdownMenu(item?.id)}
+                    onMouseLeave={handleMouseLeave}
+                    style={{
+                      color: dropdownVehicles ? "#ff6600" : "",
+                    }}
+                    key={i}
+                  >
+                    {item.title}
                     <img
-                      src="../dovnblack.svg"
-                      style={{ transform: dropdownVehicles ? "rotate(180deg)" : "", transition: "0.3s ease-out" }}
+                      src={location.pathname === "/blog" || match || match2 || match3 ? "../white.svg" : "../dovnblack.svg"}
+                      style={{
+                        transform: dropdownVehicles ? "rotate(180deg)" : "",
+                        transition: "0.3s ease-out",
+                      }}
                       alt="down-black"
                     />
-                  )}
-                </Link>
+                  </span>
+                ) : (
+                  <Link
+                    to={item.to}
+                    className={`header-item ${
+                      location.pathname === "/blog"
+                        ? "header-item-blog"
+                        : match || match2 || match3
+                        ? "bloginner"
+                        : location.pathname === "/bcycle"
+                        ? "header-item-bcycle"
+                        : location.pathname === "/e-bcycle"
+                        ? "header-item-ebcycle"
+                        : location.pathname === "/news_single"
+                        ? "header-item-news-single"
+                        : ""
+                    }`}
+                    onMouseEnter={() => {
+                      if (item.id === 1) {
+                        handleDropdownMenu(item?.id);
+                      }
+                    }}
+                    onMouseLeave={handleMouseLeave}
+                    style={{
+                      color:
+                        item.id !== 1
+                          ? AccordingChangeColorToLocation(item.id, location)
+                          : dropdownVehicles
+                          ? "#ff6600"
+                          : "",
+                    }}
+                    key={i}
+                  >
+                    {item.title}
+                  </Link>
+                )}
+               </>
+                
               ))}
               {dropdownVehicles && (
                 <div
@@ -128,13 +161,13 @@ const UpScrollHeader = () => {
                     to="/e-bcycle"
                     className="e-bcycle-title"
                     style={{ color: location.pathname === "/e-bcycle" ? "#ff6600" : "" }}>
-                    {selectedLanguage === "ru" ? "Електронный велосипед" : "E-bcycle"}
+                    {translatesWord['ebcycle_dropdown']}
                   </Link>
                   <Link
                     to="/bcycle"
                     className="bcycle-title"
                     style={{ color: location.pathname === "/bcycle" ? "#ff6600" : "" }}>
-                    {selectedLanguage === "ru" ? "Велосипед" : "Bcycle"}
+                    {translatesWord['bcycle_dropdown']}
                   </Link>
                 </div>
               )}

@@ -617,7 +617,7 @@
     padding-bottom: 40px;
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
@@ -867,6 +867,10 @@
   .homepage .top-content {
     height: 700px;
   }
+  .e-bcycle .top-content-bcycle .text .paragraph p {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
   .contact-page .contact-page-wrapper .contact-page-topcontent img {
     height: 700px !important;
   }
@@ -883,10 +887,10 @@
   }
 
   .e-bcycle .top-content-bcycle {
-    height: 685px !important;
+    height: auto !important;
   }
   .bcycle .top-content-bcycle {
-    height: 685px !important;
+    height: auto !important;
   }
 }
 
@@ -1041,6 +1045,9 @@
 }
 
 @media screen and (max-width: 568px) and (min-width: 268px) {
+  .homepage .feel-the-difference-container .left-right-pages .e-bcycle h1, .homepage .feel-the-difference-container .left-right-pages .bcycle h1 {
+    padding-top: 20px !important;
+  }
   .latest-news-section .swiper-area .swiper-slide:hover .text p {
     font-weight: 400 !important;
     font-size: 14px !important;

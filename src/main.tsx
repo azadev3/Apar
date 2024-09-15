@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./styles/global.scss";
 import { ScrollContextProvider } from "./context/ScrollHeader.tsx";
 import { MobilMenuContextProvider } from "./context/MobilMenu.tsx";
@@ -17,7 +17,7 @@ import { ViewportContextProvider } from "./context/WindowHeight.tsx";
 const query = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <HashRouter>
+  <BrowserRouter>
     <QueryClientProvider client={query}>
       <ScrollContextProvider>
         <MobilMenuContextProvider>
@@ -37,5 +37,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </MobilMenuContextProvider>
       </ScrollContextProvider>
     </QueryClientProvider>
-  </HashRouter>
+  </BrowserRouter>
 );
