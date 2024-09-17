@@ -53,6 +53,12 @@ const OurPartners = () => {
         <Swiper
           loop={true}
           spaceBetween={16}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 1000,
+          }}
+          mousewheel={true}
+          speed={2200}
           breakpoints={{
             200: {
               slidesPerView: 1.2,
@@ -70,11 +76,6 @@ const OurPartners = () => {
               slidesPerView: 3,
             },
           }}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 0,
-          }}
-          speed={3000}
           className="mySwiper">
           {partnerData && partnerData?.length > 0 ? partnerData?.map((data: PartnersType) => (
             <SwiperSlide key={data?.id}>
