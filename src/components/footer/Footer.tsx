@@ -22,7 +22,7 @@ export type LinkType = {
 // };
 
 type SocialType = {
-  id: number,
+  id: number;
   title: string;
   account: any;
   icon: string;
@@ -189,17 +189,19 @@ const Footer = () => {
               <p>{translatesWord["footer_aparide2024"]}</p>
               <div className="rules">
                 <Link
+                  target="_blank"
                   to={translatesWord["footer_qaydalar_yonlendirme"]}
                   className="rule"
-                  style={{ cursor: "no-drop", color: "#CECECE38" }}
-                  onClick={(e) => e.preventDefault()}>
+                  // style={{ cursor: "no-drop", color: "#CECECE38" }}
+                >
                   {translatesWord["footer_rules_nav"]}
                 </Link>
                 <Link
+                  target="_blank"
                   to={translatesWord["footer_mexfilik_yonlendirme"]}
                   className="rule"
-                  style={{ cursor: "no-drop", color: "#CECECE38" }}
-                  onClick={(e) => e.preventDefault()}>
+                  // style={{ cursor: "no-drop", color: "#CECECE38" }}
+                >
                   {translatesWord["footer_security_nav"]}
                 </Link>
               </div>

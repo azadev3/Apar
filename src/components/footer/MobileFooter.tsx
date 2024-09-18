@@ -130,17 +130,20 @@ const MobileFooter: React.FC = () => {
       </div>
       <div className="rules">
         <Link
+          target="_blank"
           to={translatesWord["footer_qaydalar_yonlendirme"]}
           className="rule"
-          style={{ cursor: "no-drop", color: "#CECECE38" }}
-          onClick={(e) => e.preventDefault()}>
+          // style={{ cursor: "no-drop", color: "#CECECE38" }}
+        >
           {translatesWord ? <>{translatesWord["footer_rules_nav"]?.split("/")?.join("")}</> : ""}
         </Link>
         <Link
+          target="_blank"
           to={translatesWord["footer_mexfilik_yonlendirme"]}
           className="rule"
-          style={{ cursor: "no-drop", color: "#CECECE38", textWrap: "nowrap" }}
-          onClick={(e) => e.preventDefault()}>
+          style={{ textWrap: "nowrap" }}
+          // style={{ cursor: "no-drop", color: "#CECECE38", textWrap: "nowrap" }}
+        >
           {translatesWord["footer_security_nav"]}
         </Link>
       </div>
