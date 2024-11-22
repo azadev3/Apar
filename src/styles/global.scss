@@ -10,6 +10,9 @@
   font-family: "AmericanCaptain", sans-serif;
 }
 
+.homepage .how-to-ride-section .how-to-ride-section-wrappered .left p {
+  line-height: 24px !important;
+}
 //define the font families
 @mixin Poppins {
   font-family: "Poppins", sans-serif;
@@ -1710,7 +1713,7 @@
   width: 100%;
   height: 400px;
   filter: grayscale(100%);
-  object-fit: cover !important;
+  object-fit: fill !important;
   border-radius: 16px 0px 0px 16px;
 }
 .about-us .about-us-wrapper .our-collective-section .collective-grid {

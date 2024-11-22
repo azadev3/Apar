@@ -38,6 +38,17 @@ export type SidebarType = {
   box: Boxtype[];
 };
 
+type TopBlogsType = {
+  id: number;
+  title: string;
+  description: string;
+  view: number,
+  order: number,
+  image: string;
+  created_at: string;
+  images: Images[];
+}
+
 const BlogPage = () => {
   const navigate = useNavigate();
 
@@ -90,6 +101,30 @@ const BlogPage = () => {
     }
   };
 
+  const [topBlogs, setTopBlogs] = React.useState<TopBlogsType[]>([]);
+
+  const getTopBlogs = async () => {
+    try {
+      const res = await axios.get("https://coming.166tech.az/api/best_blogs", {
+        headers: {
+          "Accept-Language": selectedLanguage,
+        },
+      });
+
+      if(res.data) {
+        setTopBlogs(res.data);
+        console.log(res.data);
+      } else {
+        console.log(res.status)
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  React.useEffect(() => {
+    getTopBlogs();
+  }, [selectedLanguage]);
 
   return (
     <div className="blog-page">
@@ -98,7 +133,7 @@ const BlogPage = () => {
           {changeBlogpage ? (
             <div className="top-content-blog-page-mobile">
               <div className="titleblog">
-                <h1>{translatesWord['blog']}</h1>
+                <h1>{translatesWord["blog"]}</h1>
               </div>
               <div className="content">
                 <div className="left-in-content">
@@ -136,9 +171,8 @@ const BlogPage = () => {
                   ))}
                 </div>
 
-                <h1 className="swiper-blog-title-main">{translatesWord['top_blogs_title']}</h1>
-                <Swiper 
-                className="mySwiper-blogpage" slidesPerView={1.5} spaceBetween={15}>
+                <h1 className="swiper-blog-title-main">{translatesWord["top_blogs_title"]}</h1>
+                <Swiper className="mySwiper-blogpage" slidesPerView={1.5} spaceBetween={15}>
                   {blogs?.map((box: Boxtype, j: number) => (
                     <div key={j} className="sidebar-item">
                       <div className="item-box">
@@ -154,8 +188,11 @@ const BlogPage = () => {
                               <img src={box.image} alt="" />
                             </div>
                           </div>
-                          <div className="left" style={{marginTop:'15px', height: "145px"}}>
-                            <h1 style={{fontSize: "14px", lineClamp: '2', WebkitLineClamp: "2", lineHeight: "normal"}}>{box.title}</h1>
+                          <div className="left" style={{ marginTop: "15px", height: "145px" }}>
+                            <h1
+                              style={{ fontSize: "14px", lineClamp: "2", WebkitLineClamp: "2", lineHeight: "normal" }}>
+                              {box.title}
+                            </h1>
                             <p style={{ fontSize: "14px", lineHeight: "normal" }}>{box.description}</p>
                             <article>{box.created_at}</article>
                           </div>
@@ -208,15 +245,16 @@ const BlogPage = () => {
                 </div>
 
                 <aside className="sidebar">
-                  <h1>{translatesWord['top_blogs_title']}</h1>
-                  {blogs?.map((box: Boxtype, i: number) => (
+                  <h1>{translatesWord["top_blogs_title"]}</h1>
+                  {topBlogs && topBlogs?.length > 0 ? topBlogs?.map((box: TopBlogsType, i: number) => (
                     <div key={i} className="sidebar-item">
-                      <div 
-                      onClick={() => {
-                        getSingleBlogId(box.id);
-                        navigate(`/blog_single/${i}`);
-                      }}
-                      className="item" key={i}>
+                      <div
+                        onClick={() => {
+                          getSingleBlogId(box.id);
+                          navigate(`/blog_single/${i}`);
+                        }}
+                        className="item"
+                        key={i}>
                         <div className="left">
                           <span>{box.title}</span>
                           <p>{box.description}</p>
@@ -230,7 +268,7 @@ const BlogPage = () => {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  )) : ""}
                 </aside>
               </div>
             </div>
