@@ -189,7 +189,7 @@ const BePartnerPage = () => {
                         type="email"
                         name="email"
                         id="email"
-                        placeholder={selectedLanguage === "ru" ? "Электронная почта" : "Email"}
+                        placeholder={translatesWord['email_placeholder']}
                       />
                       {props.errors.email && props.touched.email && (
                         <span className="error-msg">{props.errors.email}</span>
@@ -232,13 +232,7 @@ const BePartnerPage = () => {
                           type="number"
                           name="phone"
                           id="phone"
-                          placeholder={
-                            selectedLanguage === "az"
-                              ? "Telefon nömrəsi"
-                              : selectedLanguage === "ru"
-                              ? "Номер телефона"
-                              : "Phone number"
-                          }
+                          placeholder={translatesWord['phone_placeholder']}
                         />
                       </div>
                     </div>
@@ -256,13 +250,7 @@ const BePartnerPage = () => {
                         type="text"
                         name="businessName"
                         id="businessName"
-                        placeholder={
-                          selectedLanguage === "az"
-                            ? "Biznesinizin adı"
-                            : selectedLanguage === "ru"
-                            ? "Наименование фирмы"
-                            : "Business name"
-                        }
+                        placeholder={translatesWord['business_name_placeholder']}
                       />
                       {props.errors.businessName && props.touched.businessName && (
                         <span className="error-msg">{props.errors.businessName}</span>
@@ -274,9 +262,7 @@ const BePartnerPage = () => {
                         type="text"
                         name="record"
                         id="record"
-                        placeholder={
-                          selectedLanguage === "az" ? "Mesajınız" : selectedLanguage === "ru" ? "Сообщение" : "Record"
-                        }
+                        placeholder={translatesWord['record_placeholder']}
                       />
                     </div>
 
