@@ -119,9 +119,7 @@ const BePartnerPage = () => {
 
           <div className="form-and-text">
             <div className="left" style={{ marginBottom: "8rem" }}>
-              <h1>
-                <h1>{translatesWord ? <span>{translatesWord["contact_page_title_find_us"]}</span> : ""}</h1>
-              </h1>
+              <h1>{translatesWord ? <span>{translatesWord["contact_page_title_find_us"]}</span> : ""}</h1>
               <p>{translatesWord["be_partner_text"]}</p>
             </div>
 
@@ -140,10 +138,9 @@ const BePartnerPage = () => {
                   try {
                     if (response.data) {
                       toast.success(
-                        `${
-                          selectedLanguage === "az"
-                            ? "Sorğunuz müvəffəqiyyətlə göndərildi."
-                            : selectedLanguage === "ru"
+                        `${selectedLanguage === "az"
+                          ? "Sorğunuz müvəffəqiyyətlə göndərildi."
+                          : selectedLanguage === "ru"
                             ? "Ваш запрос успешно отправлен."
                             : "Your request has been sent successfully."
                         }`,
@@ -155,10 +152,9 @@ const BePartnerPage = () => {
                     }
                   } catch (error) {
                     toast.error(
-                      `${
-                        selectedLanguage === "az"
-                          ? "Xəta var. Lütfən yenidən yoxlayın..."
-                          : selectedLanguage === "ru"
+                      `${selectedLanguage === "az"
+                        ? "Xəta var. Lütfən yenidən yoxlayın..."
+                        : selectedLanguage === "ru"
                           ? "Есть ошибка. Пожалуйста, проверьте еще раз..."
                           : "There is an error. Please check again..."
                       }`,
@@ -173,7 +169,7 @@ const BePartnerPage = () => {
                   <Form className="form-be-partner">
                     <ToastContainer transition={Zoom} autoClose={2500} />
                     <div className="title">
-                      <h1>{translatesWord["form_title"]}</h1>
+                      <h4>{translatesWord["form_title"]}</h4>
                     </div>
 
                     <div className="email-input">
@@ -183,8 +179,8 @@ const BePartnerPage = () => {
                             props.touched.email && props.errors.email
                               ? "1px solid red"
                               : props.values.email
-                              ? "1px solid green"
-                              : "",
+                                ? "1px solid green"
+                                : "",
                         }}
                         type="email"
                         name="email"
@@ -198,22 +194,6 @@ const BePartnerPage = () => {
 
                     <div className="phone-number-input">
                       <div className="left-operator-code">
-                        {/* <Field
-                      style={{
-                        border:
-                          props.touched.operatorCode && props.errors.operatorCode
-                            ? "1px solid red"
-                            : props.values.operatorCode ? '1px solid green' : '',
-                      }}
-                      type="text"
-                      name="operatorCode"
-                      id="operatorCode"
-                      placeholder="051"
-                    />
-                    {props.errors.operatorCode && props.touched.operatorCode && (
-                      <span className="error-msg">{props.errors.operatorCode}</span>
-                    )} */}
-
                         <Field name="operatorCode" id="operatorCode" as="select">
                           <option value="" defaultChecked>--</option>
                           <option value="051">051</option>
@@ -244,8 +224,8 @@ const BePartnerPage = () => {
                             props.touched.businessName && props.errors.businessName
                               ? "1px solid red"
                               : props.values.businessName
-                              ? "1px solid green"
-                              : "",
+                                ? "1px solid green"
+                                : "",
                         }}
                         type="text"
                         name="businessName"
@@ -326,10 +306,10 @@ const BePartnerPage = () => {
                 }}
                 pagination={true}
                 modules={[Autoplay, Pagination]}
-                // autoplay={{
-                //   delay: 2000,
-                //   pauseOnMouseEnter: false,
-                // }}
+              // autoplay={{
+              //   delay: 2000,
+              //   pauseOnMouseEnter: false,
+              // }}
               >
                 {adversiment.map((item: AdversimentType, i: number) => (
                   <SwiperSlide key={i} className="item-adversiment-swiper">
@@ -339,7 +319,7 @@ const BePartnerPage = () => {
                       </div>
                       <div className="text">
                         <div className="title">
-                          <h1>{item.title}</h1>
+                          <h4>{item.title}</h4>
                         </div>
 
                         <div className="descript">
@@ -359,7 +339,7 @@ const BePartnerPage = () => {
                     </div>
                     <div className="text">
                       <div className="title">
-                        <h1>{item.title}</h1>
+                        <h4>{item.title}</h4>
                       </div>
 
                       <div className="descript">
@@ -376,7 +356,7 @@ const BePartnerPage = () => {
         <div className="money-and-time">
           <div className="top">
             <div className="title">
-              <h1>{translatesWord["save_time_money_title"]}</h1>
+              <h4>{translatesWord["save_time_money_title"]}</h4>
             </div>
 
             <p>{translatesWord["save_time_money_paragraph"]}</p>
@@ -397,7 +377,7 @@ const BePartnerPage = () => {
                     </div>
 
                     <div className="bottomtext">
-                      <h1>{item.title}</h1>
+                      <h5>{item.title}</h5>
                       <p>{item.description}</p>
                     </div>
                   </SwiperSlide>
@@ -412,7 +392,7 @@ const BePartnerPage = () => {
                     </div>
 
                     <div className="bottomtext">
-                      <h1>{item.title}</h1>
+                      <h5>{item.title}</h5>
                       <p>{item.description}</p>
                     </div>
                   </div>

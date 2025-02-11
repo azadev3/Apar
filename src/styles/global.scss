@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
 
 @font-face {
-  font-family: "AmericanCaptain";
-  src: url("../american_captain/American\ Captain.otf") format("opentype");
+  font-family: 'AmericanCaptain';
+  src: url('../american_captain/American\ Captain.otf') format('opentype');
   font-display: swap;
 }
 
 .font-example {
-  font-family: "AmericanCaptain", sans-serif;
+  font-family: 'AmericanCaptain', sans-serif;
 }
 
 .homepage .how-to-ride-section .how-to-ride-section-wrappered .left p {
@@ -15,16 +15,54 @@
 }
 //define the font families
 @mixin Poppins {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 @mixin AmericanCaptain {
-  font-family: "AmericanCaptain";
+  font-family: 'AmericanCaptain';
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.loader-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loader {
+    border: 5px solid #f26622;
+    border-left-color: transparent;
+    border-radius: 50%;
+  }
+
+  .loader {
+    border: 5px solid #f26622;
+    border-left-color: transparent;
+    width: 48px;
+    height: 48px;
+  }
+
+  .loader {
+    border: 5px solid #f26622;
+    border-left-color: transparent;
+    width: 48px;
+    height: 48px;
+    animation: spin89345 1s linear infinite;
+  }
+
+  @keyframes spin89345 {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 .app {
@@ -134,7 +172,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            h1 {
+            h2 {
               transition: 300ms ease-in-out;
               @include AmericanCaptain();
               font-size: 32px;
@@ -286,7 +324,7 @@
           display: flex;
           align-items: center;
           justify-content: flex-start;
-          h1 {
+          h3 {
             @include AmericanCaptain();
             text-transform: uppercase;
             font-size: 72px;
@@ -416,7 +454,7 @@
     }
   }
   .download-the-app-wrapper::after {
-    content: "";
+    content: '';
     border: 40px solid #fff;
     width: 50px;
     height: 50px;
@@ -426,7 +464,7 @@
     border-radius: 50%;
   }
   .download-the-app-wrapper::before {
-    content: "";
+    content: '';
     border: 80px solid #fff;
     width: 40%;
     height: 1050px;
@@ -459,7 +497,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      h1 {
+      h3 {
         @include AmericanCaptain();
         font-size: 48px;
         font-weight: 400;
@@ -577,7 +615,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .download-the-app-mobile .text-area .download-text h1 {
+  .download-the-app-mobile .text-area .download-text h3 {
     font-size: 30px;
   }
 
@@ -638,7 +676,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .download-the-app-mobile .text-area .download-text h1 {
+  .download-the-app-mobile .text-area .download-text h3 {
     font-size: 30px;
   }
 
@@ -758,7 +796,7 @@
         transform: translateX(-100rem);
       }
     }
-    h1 {
+    h4 {
       color: rgba(255, 255, 255, 1);
       @include AmericanCaptain();
       font-size: 48px;
@@ -1050,7 +1088,7 @@
           flex-direction: column;
           gap: 12px;
           padding: 10px;
-          h1 {
+          h5 {
             transition: 400ms ease-in-out;
             @include AmericanCaptain();
             font-size: 32px;
@@ -1119,7 +1157,7 @@
         padding: 12px 10px;
       }
       .swiper-button-next:after {
-        content: url("../swiperright.png");
+        content: url('../swiperright.png');
         top: 50% !important;
         position: absolute;
         left: 50% !important;
@@ -1136,7 +1174,7 @@
         padding: 12px 10px;
       }
       .swiper-button-prev:after {
-        content: url("../swiperleft.png");
+        content: url('../swiperleft.png');
         top: 50% !important;
         position: absolute;
         left: 50% !important;
@@ -1228,7 +1266,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      h1 {
+      .blog-carousel-title {
         text-transform: uppercase;
         @include AmericanCaptain();
         font-size: 72px;
@@ -1292,7 +1330,7 @@
           flex-direction: column;
           gap: 12px;
           padding: 10px;
-          h1 {
+          .text-title {
             transition: 400ms ease-in-out;
             @include AmericanCaptain();
             font-size: 32px;
@@ -1362,7 +1400,7 @@
         padding: 12px 10px;
       }
       .swiper-button-next:after {
-        content: url("../swiperright.png");
+        content: url('../swiperright.png');
         top: 50% !important;
         position: absolute;
         left: 50% !important;
@@ -1379,7 +1417,7 @@
         padding: 12px 10px;
       }
       .swiper-button-prev:after {
-        content: url("../swiperleft.png");
+        content: url('../swiperleft.png');
         top: 50% !important;
         position: absolute;
         left: 50% !important;
@@ -1604,7 +1642,7 @@
         padding: 12px 10px;
       }
       .swiper-button-next:after {
-        content: url("../swiperright.png");
+        content: url('../swiperright.png');
         top: 50% !important;
         position: absolute;
         left: 50% !important;
@@ -1621,7 +1659,7 @@
         padding: 12px 10px;
       }
       .swiper-button-prev:after {
-        content: url("../swiperleft.png");
+        content: url('../swiperleft.png');
         top: 50% !important;
         position: absolute;
         left: 50% !important;
@@ -1683,9 +1721,9 @@
   }
 }
 
-.blog-mobile .swiper-slide .blog-container .bottom-content .titl h1,
-.blog-mobile .swiper-slide .blog-container .bottom-content .paragraph h1,
-.blog-mobile .swiper-slide .blog-container .bottom-content .date h1 {
+.blog-mobile .swiper-slide .blog-container .bottom-content .titl h2,
+.blog-mobile .swiper-slide .blog-container .bottom-content .paragraph h2,
+.blog-mobile .swiper-slide .blog-container .bottom-content .date h2 {
   font-size: 18px !important;
 }
 
@@ -1696,7 +1734,8 @@
   min-height: 115px !important;
 }
 
-.homepage .feel-the-difference-container .left-right-pages .e-bcycle, .homepage .feel-the-difference-container .left-right-pages .bcycle {
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle,
+.homepage .feel-the-difference-container .left-right-pages .bcycle {
   text-decoration: none;
   width: 360px;
   height: auto;
@@ -1709,7 +1748,8 @@
   flex-direction: column;
   border-radius: 16px 0px 0px 16px;
 }
-.homepage .feel-the-difference-container .left-right-pages .e-bcycle img, .homepage .feel-the-difference-container .left-right-pages .bcycle img {
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle img,
+.homepage .feel-the-difference-container .left-right-pages .bcycle img {
   width: 100%;
   height: 400px;
   filter: grayscale(100%);
@@ -1720,12 +1760,12 @@
   margin-top: 60px !important;
 }
 
-.adversiments-swiper .item-adversiment-swiper .text .title h1 {
+.adversiments-swiper .item-adversiment-swiper .text .title h4 {
   line-clamp: unset !important;
   -webkit-line-clamp: unset !important;
 }
 .adversiments-swiper .item-adversiment-swiper .adversiment-sw .text {
-  height:  auto !important;
+  height: auto !important;
 }
 .adversiments-swiper .item-adversiment-swiper .adversiment-sw {
   justify-content: flex-start !important;

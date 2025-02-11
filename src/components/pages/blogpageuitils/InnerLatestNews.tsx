@@ -55,23 +55,6 @@ const InnerLatestNews = () => {
   return (
     <React.Fragment>
       <div className="blog-inner-page-container">
-        {/* <div className="top-content-inner-blog">
-          <div className="topimg-wrapper">
-            <img src={innerBlogItem?.image} alt="" />
-          </div>
-          <div className="text-bloginner">
-            <h1>{innerBlogItem?.title}</h1>
-            <p>{innerBlogItem?.description}</p>
-            <div className="view-and-date">
-              <span className="date">{innerBlogItem?.created_at}</span>
-              <span className="view-count">
-                <IoEyeOutline className="eye" />
-                {innerBlogItem?.view}
-              </span>
-            </div>
-          </div>
-        </div> */}
-
         {innerBlogItem?.images?.length !== 0 ? (
           <React.Fragment>
             <Swiper 
@@ -87,7 +70,7 @@ const InnerLatestNews = () => {
               ))}
             </Swiper>
             <div className="text-bloginner-swipered">
-              <h1>{innerBlogItem?.title}</h1>
+              <h5>{innerBlogItem?.title}</h5>
               <p>{innerBlogItem?.description}</p>
               <div className="view-and-date">
                 <span className="date">{innerBlogItem?.created_at}</span>
@@ -104,7 +87,7 @@ const InnerLatestNews = () => {
               <img src={innerBlogItem?.image} alt="" />
             </div>
             <div className="text-bloginner">
-              <h1>{innerBlogItem?.title}</h1>
+              <h5>{innerBlogItem?.title}</h5>
               <p>{innerBlogItem?.description}</p>
               <div className="view-and-date">
                 <span className="date">{innerBlogItem?.created_at}</span>

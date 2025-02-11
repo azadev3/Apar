@@ -43,7 +43,7 @@ const Howtorideflag = () => {
         {howToRideData.map((item) => (
           <React.Fragment key={item.id}>
             <img src="../starmob.svg" alt="star" />
-            <h1>{item.text}</h1>
+            <h4>{item.text}</h4>
           </React.Fragment>
         ))}
         {innering && (
@@ -51,7 +51,7 @@ const Howtorideflag = () => {
             {howToRideData.map((item) => (
               <React.Fragment key={item.id}>
                 <img src="../starmob.svg" alt="star" />
-                <h1>{item.text}</h1>
+                <h4>{item.text}</h4>
               </React.Fragment>
             ))}
           </>

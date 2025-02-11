@@ -183,7 +183,7 @@
         width: 100%;
         height: auto;
         @include flexible;
-        h1 {
+        h5 {
           @include AmericanCaptain();
           font-size: 72px;
           font-weight: 400;

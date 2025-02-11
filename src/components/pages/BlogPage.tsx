@@ -15,6 +15,7 @@ import { api, option } from "../../Api";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
 import BlogCarousel from "../BlogCarousel";
+import Loader from "../../Loader";
 
 export type Images = {
   id: number;
@@ -55,7 +56,7 @@ const BlogPage = () => {
   const { selectedLanguage } = useLang();
   const [blogs, setBlogs] = React.useState<Boxtype[]>([]);
 
-  const { data: blogsDatass } = useQuery({
+  const { data: blogsDatass, isLoading } = useQuery({
     queryKey: ["blogsDatass", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.blog, option(selectedLanguage));
@@ -111,7 +112,7 @@ const BlogPage = () => {
         },
       });
 
-      if(res.data) {
+      if (res.data) {
         setTopBlogs(res.data);
         console.log(res.data);
       } else {
@@ -126,6 +127,10 @@ const BlogPage = () => {
     getTopBlogs();
   }, [selectedLanguage]);
 
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <div className="blog-page">
       <div className="blog-page-wrapper">
@@ -133,7 +138,7 @@ const BlogPage = () => {
           {changeBlogpage ? (
             <div className="top-content-blog-page-mobile">
               <div className="titleblog">
-                <h1>{translatesWord["blog"]}</h1>
+                <h4>{translatesWord["blog"]}</h4>
               </div>
               <div className="content">
                 <div className="left-in-content">
@@ -153,7 +158,7 @@ const BlogPage = () => {
                             />
                           </div>
                           <div className="title-news">
-                            <h1>{box.title}</h1>
+                            <h4>{box.title}</h4>
                           </div>
                           <div className="description">
                             <p>{box.description}</p>
@@ -206,7 +211,7 @@ const BlogPage = () => {
           ) : (
             <div className="top-content-blog-page">
               <div className="titleblog">
-                <h1>{translatesWord["blog"]}</h1>
+                <h4>{translatesWord["blog"]}</h4>
               </div>
               <div className="content">
                 <div className="left-in-content">
@@ -226,7 +231,7 @@ const BlogPage = () => {
                             />
                           </div>
                           <div className="title-news">
-                            <h1>{box.title}</h1>
+                            <h4>{box.title}</h4>
                           </div>
                           <div className="description">
                             <p>{box.description}</p>
@@ -245,13 +250,13 @@ const BlogPage = () => {
                 </div>
 
                 <aside className="sidebar">
-                  <h1>{translatesWord["top_blogs_title"]}</h1>
+                  <h4>{translatesWord["top_blogs_title"]}</h4>
                   {topBlogs && topBlogs?.length > 0 ? topBlogs?.map((box: TopBlogsType, i: number) => (
                     <div key={i} className="sidebar-item">
                       <div
                         onClick={() => {
                           getSingleBlogId(box.id);
-                          navigate(`/blog_single/${i}`);
+                          navigate(`/blog_single/${i+1}`);
                         }}
                         className="item"
                         key={i}>

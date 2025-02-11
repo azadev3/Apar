@@ -8,6 +8,7 @@ import { api, option } from "../../Api";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import Loader from "../../Loader";
 
 const BcyclePage = () => {
 
@@ -16,7 +17,7 @@ const BcyclePage = () => {
   const { selectedLanguage } = useLang();
   const [ebcycledata, setData] = React.useState<EbcycleType[]>([]);
 
-  const { data: ebcycleDataaa } = useQuery({
+  const { data: ebcycleDataaa, isLoading } = useQuery({
     queryKey: ["ebcycleDataaa", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.feel_the_difference, option(selectedLanguage));
@@ -36,6 +37,10 @@ const BcyclePage = () => {
     .flatMap((item: EbcycleType) => item.specifications);
 
   const bcycle = ebcycledata.find((item: EbcycleType, i: number) => i === 1 && item);
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <div className="bcycle">
@@ -58,7 +63,7 @@ const BcyclePage = () => {
 
       <div className="specifications">
         <div className="title">
-          <h1>{translatesWord['specifications_title']}</h1>
+          <h4>{translatesWord['specifications_title']}</h4>
         </div>
 
         <div className="content">

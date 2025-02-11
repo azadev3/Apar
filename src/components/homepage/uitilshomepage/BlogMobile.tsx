@@ -96,7 +96,7 @@ const BlogMobile = () => {
 
               <div className="bottom-content">
                 <div className="titl">
-                  <h1>{item.title}</h1>
+                  <h2>{item.title}</h2>
                 </div>
                 <div className="paragraph">
                   <p>{item.description}</p>

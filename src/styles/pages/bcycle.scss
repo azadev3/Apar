@@ -93,7 +93,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      h1 {
+      h4 {
         text-transform: uppercase;
         text-align: center;
         @include AmericanCaptain();
@@ -262,7 +262,7 @@
          align-items: center;
          justify-content: center;
          text-align: center;
-         h1 {
+         h4 {
            text-transform: uppercase;
            text-align: center;
            @include AmericanCaptain();

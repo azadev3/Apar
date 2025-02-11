@@ -29,12 +29,24 @@ export default function SimpleSlider() {
     { id: 3, title: `${translatesWord["discoun_line"]}` },
   ];
 
+  if (!translatesWord || !translatesWord["discoun_line"]) {
+    return <div className="topheader">
+      <Slider {...settings} className="slick-carousel">
+        {TopHeaderItem.map((_: TopheaderItemType, i: number) => (
+          <div className="div-content" key={i}>
+            ...
+          </div>
+        ))}
+      </Slider>
+    </div>;
+  }
+
   return (
     <div className="topheader">
       <Slider {...settings} className="slick-carousel">
         {TopHeaderItem.map((item: TopheaderItemType, i: number) => (
           <div className="div-content" key={i}>
-            {item.title}
+            {item?.title === undefined ? '...' : item?.title}
           </div>
         ))}
       </Slider>

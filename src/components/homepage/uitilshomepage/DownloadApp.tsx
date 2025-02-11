@@ -53,18 +53,18 @@ const DownloadApp = () => {
         <div className="download-the-app-mobile">
           <div className="text-area">
             <div className="download-text">
-              <h1>D</h1>
+              <h3>D</h3>
               <div className="capa1">
                 <img src="../yenicapa.svg" />
               </div>
-              <h1>WNL</h1>
+              <h3>WNL</h3>
               <div className="capa2">
                 <img src="../yenicapanarinci.svg" />
               </div>
               <div className="text-wrap">
-                <h1>AD</h1>
-                <h1>THE</h1>
-                <h1>APP</h1>
+                <h3>AD</h3>
+                <h3>THE</h3>
+                <h3>APP</h3>
               </div>
             </div>
             <p>{translatesWord["download_app_paragraph"]}</p>
@@ -114,11 +114,11 @@ const DownloadApp = () => {
           <div className="download-the-app-wrapper">
             <div className="left">
               <div className="title-download">
-                <h1>D</h1>
+                <h3>D</h3>
                 <div className="capa">
                   <img src="../yenicapa.svg" alt="" width="140%" height="100%" />
                 </div>
-                <h1>WNL</h1>
+                <h3>WNL</h3>
                 <div className="capa2">
                   <img src="../yenicapanarinci.svg" alt="" width="100%" height="100%" />
                 </div>
@@ -127,8 +127,8 @@ const DownloadApp = () => {
                     display: "flex",
                     gap: "7px",
                   }}>
-                  <h1 className="ad">AD</h1>
-                  <h1>THE APP</h1>
+                  <h3 className="ad">AD</h3>
+                  <h3>THE APP</h3>
                 </div>
               </div>
 

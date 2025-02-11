@@ -8,7 +8,7 @@
     padding-top: 36px;
     padding-bottom: 36px;
   }
-  .provider-modal .qr-modal h1 {
+  .provider-modal .qr-modal h2 {
     font-size: 32px !important;
   }
   .provider-modal .qr-modal .qr-area {
@@ -151,6 +151,7 @@
 
   .homepage .feel-the-difference-container .left-right-pages {
     height: auto;
+    flex-direction: column !important;
   }
 
   .homepage .feel-the-difference-container .text-content-area-feel-the-difference .top-text h1 {
@@ -164,8 +165,8 @@
     padding: 0;
   }
 
-  .homepage .feel-the-difference-container .left-right-pages .e-bcycle h1,
-  .homepage .feel-the-difference-container .left-right-pages .bcycle h1 {
+  .homepage .feel-the-difference-container .left-right-pages .e-bcycle h6,
+  .homepage .feel-the-difference-container .left-right-pages .bcycle h6 {
     font-size: 30px;
     line-height: unset;
   }
@@ -494,7 +495,7 @@
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
-          h1 {
+          h2 {
             font-family: AmericanCaptain();
             font-size: 32px;
             font-weight: 400;
@@ -1050,7 +1051,7 @@
 }
 
 @media screen and (max-width: 568px) and (min-width: 268px) {
-  .homepage .feel-the-difference-container .left-right-pages .e-bcycle h1, .homepage .feel-the-difference-container .left-right-pages .bcycle h1 {
+  .homepage .feel-the-difference-container .left-right-pages .e-bcycle h6, .homepage .feel-the-difference-container .left-right-pages .bcycle h6 {
     padding-top: 20px !important;
   }
   .latest-news-section .swiper-area .swiper-slide:hover .text p {
@@ -1128,7 +1129,7 @@
   .contact-page .contact-page-wrapper .nav-and-contents .navigators {
     grid-template-columns: repeat(1, 1fr) !important;
   }
-  .blog-carousel-section .swiper-area-blog-carousel .swiper-slide .text h1 {
+  .blog-carousel-section .swiper-area-blog-carousel .swiper-slide .text .text-title {
     font-size: 21px !important;
     -webkit-line-clamp: 2 !important; 
     line-clamp: 2 !important;

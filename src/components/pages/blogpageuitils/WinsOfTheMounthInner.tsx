@@ -87,7 +87,7 @@ const WinsOfTheMounthInner = () => {
               <img src={innerBlogItem?.image} alt="" />
             </div>
             <div className="text-bloginner">
-              <h1>{innerBlogItem?.title}</h1>
+              <h5>{innerBlogItem?.title}</h5>
               <p>{innerBlogItem?.description}</p>
               <div className="view-and-date">
                 <span className="date">{innerBlogItem?.created_at}</span>

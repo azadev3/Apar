@@ -224,7 +224,7 @@
         justify-content: center;
         overflow: hidden;
         flex-direction: column;
-        h1 {
+        h6 {
           text-transform: uppercase;
           @include AmericanCaptain();
           font-size: 48px;
@@ -244,7 +244,7 @@
       }
 
       .e-bcycle:hover {
-        h1 {
+        h6 {
           color: #ff6600;
         }
         img {
@@ -252,7 +252,7 @@
         }
       }
       .bcycle:hover {
-        h1 {
+        h6 {
           color: #ff6600;
         }
         img {

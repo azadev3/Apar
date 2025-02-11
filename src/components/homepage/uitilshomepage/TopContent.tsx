@@ -4,6 +4,7 @@ import { useLang } from "../../../context/SelectedLanguage";
 import axios from "axios";
 import { option } from "../../../Api";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../Loader";
 
 type HeroApiType = {
   id: number;
@@ -46,13 +47,13 @@ const TopContent = () => {
 
   const [hero, setHero] = React.useState<HeroApiType[]>([]);
 
-  const { data: heroDatas } = useQuery({
+  const { data: heroDatas, isLoading } = useQuery({
     queryKey: ["heroDatas", selectedLanguage],
     queryFn: async () => {
       const response = await axios.get("https://coming.166tech.az/api/mains", option(selectedLanguage));
       return response.data;
     },
-    
+
     staleTime: 600000,
   });
 
@@ -77,6 +78,10 @@ const TopContent = () => {
       setMediaIcon(MediaData);
     }
   }, [MediaData]);
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   return (
     <div className="top-content-provider">

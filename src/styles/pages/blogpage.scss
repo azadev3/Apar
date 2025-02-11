@@ -32,7 +32,7 @@
         width: 100%;
         height: auto;
         @include flexible;
-        h1 {
+        h4 {
           @include AmericanCaptain();
           font-size: 128px;
           font-weight: 400;
@@ -86,7 +86,7 @@
             align-items: flex-start;
             justify-content: flex-start;
             margin-top: 26px;
-            h1 {
+            h4 {
               text-transform: capitalize;
               font-size: 28px;
               font-weight: 600;
@@ -159,7 +159,7 @@
           flex-direction: column;
 
           
-          h1 {
+          h4 {
             font-size: 48px;
             font-weight: 400;
             text-transform: uppercase;
@@ -320,7 +320,7 @@
       padding-left: 160px;
       padding-right: 160px;
 
-      h1 {
+      h5 {
         @include AmericanCaptain();
         font-size: 72px;
         font-weight: 600;

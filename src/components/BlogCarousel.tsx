@@ -70,7 +70,7 @@ const BlogCarousel = () => {
   return (
     <div className="blog-carousel-section">
       <div className="title-blog-carousel">
-        <h1>{translatesWord["blog"]}</h1>
+        <h3 className="blog-carousel-title">{translatesWord["blog"]}</h3>
       </div>
 
       <div className="swiper-area-blog-carousel">
@@ -108,7 +108,7 @@ const BlogCarousel = () => {
                 </div>
 
                 <div className="text">
-                  <h1>{item.title}</h1>
+                  <h3 className="text-title">{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
                 <article>{item.created_at}</article>

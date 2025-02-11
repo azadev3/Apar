@@ -68,7 +68,7 @@ const FeelTheDifference = () => {
             i === 0 && (
               <Link to="/e-bcycle" className="e-bcycle" key={i}>
                 <img src={item.image} alt="" style={{ filter: reelImg ? "grayscale(0)" : "" }} />
-                <h1>{item.title}</h1>
+                <h6>{item.title}</h6>
               </Link>
             )
         )}
@@ -78,7 +78,7 @@ const FeelTheDifference = () => {
             i === 1 && (
               <Link key={i} to="/bcycle" className="bcycle">
                 <img src={item.image} alt="" style={{ filter: reelImg ? "grayscale(0)" : "" }} />
-                <h1>{item.title}</h1>
+                <h6>{item.title}</h6>
               </Link>
             )
         )}

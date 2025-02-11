@@ -287,7 +287,7 @@
     transform: translateX(-100rem);
   }
 }
-.how-to-ride-flag-mobile .partners h1 {
+.how-to-ride-flag-mobile .partners h4 {
   color: rgb(255, 255, 255);
   font-family: "AmericanCaptain";
   font-size: 48px;
@@ -307,7 +307,7 @@
     width: 30px;
     height: 30px;
   }
-  .how-to-ride-flag-mobile .partners h1 {
+  .how-to-ride-flag-mobile .partners h4 {
     font-size: 38px;
   }
 }
@@ -538,8 +538,8 @@
   overflow: hidden;
   flex-direction: column;
 }
-.homepage .feel-the-difference-container .left-right-pages .e-bcycle h1,
-.homepage .feel-the-difference-container .left-right-pages .bcycle h1 {
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle h6,
+.homepage .feel-the-difference-container .left-right-pages .bcycle h6 {
   text-transform: uppercase;
   font-family: "AmericanCaptain";
   font-size: 48px;
@@ -558,13 +558,13 @@
      object-fit: fill;
   filter: grayscale(100%);
 }
-.homepage .feel-the-difference-container .left-right-pages .e-bcycle:hover h1 {
+.homepage .feel-the-difference-container .left-right-pages .e-bcycle:hover h6 {
   color: #ff6600;
 }
 .homepage .feel-the-difference-container .left-right-pages .e-bcycle:hover img {
   filter: grayscale(0);
 }
-.homepage .feel-the-difference-container .left-right-pages .bcycle:hover h1 {
+.homepage .feel-the-difference-container .left-right-pages .bcycle:hover h6 {
   color: #ff6600;
 }
 .homepage .feel-the-difference-container .left-right-pages .bcycle:hover img {

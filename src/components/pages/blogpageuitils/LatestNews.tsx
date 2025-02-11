@@ -118,7 +118,7 @@ const LatestNews = () => {
               </div>
 
               <div className="text">
-                <h1>{item.title}</h1>
+                <h5>{item.title}</h5>
                 <p>{item.description}</p>
               </div>
               <article>{item.created_at}</article>

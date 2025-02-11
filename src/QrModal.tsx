@@ -26,7 +26,7 @@ const QrModal = () => {
 
   return (
     <div className="qr-modal" style={{ position: "relative" }} ref={qrModalRef}>
-      <h1>{translatesWord['get_the_ride_app_qr_title']}</h1>
+      <h2>{translatesWord['get_the_ride_app_qr_title']}</h2>
       <div className="qr-area">
         {logo.slice(2, 3).map((logo: HeaderLogoType, i: number) => (
           <img src={logo.qr_code} key={i} />
