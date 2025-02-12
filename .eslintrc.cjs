@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "jsx-a11y/heading-has-content": "warn",
+    "jsx-a11y/no-redundant-roles": "warn",
+    "jsx-a11y/no-multiple-h1": "error"
   },
 }

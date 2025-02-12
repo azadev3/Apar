@@ -105,7 +105,7 @@ const AboutPage = () => {
                   </div>
 
                   <div className="text">
-                    <h1>{box.title}</h1>
+                    <h4>{box.title}</h4>
                     <p>{box.text}</p>
                   </div>
                 </div>

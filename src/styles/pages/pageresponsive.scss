@@ -15,7 +15,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    h1 {
+    h5 {
       font-size: 48px;
       font-weight: 400;
       line-height: 52px;
@@ -215,7 +215,7 @@
   }
 }
 @media screen and (max-width: 1093px) and (min-width: 968px) {
-  .why-ride-page .whyridepage-wrapper .top .left h1 {
+  .why-ride-page .whyridepage-wrapper .top .left h3 {
     font-size: 90px;
   }
 }
@@ -248,7 +248,7 @@
     padding: 0 !important;
     text-align: center;
   }
-  .why-ride-page .whyridepage-wrapper .top .left h1 {
+  .why-ride-page .whyridepage-wrapper .top .left h3 {
     width: 100%;
     text-align: center;
     text-wrap: nowrap;
@@ -310,7 +310,7 @@
     width: 100%;
     text-align: center;
   }
-  .why-ride-page .whyridepage-wrapper .top .left h1 {
+  .why-ride-page .whyridepage-wrapper .top .left h3 {
     width: 100%;
     text-align: center;
     text-wrap: nowrap;
@@ -355,7 +355,7 @@
     width: 100%;
     height: 236px;
   }
-  .easy-parking-section-mobile .left h1 {
+  .easy-parking-section-mobile .left h5 {
     text-wrap: wrap;
     font-size: 45px;
     line-height: 50px;
@@ -1397,7 +1397,7 @@
     height: 200px;
     width: 100%;
   }
-  .about-us .about-us-wrapper .top-our-advantages .right-our .experience-box .text h1 {
+  .about-us .about-us-wrapper .top-our-advantages .right-our .experience-box .text h4 {
     font-size: 18px;
     line-height: unset;
   }
@@ -1484,7 +1484,7 @@
     height: 175px;
     width: 100%;
   }
-  .about-us .about-us-wrapper .top-our-advantages .right-our .experience-box .text h1 {
+  .about-us .about-us-wrapper .top-our-advantages .right-our .experience-box .text h4 {
     font-size: 18px;
     line-height: unset;
   }
@@ -2086,7 +2086,7 @@
     text-wrap: nowrap;
   }
 
-  .contact-page .contact-page-wrapper .nav-and-contents .content .title h1, .contact-page .contact-page-wrapper .nav-and-contents .content .description h1 {
+  .contact-page .contact-page-wrapper .nav-and-contents .content .title h5, .contact-page .contact-page-wrapper .nav-and-contents .content .description h5 {
     font-size: 45px;
     line-height: unset;
   }

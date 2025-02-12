@@ -119,7 +119,7 @@ const WinsOfTheMounth = () => {
               </div>
 
               <div className="text">
-                <h1>{item.title}</h1>
+                <h6>{item.title}</h6>
                 <p>{item.description}</p>
               </div>
               <article>{item.created_at}</article>

@@ -70,7 +70,7 @@ const WinsOfTheMounthInner = () => {
             </Swiper>
 
             <div className="text-bloginner-swipered">
-              <h1>{innerBlogItem?.title}</h1>
+              <h5>{innerBlogItem?.title}</h5>
               <p>{innerBlogItem?.description}</p>
               <div className="view-and-date">
                 <span className="date">{innerBlogItem?.created_at}</span>

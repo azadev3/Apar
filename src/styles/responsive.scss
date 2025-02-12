@@ -45,7 +45,7 @@
     padding-right: 24px;
   }
 
-  .homepage .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+  .homepage .how-to-ride-section .how-to-ride-section-wrappered .left h5 {
     font-size: 45px;
     line-height: 44px;
     padding-top: 30px;
@@ -84,7 +84,7 @@
     margin-top: 0;
   }
 
-  .homepage .map-container .title h1 {
+  .homepage .map-container .title h4 {
     font-size: 45px;
     line-height: 40px;
   }
@@ -109,7 +109,7 @@
     line-height: 24px;
   }
 
-  .homepage .our-partners .title-our-partners h1 {
+  .homepage .our-partners .title-our-partners h6 {
     font-size: 45px;
     line-height: 40px;
   }
@@ -154,7 +154,7 @@
     flex-direction: column !important;
   }
 
-  .homepage .feel-the-difference-container .text-content-area-feel-the-difference .top-text h1 {
+  .homepage .feel-the-difference-container .text-content-area-feel-the-difference .top-text h4 {
     font-size: 45px;
     line-height: 44px;
   }
@@ -175,7 +175,7 @@
     margin-top: 30px;
   }
 
-  .homepage .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+  .homepage .how-to-ride-section .how-to-ride-section-wrappered .left h5 {
     font-size: 45px;
     line-height: 44px;
     padding-top: 30px;
@@ -228,7 +228,7 @@
     gap: 27px;
   }
 
-  .homepage .map-container .title h1 {
+  .homepage .map-container .title h4 {
     font-size: 40px;
     line-height: 40px;
   }
@@ -262,7 +262,7 @@
     overflow: hidden;
   }
 
-  .homepage .our-partners .title-our-partners h1 {
+  .homepage .our-partners .title-our-partners h6 {
     font-size: 45px;
     line-height: 40px;
   }
@@ -302,7 +302,7 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 50px;
-  h1 {
+  h3 {
     width: 100%;
     text-align: center;
     @include flexible;
@@ -359,7 +359,7 @@
       justify-content: center;
       flex-direction: column;
       gap: 10px;
-      .text-box-h1 {
+      .text-box-h4 {
         width: 100%;
         text-align: start;
         font-size: 32px;
@@ -415,7 +415,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  h1 {
+  h3 {
     width: 100%;
     text-align: center;
     @include flexible;
@@ -1044,7 +1044,7 @@
 }
 
 @media screen and (max-width: 1390px) and (min-width: 1100px) {
-  .why-ride-page .whyridepage-wrapper .top .left h1 {
+  .why-ride-page .whyridepage-wrapper .top .left h3 {
     font-size: 100px !important;
     text-wrap: nowrap !important;
   }

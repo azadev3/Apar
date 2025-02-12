@@ -32,9 +32,9 @@ const Map = () => {
   return (
     <div className="map-container">
       <div className="title">
-        <h1 className="wherefindustitle" style={{ textTransform: "uppercase" }}>
+        <h4 className="wherefindustitle" style={{ textTransform: "uppercase" }}>
           {translatesWord["where_you_find_us"]}
-        </h1>
+        </h4>
       </div>
 
       <div className="description">

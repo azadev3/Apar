@@ -8,7 +8,6 @@ import Map from './uitilshomepage/Map';
 import OurPartners from './uitilshomepage/OurPartners';
 import DownloadApp from './uitilshomepage/DownloadApp';
 
-
 const Homepage = () => {
   return (
     <div className='homepage'>

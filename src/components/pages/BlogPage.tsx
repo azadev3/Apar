@@ -176,7 +176,7 @@ const BlogPage = () => {
                   ))}
                 </div>
 
-                <h1 className="swiper-blog-title-main">{translatesWord["top_blogs_title"]}</h1>
+                <h6 className="swiper-blog-title-main">{translatesWord["top_blogs_title"]}</h6>
                 <Swiper className="mySwiper-blogpage" slidesPerView={1.5} spaceBetween={15}>
                   {blogs?.map((box: Boxtype, j: number) => (
                     <div key={j} className="sidebar-item">

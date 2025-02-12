@@ -121,13 +121,13 @@ const WhyRidePage = () => {
         <div className="top">
           <div className="left">
             <div className="text">
-              <h1
+              <h3
                 style={{
                   textTransform: "uppercase",
                   fontSize: selectedLanguage === "ru" || selectedLanguage === "az" ? "70px" : "",
                 }}>
                 {translatesWord["why_ride_footer"]}
-              </h1>
+              </h3>
               <div className="description">
                 <p style={{ paddingRight: "30px" }}>
                   {selectedNavDetails?.description ? selectedNavDetails?.description : navData[0]?.description}
@@ -163,7 +163,7 @@ const WhyRidePage = () => {
           {changeWhyRideSection ? (
             <div className="easy-parking-section-mobile">
               <div className="left">
-                <h1 className={i === 1 || i === 3 ? "shadow-text" : ""}>{item.title}</h1>
+                <h5 className={i === 1 || i === 3 ? "shadow-text" : ""}>{item.title}</h5>
                 <p>{item.text}</p>
               </div>
               <div className="right">
@@ -176,7 +176,7 @@ const WhyRidePage = () => {
                 style={{ flexDirection: i === 1 || i === 3 ? "row-reverse" : "unset" }}
                 className={`easy-parking-section-wrapper ${i === 1 || i === 3 ? "thinking-eco-system" : ""}`}>
                 <div className="left">
-                  <h1 className={i === 1 || i === 3 ? "shadow-text" : ""}>{item.title}</h1>
+                  <h5 className={i === 1 || i === 3 ? "shadow-text" : ""}>{item.title}</h5>
                   <p>{item.text}</p>
                 </div>
                 <div className="right" style={{ width: i === 3 ? "100%" : "" }}>

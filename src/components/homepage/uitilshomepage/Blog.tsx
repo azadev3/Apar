@@ -68,7 +68,7 @@ const Blog = () => {
       ) : (
         <div className="blog" style={{backgroundColor: window.location.pathname === '/e-bcycle' || window.location.pathname === '/bcycle' ? 'transparent' :''}}>
           <div className="title">
-            <h1>{translatesWord['blog']}</h1>
+            <h5>{translatesWord['blog']}</h5>
           </div>
 
           <div className="blog-container">

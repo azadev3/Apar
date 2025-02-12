@@ -35,7 +35,7 @@ const WhyRideMobile = () => {
 
   return (
     <div className="mobile-whyride" id="mobile_whyride">
-     <h1 style={{lineHeight: '50px', fontSize: '46px'}}>{translatesWord['why_ride']}</h1>
+     <h3 style={{lineHeight: '50px', fontSize: '46px'}}>{translatesWord['why_ride']}</h3>
       <Swiper pagination={true} 
       slidesPerView={1.3}
       autoplay = {{
@@ -50,7 +50,7 @@ const WhyRideMobile = () => {
                </div>
 
                <div className="text-box">
-                    <h1 className="text-box-h1">{item?.title}</h1>
+                    <h4 className="text-box-h4">{item?.title}</h4>
                     <p className="text-box-p">{item?.text}</p>
                </div>
           </SwiperSlide>

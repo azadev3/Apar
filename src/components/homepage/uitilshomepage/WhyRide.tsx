@@ -62,13 +62,13 @@ const WhyRide = () => {
       ) : (
         <div className="why-ride-section" id="whyride">
           <div className="title">
-            <h1 style={{textTransform: 'uppercase'}}>{translatesWord['why_ride']}</h1>
+            <h3 style={{textTransform: 'uppercase'}}>{translatesWord['why_ride']}</h3>
           </div>
 
           <div className="why-ride-box">
             {whyridedata.map((box: WhyRideBoxType, i: number) => (
               <div className="box-item" key={i}>
-                <h1 style={{wordSpacing: i === 3 ? '50px' : ''}}>{box.title}</h1>
+                <h4 style={{wordSpacing: i === 3 ? '50px' : ''}}>{box.title}</h4>
                 <div className="image-wrapper">
                   <img src={box.image} alt={`${box.id}`} title={box?.title} />
                 </div>

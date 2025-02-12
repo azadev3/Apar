@@ -46,7 +46,7 @@ const OurPartners = () => {
     <div className="our-partners">
       <img src="../ellipseforpartner.svg" alt="" className="partner-ellipse" />
       <div className="title-our-partners">
-        <h1 style={{ textTransform: "uppercase" }}>{translatesWord["our_partners_title_homepage"]}</h1>
+        <h6 style={{ textTransform: "uppercase" }}>{translatesWord["our_partners_title_homepage"]}</h6>
       </div>
 
       <div className="carousel-content">

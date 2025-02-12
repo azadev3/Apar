@@ -52,9 +52,9 @@ const FeelTheDifference = () => {
       <img className="ellipse2" src="../ellipse2.svg" alt="" />
       <div className="text-content-area-feel-the-difference">
         <div className="top-text">
-          <h1 style={{ textTransform: "uppercase" }}>
+          <h4 style={{ textTransform: "uppercase" }}>
            {translatesWord['feel_the_difference']}
-          </h1>
+          </h4>
         </div>
 
         <div className="paragraph">

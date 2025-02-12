@@ -151,7 +151,7 @@ const ContactPage = () => {
                     {item.content.map((item: NavContentType, i: number) => (
                       <React.Fragment key={i}>
                         <div className="title">
-                          <h1>{item.title}</h1>
+                          <h5>{item.title}</h5>
                         </div>
                         <div className="description">
                           <p>{item.description}</p>

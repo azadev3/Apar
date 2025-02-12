@@ -102,7 +102,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      h1 {
+      h5 {
         text-transform: uppercase;
         font-size: 72px;
         font-weight: 400;
@@ -846,7 +846,7 @@
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        h1 {
+        h5 {
           color: #ff6600;
           @include AmericanCaptain();
           font-size: 72px;
@@ -944,7 +944,7 @@
     .app .how-to-ride-section .how-to-ride-section-wrappered .right {
       width: 100%;
     }
-    .app .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+    .app .how-to-ride-section .how-to-ride-section-wrappered .left h5 {
       width: 100%;
       text-align: center;
     }
@@ -971,7 +971,7 @@
     .app .how-to-ride-section .how-to-ride-section-wrappered .right {
       width: 100%;
     }
-    .app .how-to-ride-section .how-to-ride-section-wrappered .left h1 {
+    .app .how-to-ride-section .how-to-ride-section-wrappered .left h5 {
       width: 100%;
       text-align: center;
       font-size: 55px;
@@ -1573,7 +1573,7 @@
           flex-direction: column;
           gap: 12px;
           padding: 10px;
-          h1 {
+          h6 {
             transition: 400ms ease-in-out;
             @include AmericanCaptain();
             font-size: 32px;

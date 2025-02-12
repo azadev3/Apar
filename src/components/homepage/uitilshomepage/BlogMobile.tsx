@@ -71,7 +71,7 @@ const BlogMobile = () => {
         paddingTop: controlSize && location.pathname === "/" ? "3rem" : "",
         paddingBottom: controlSize && location.pathname === "/" ? "3rem" : "",
       }}>
-      <h1>{translatesWord["blog"]}</h1>
+      <h3>{translatesWord["blog"]}</h3>
 
       <Swiper
         className="mySwiper"

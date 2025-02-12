@@ -128,7 +128,7 @@ const HowToRide = () => {
       {howtoridedatas.map((item: HowToRideType, i: number) => (
         <div className="how-to-ride-section-wrappered" key={i}>
           <div className="left">
-            <h1
+            <h5
               style={{
                 display:
                   (location.pathname === "/about" && window.innerWidth <= 1200) ||
@@ -138,8 +138,7 @@ const HowToRide = () => {
                 textTransform: "uppercase",
               }}>
                 {translatesWord['how_to_ride_footer']}
-            </h1>
-
+            </h5>
             <div dangerouslySetInnerHTML={{ __html: item?.description }}/>
           </div>
 
