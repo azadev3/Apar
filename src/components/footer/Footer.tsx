@@ -9,6 +9,8 @@ import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType } from "../header/Header";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import { EnumLangType } from "../pages/WhyRidePage";
+import { paths } from "../../App";
 
 export type LinkType = {
   id: number;
@@ -43,7 +45,7 @@ const Footer = () => {
     {
       id: 2,
       title: `${translatesWord["why_ride_nav"]}`,
-      to: "/whyride",
+      to: paths.whyride[selectedLanguage as EnumLangType],
     },
     {
       id: 3,
@@ -56,12 +58,12 @@ const Footer = () => {
     {
       id: 1,
       title: `${translatesWord["partner_nav"]}`,
-      to: "/bepartner",
+      to: paths.be_partner[selectedLanguage as EnumLangType],
     },
     {
       id: 2,
       title: `${translatesWord["contact_nav"]}`,
-      to: "/contact",
+      to: paths.contact[selectedLanguage as EnumLangType],
     },
   ];
 
@@ -69,12 +71,12 @@ const Footer = () => {
     {
       id: 1,
       title: `${translatesWord["about_nav"]}`,
-      to: "/about",
+      to: paths.about[selectedLanguage as EnumLangType],
     },
     {
       id: 2,
       title: `${translatesWord["blog_nav"]}`,
-      to: "/blog",
+      to: paths.blog[selectedLanguage as EnumLangType],
     },
   ];
 
@@ -155,7 +157,7 @@ const Footer = () => {
                         if (item.id === 3) {
                           getScroll2();
                         } else if (item.id === 2) {
-                          navigate("/whyride");
+                          navigate(paths.whyride[selectedLanguage as EnumLangType]);
                         }
                       }}>
                       {item.title}

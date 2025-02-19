@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../styles/pages/blogpage.scss";
-import { useParams } from "react-router-dom";
-import { Boxtype, Images } from "../BlogPage";
+import { useNavigate, useParams } from "react-router-dom";
+import { Images } from "../BlogPage";
 import { IoEyeOutline } from "react-icons/io5";
 import LatestNews from "./LatestNews";
 import DownloadApp from "../../homepage/uitilshomepage/DownloadApp";
@@ -19,10 +19,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useQuery } from "@tanstack/react-query";
 import BlogCarousel from "../../BlogCarousel";
+import { paths } from "../../../App";
 
 const InnerLatestNews = () => {
+  const { lang, latestid } = useParams<{ lang: 'az' | 'en' | 'ru'; latestid: string }>();
   const { selectedLanguage } = useLang();
-  const [blogs, setBlogs] = React.useState<Boxtype[]>([]);
+  const navigate = useNavigate();
 
   const { data: blogdatas_other_latest_news } = useQuery({
     queryKey: ["blogdatas_other_latest_news", selectedLanguage],
@@ -33,50 +35,43 @@ const InnerLatestNews = () => {
     staleTime: 500000,
   });
 
+  const findedItem = blogdatas_other_latest_news && blogdatas_other_latest_news?.find(
+    (item: { slug: { az: string; en: string; ru: string } }) =>
+      item?.slug[lang as keyof typeof item.slug] === latestid
+  );
+
   React.useEffect(() => {
-    if (blogdatas_other_latest_news) {
-      setBlogs(blogdatas_other_latest_news);
+    if (findedItem && lang !== selectedLanguage) {
+      navigate(`/${paths.news_single[selectedLanguage as keyof typeof paths.news_single]}/${selectedLanguage}/${findedItem?.slug[selectedLanguage as keyof typeof findedItem.slug]}`, { replace: true });
     }
-  }, [blogdatas_other_latest_news]);
+  }, [selectedLanguage, lang, navigate, findedItem]);
 
-  const { latestid } = useParams();
-  if (latestid === undefined) {
-    return null;
-  }
-
-  const parseID = parseInt(latestid);
-
-  if (isNaN(parseID)) {
-    return null;
-  }
-
-  const innerBlogItem: Boxtype | undefined = blogs.find((_, i: number) => i === parseID);
 
   return (
     <React.Fragment>
       <div className="blog-inner-page-container">
-        {innerBlogItem?.images?.length !== 0 ? (
+        {findedItem?.images?.length !== 0 ? (
           <React.Fragment>
-            <Swiper 
-             autoplay={{
-              delay: 5000,
-              pauseOnMouseEnter: false,
-            }}
-            loop={true} navigation={true} modules={[Navigation, Autoplay]} className="mySwiper">
-              {innerBlogItem?.images?.map((image: Images, i: number) => (
+            <Swiper
+              autoplay={{
+                delay: 5000,
+                pauseOnMouseEnter: false,
+              }}
+              loop={true} navigation={true} modules={[Navigation, Autoplay]} className="mySwiper">
+              {findedItem?.images?.map((image: Images, i: number) => (
                 <SwiperSlide key={i}>
                   <img src={image.image} alt="" />
                 </SwiperSlide>
               ))}
             </Swiper>
             <div className="text-bloginner-swipered">
-              <h5>{innerBlogItem?.title}</h5>
-              <p>{innerBlogItem?.description}</p>
+              <h5>{findedItem?.title}</h5>
+              <p>{findedItem?.description}</p>
               <div className="view-and-date">
-                <span className="date">{innerBlogItem?.created_at}</span>
+                <span className="date">{findedItem?.created_at}</span>
                 <span className="view-count">
                   <IoEyeOutline className="eye" />
-                  {innerBlogItem?.view}
+                  {findedItem?.view}
                 </span>
               </div>
             </div>
@@ -84,16 +79,16 @@ const InnerLatestNews = () => {
         ) : (
           <div className="top-content-inner-blog">
             <div className="topimg-wrapper">
-              <img src={innerBlogItem?.image} alt="" />
+              <img src={findedItem?.image} alt="" />
             </div>
             <div className="text-bloginner">
-              <h5>{innerBlogItem?.title}</h5>
-              <p>{innerBlogItem?.description}</p>
+              <h5>{findedItem?.title}</h5>
+              <p>{findedItem?.description}</p>
               <div className="view-and-date">
-                <span className="date">{innerBlogItem?.created_at}</span>
+                <span className="date">{findedItem?.created_at}</span>
                 <span className="view-count">
                   <IoEyeOutline className="eye" />
-                  {innerBlogItem?.view}
+                  {findedItem?.view}
                 </span>
               </div>
             </div>
@@ -102,7 +97,7 @@ const InnerLatestNews = () => {
       </div>
       <BlogCarousel />
       <LatestNews />
-      
+
       {/* <WinsOfTheMounth /> */}
       <DownloadApp />
     </React.Fragment>

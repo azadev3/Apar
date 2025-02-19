@@ -8,6 +8,8 @@ import axios from "axios";
 import { api, option } from "../../Api";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import { paths } from "../../App";
 
 type NavType = {
   id: number;
@@ -23,8 +25,28 @@ type BottomItemType = {
   image: string;
 };
 
+export const routeWhyRideTitle = {
+  az: 'sürüş',
+  en: 'why-ride',
+  ru: 'apicumu'
+}
+export type EnumLangType = 'az' | 'en' | 'ru';
+
 const WhyRidePage = () => {
+  const { lang } = useParams<{ lang: 'az' | 'en' | 'ru'; }>();
   const { selectedLanguage } = useLang();
+  const { translatesWord } = useTranslateApi();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (selectedLanguage && selectedLanguage !== lang) {
+      const newPath = paths.whyride[selectedLanguage as keyof typeof paths.whyride];
+      if (newPath) {
+        navigate(newPath, { replace: true });
+      }
+    }
+  }, [selectedLanguage, lang, navigate]);
+
   const [ridesdata, setRidesdata] = React.useState<BottomItemType[]>([]);
   const [navData, setNavData] = React.useState<NavType[]>([]);
 
@@ -59,6 +81,7 @@ const WhyRidePage = () => {
     const storedIndex = localStorage.getItem("selectedNavItemIndex");
     return storedIndex ? parseInt(storedIndex, 10) : 0;
   });
+
   const [selectedNavDetails, setSelectedNavDetails] = React.useState(() => {
     const storedDetails = localStorage.getItem("selectedNavDetails");
     return storedDetails ? JSON.parse(storedDetails) : navData[0];
@@ -113,7 +136,6 @@ const WhyRidePage = () => {
     };
   }, []);
 
-  const { translatesWord } = useTranslateApi();
 
   return (
     <div className="why-ride-page">
@@ -121,13 +143,13 @@ const WhyRidePage = () => {
         <div className="top">
           <div className="left">
             <div className="text">
-              <h3
+              <h1
                 style={{
                   textTransform: "uppercase",
                   fontSize: selectedLanguage === "ru" || selectedLanguage === "az" ? "70px" : "",
                 }}>
                 {translatesWord["why_ride_footer"]}
-              </h3>
+              </h1>
               <div className="description">
                 <p style={{ paddingRight: "30px" }}>
                   {selectedNavDetails?.description ? selectedNavDetails?.description : navData[0]?.description}
@@ -143,9 +165,9 @@ const WhyRidePage = () => {
                     background: i === selectedNavItemIndex ? "#ff6600" : "",
                     color: i === selectedNavItemIndex ? "#FFFFFF" : "",
                   }}
-                  onMouseEnter={() => (!changeWhyRideSection ? handleHover(i) : () => {})}
-                  onMouseLeave={() => (!changeWhyRideSection ? handleLeave : () => {})}
-                  onClick={() => (changeWhyRideSection ? handleHover(i) : () => {})}>
+                  onMouseEnter={() => (!changeWhyRideSection ? handleHover(i) : () => { })}
+                  onMouseLeave={() => (!changeWhyRideSection ? handleLeave : () => { })}
+                  onClick={() => (changeWhyRideSection ? handleHover(i) : () => { })}>
                   {navs.title}
                 </span>
               ))}

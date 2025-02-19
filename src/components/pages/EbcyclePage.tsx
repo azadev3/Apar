@@ -8,6 +8,9 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import Loader from "../../Loader";
+import { useNavigate, useParams } from "react-router-dom";
+import { EnumLangType } from "./WhyRidePage";
+import { paths } from "../../App";
 
 export type Specifications = {
   title: string;
@@ -27,9 +30,20 @@ export type EbcycleType = {
 
 const EbcyclePage = () => {
 
+  const { lang } = useParams<{ lang: EnumLangType }>();
   const { translatesWord } = useTranslateApi();
-
   const { selectedLanguage } = useLang();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (selectedLanguage && selectedLanguage !== lang) {
+      const newPath = paths.e_bcycle[selectedLanguage as keyof typeof paths.e_bcycle];
+      if (newPath) {
+        navigate(newPath, { replace: true });
+      }
+    }
+  }, [navigate, lang, selectedLanguage]);
+
   const [ebcycledata, setData] = React.useState<EbcycleType[]>([]);
 
   const { data: eb_cycle_datas, isLoading } = useQuery({

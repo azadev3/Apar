@@ -6,6 +6,8 @@ import { useLang } from "../../../context/SelectedLanguage";
 import { api, option } from "../../../Api";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { EnumLangType } from "../../pages/WhyRidePage";
+import { paths } from "../../../App";
 
 export type BlogType = {
   id: number;
@@ -13,6 +15,11 @@ export type BlogType = {
   description: string;
   created_at: string;
   image: string;
+  slug: {
+    az: string;
+    en: string;
+    ru: string;
+  }
 };
 
 const Blog = () => {
@@ -40,9 +47,9 @@ const Blog = () => {
 
   const { selectedLanguage } = useLang();
   const [blogs, setBlogs] = React.useState<BlogType[]>([]);
- 
-    
-  const { data: blogsData } = useQuery({ 
+
+
+  const { data: blogsData } = useQuery({
     queryKey: ['blogsData', selectedLanguage],
     queryFn: async () => {
       const response = await axios.get(api.blog, option(selectedLanguage));
@@ -52,7 +59,7 @@ const Blog = () => {
   })
 
   React.useEffect(() => {
-    if(blogsData) {
+    if (blogsData) {
       setBlogs(blogsData);
     }
   }, [blogsData]);
@@ -66,35 +73,35 @@ const Blog = () => {
       {changeBlog ? (
         <BlogMobile />
       ) : (
-        <div className="blog" style={{backgroundColor: window.location.pathname === '/e-bcycle' || window.location.pathname === '/bcycle' ? 'transparent' :''}}>
+        <div className="blog" style={{ backgroundColor: window.location.pathname === paths.e_bcycle[selectedLanguage as EnumLangType] || window.location.pathname === paths.bcycle[selectedLanguage as EnumLangType] ? 'transparent' : '' }}>
           <div className="title">
             <h5>{translatesWord['blog']}</h5>
           </div>
 
           <div className="blog-container">
             {blogs?.slice(0, 3)?.map((item: BlogType, i: number) => (
-              <div onClick={() => navigate('/blog')} className="blog-item" key={i}>
+              <div onClick={() => navigate(`/${selectedLanguage}/${item?.slug[selectedLanguage as keyof typeof item.slug]}`)} className="blog-item" key={i}>
                 <div className="image-wrapper">
                   <img src={item.image} alt="" />
                 </div>
                 <div className="descriptions">
-                <div className="titl" title={item?.title}>
-                  <h2>{item.title}</h2>
-                </div>
-                <div className="paragraph">
-                  <p>{item.description}</p>
-                </div>
-                <div className="date">
-                  <span>{item.created_at}</span>
-                </div>
+                  <div className="titl" title={item?.title}>
+                    <h2>{item.title}</h2>
+                  </div>
+                  <div className="paragraph">
+                    <p>{item.description}</p>
+                  </div>
+                  <div className="date">
+                    <span>{item.created_at}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="button">
-            <Link to="/blog" className={`more-btn ${selectedLanguage === 'az' ? 'more-btn-az' : ''}`}>
-              <span style={{textTransform: 'capitalize'}}>{translatesWord['more_button']}</span>
+            <Link to={paths.blog[selectedLanguage as EnumLangType]} className={`more-btn ${selectedLanguage === 'az' ? 'more-btn-az' : ''}`}>
+              <span style={{ textTransform: 'capitalize' }}>{translatesWord['more_button']}</span>
               <img src="../rrr.svg" alt="" />
             </Link>
           </div>

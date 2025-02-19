@@ -10,6 +10,8 @@ import axios from "axios";
 import { BlogType } from "./Blog";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../../context/GetTranslateContext";
+import { EnumLangType } from "../../pages/WhyRidePage";
+import { paths } from "../../../App";
 
 const BlogMobile = () => {
   const location = useLocation();
@@ -52,17 +54,17 @@ const BlogMobile = () => {
     }
   }, [blogsDataMobile]);
 
-  const getSingleBlogId = async (blogid: number) => {
-    const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
-    try {
-      if (response.data) {
-      } else {
-        console.log(response.status);
-      }
-    } catch (error) {
-      console.log(error, "erorr");
-    }
-  };
+  // const getSingleBlogId = async (blogid: number) => {
+  //   const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
+  //   try {
+  //     if (response.data) {
+  //     } else {
+  //       console.log(response.status);
+  //     }
+  //   } catch (error) {
+  //     console.log(error, "erorr");
+  //   }
+  // };
   return (
     <div
       className="blog-mobile"
@@ -84,8 +86,8 @@ const BlogMobile = () => {
         {blogs.map((item: BlogType, i: number) => (
           <SwiperSlide
             onClick={() => {
-              getSingleBlogId(item.id);
-              navigate(`/blog_single/${i}`);
+              // getSingleBlogId(item.id);
+              navigate(`/${selectedLanguage}/${item?.slug[selectedLanguage as keyof typeof item.slug]}`);
             }}
             key={i}
             className="blog-item">
@@ -111,7 +113,7 @@ const BlogMobile = () => {
       </Swiper>
 
       <div className="more-btn">
-        <Link style={{ textTransform: "capitalize" }} to="/blog" className="more">
+        <Link style={{ textTransform: "capitalize" }} to={paths.blog[selectedLanguage as EnumLangType]} className="more">
           {translatesWord["more_button"]}
           <img src="../bbb.svg" alt="more-arrow-icon" />
         </Link>

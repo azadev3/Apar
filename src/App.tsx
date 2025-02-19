@@ -6,7 +6,7 @@ import Footer from "./components/footer/Footer";
 import { Route, Routes, useLocation } from "react-router-dom";
 import EbcyclePage from "./components/pages/EbcyclePage";
 import BcyclePage from "./components/pages/Bcyclepage";
-import WhyRidePage from "./components/pages/WhyRidePage";
+import WhyRidePage, { EnumLangType } from "./components/pages/WhyRidePage";
 import BlogPage from "./components/pages/BlogPage";
 import InnerBlog from "./components/pages/blogpageuitils/InnerBlog";
 import AboutPage from "./components/pages/AboutPage";
@@ -19,10 +19,66 @@ import QrModal from "./QrModal";
 import "./styles/qrmodal.scss";
 import InnerLatestNews from "./components/pages/blogpageuitils/InnerLatestNews";
 import { ToastContainer, Zoom } from "react-toastify";
+import { useLang } from "./context/SelectedLanguage";
+
+export const paths = {
+  whyride: {
+    az: "/az/niyə-apar",
+    en: "/en/why-ride",
+    ru: "/ru/зачем-ездить"
+  },
+  blog: {
+    az: "/az/bloq",
+    en: "/en/blog",
+    ru: "/ru/блог"
+  },
+  blog_single: {
+    az: "/az/bloq",
+    en: "/en/blog",
+    ru: "/ru/блог"
+  },
+  news_single: {
+    az: "yeniliklər",
+    en: "news",
+    ru: "новости"
+  },
+  winner_single: {
+    az: "ayın-qalibi",
+    en: "winner-of-the-mounth",
+    ru: "победитель-месяца"
+  },
+  about: {
+    az: "/az/haqqımızda",
+    en: "/en/about-us",
+    ru: "/ru/о-нас"
+  },
+  be_partner: {
+    az: "/az/partnyor-ol",
+    en: "/en/be-partner",
+    ru: "/ru/быть-партнером"
+  },
+  contact: {
+    az: "/az/əlaqə",
+    en: "/en/contact",
+    ru: "/ru/контакт"
+  },
+  e_bcycle: {
+    az: "/az/e-velosiped",
+    en: "/en/e-bike",
+    ru: "/ru/е-велосипед"
+  },
+  bcycle: {
+    az: "/az/velosiped",
+    en: "/en/bike",
+    ru: "/ru/велосипед"
+  }
+}
 
 const App = () => {
 
   const { mobileMenu } = useMobile();
+
+  const { selectedLanguage } = useLang();
 
   const { qrModal, setQrModal } = useQR();
 
@@ -44,7 +100,7 @@ const App = () => {
   const location = useLocation();
   const appref = React.useRef<HTMLDivElement | null>(null);
   React.useEffect(() => {
-    if(location.pathname === '/whyride'){ 
+    if (location.pathname === paths.whyride[selectedLanguage as EnumLangType]) {
       appref.current!.style.background = '#FFFBF9'
     } else {
       appref.current!.style.background = '#ffffff'
@@ -54,7 +110,7 @@ const App = () => {
 
   return (
     <div className="app" ref={appref}>
-      <ToastContainer transition={Zoom} autoClose={2000}/>
+      <ToastContainer transition={Zoom} autoClose={2000} />
       {/* QR MODAL */}
       {qrModal && (
         <div className="provider-modal" onKeyDown={handleKey} tabIndex={0}>
@@ -78,7 +134,7 @@ const App = () => {
         />
 
         <Route
-          path="/e-bcycle"
+          path={paths.e_bcycle.az}
           element={
             <React.Fragment>
               <Topheader />
@@ -88,8 +144,55 @@ const App = () => {
             </React.Fragment>
           }
         />
+
         <Route
-          path="/bcycle"
+          path={paths.e_bcycle.en}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <EbcyclePage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={paths.e_bcycle.ru}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <EbcyclePage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={paths.bcycle.az}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <BcyclePage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={paths.bcycle.en}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <BcyclePage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={paths.bcycle.ru}
           element={
             <React.Fragment>
               <Topheader />
@@ -101,7 +204,29 @@ const App = () => {
         />
 
         <Route
-          path="/whyride"
+          path={paths.whyride.az}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <WhyRidePage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={paths.whyride.en}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <WhyRidePage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={paths.whyride.ru}
           element={
             <React.Fragment>
               <Topheader />
@@ -113,7 +238,7 @@ const App = () => {
         />
 
         <Route
-          path="/blog"
+          path={paths.blog.az}
           element={
             <React.Fragment>
               <Topheader />
@@ -123,43 +248,57 @@ const App = () => {
             </React.Fragment>
           }
         />
+
+
         <Route
-          path="/blog_single/:blogid"
+          path={paths.blog.en}
           element={
             <React.Fragment>
               <Topheader />
               <Header />
-              <InnerBlog />
+              <BlogPage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+
+        <Route
+          path={paths.blog.ru}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <BlogPage />
               <Footer />
             </React.Fragment>
           }
         />
 
         <Route
-          path="/news_single/:latestid"
+          path={paths.about.az}
           element={
             <React.Fragment>
               <Topheader />
               <Header />
-              <InnerLatestNews />
+              <AboutPage />
               <Footer />
             </React.Fragment>
           }
         />
         <Route
-          path="/winner_single/:wthmid"
+          path={paths.about.en}
           element={
             <React.Fragment>
               <Topheader />
               <Header />
-              {/* <WinsOfTheMounthInner /> */}
+              <AboutPage />
               <Footer />
             </React.Fragment>
           }
         />
-
         <Route
-          path="/about"
+          path={paths.about.ru}
           element={
             <React.Fragment>
               <Topheader />
@@ -171,7 +310,7 @@ const App = () => {
         />
 
         <Route
-          path="/bepartner"
+          path={paths.be_partner.az}
           element={
             <React.Fragment>
               <Topheader />
@@ -183,12 +322,140 @@ const App = () => {
         />
 
         <Route
-          path="/contact"
+          path={paths.be_partner.en}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <BePartnerPage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={paths.be_partner.ru}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <BePartnerPage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={paths.contact.az}
           element={
             <React.Fragment>
               <Topheader />
               <Header />
               <ContactPage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={paths.contact.en}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <ContactPage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={paths.contact.ru}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <ContactPage />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={`/:lang/:blogid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <InnerBlog />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={`/${paths.news_single.az}/:lang/:latestid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <InnerLatestNews />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={`/${paths.news_single.en}/:lang/:latestid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <InnerLatestNews />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={`/${paths.news_single.ru}/:lang/:latestid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              <InnerLatestNews />
+              <Footer />
+            </React.Fragment>
+          }
+        />
+
+        <Route
+          path={`/${paths.winner_single.az}/:lang/:wthmid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              {/* <WinsOfTheMounthInner /> */}
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={`/${paths.winner_single.en}/:lang/:wthmid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              {/* <WinsOfTheMounthInner /> */}
+              <Footer />
+            </React.Fragment>
+          }
+        />
+        <Route
+          path={`/${paths.winner_single.ru}/:lang/:wthmid`}
+          element={
+            <React.Fragment>
+              <Topheader />
+              <Header />
+              {/* <WinsOfTheMounthInner /> */}
               <Footer />
             </React.Fragment>
           }

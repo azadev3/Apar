@@ -5,6 +5,8 @@ import axios from "axios";
 import { option } from "../../../Api";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../Loader";
+import { EnumLangType } from "../../pages/WhyRidePage";
+import { paths } from "../../../App";
 
 type HeroApiType = {
   id: number;
@@ -124,7 +126,7 @@ const TopContent = () => {
         ))}
         <div className="text-content-top-content">
           {hero.map((item: HeroApiType, i: number) => (
-            <h1 onClick={() => navigate("/contact")} key={i}>
+            <h1 onClick={() => navigate(paths.contact[selectedLanguage as EnumLangType])} key={i}>
               {item?.title?.split(" ")?.map((word, index) => (
                 <React.Fragment key={index}>
                   {index > 0 && <br />}

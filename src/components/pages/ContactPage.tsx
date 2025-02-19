@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/pages/contactpage.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import LatestNews from "./blogpageuitils/LatestNews";
 import DownloadApp from "../homepage/uitilshomepage/DownloadApp";
 import { useLang } from "../../context/SelectedLanguage";
@@ -11,6 +11,8 @@ import { HeaderLogoType } from "../header/Header";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import HowToRide from "../homepage/uitilshomepage/HowToRide";
+import { EnumLangType } from "./WhyRidePage";
+import { paths } from "../../App";
 
 type NavContentType = {
   id: number;
@@ -34,6 +36,19 @@ export type SocialType = {
 };
 
 const ContactPage = () => {
+  const { lang } = useParams<{ lang: EnumLangType }>();
+  const navigate = useNavigate();
+  const { selectedLanguage } = useLang();
+
+  React.useEffect(() => {
+    if (selectedLanguage && selectedLanguage !== lang) {
+      const newPath = paths.contact[selectedLanguage as keyof typeof paths.contact];
+      if (newPath) {
+        navigate(newPath, { replace: true });
+      }
+    }
+  }, [lang, selectedLanguage, navigate]);
+
   const [active, setActive] = React.useState<{ [key: number]: boolean }>({ [0]: true });
   const [activeItem, setActiveItem] = React.useState<{ [key: number]: boolean }>({ [0]: true });
 
@@ -79,7 +94,6 @@ const ContactPage = () => {
     };
   }, []);
 
-  const { selectedLanguage } = useLang();
   const [socials, setSocials] = React.useState<SocialType[]>([]);
   const [navData, setNavData] = React.useState<NavTypes[]>([]);
 
@@ -126,8 +140,8 @@ const ContactPage = () => {
             <h1 style={{ textTransform: "uppercase" }}>
               {translatesWord ? (
                 <>
-                <span>{translatesWord["contact_page_title_find_us"]?.split(" ")[0]}</span>
-                <span>{translatesWord["contact_page_title_find_us"]?.split(" ")?.slice(1)?.join(" ")}</span>
+                  <span>{translatesWord["contact_page_title_find_us"]?.split(" ")[0]}</span>
+                  <span>{translatesWord["contact_page_title_find_us"]?.split(" ")?.slice(1)?.join(" ")}</span>
                 </>
               ) : ""}
             </h1>
@@ -170,34 +184,34 @@ const ContactPage = () => {
             {socials.map((item: SocialType, i: number) => (
               i === 4 ? (
                 <a
-                href={`mailto:${item.url ? item.url : ""}`}
-                className="link-item"
-                key={i}
-                onMouseEnter={() => handleHover(i)}
-                onMouseLeave={() => handleLeave(i)}>
-                <div className="image-wrapper">
-                  <img src={hoverSocial[i] || changeFindus ? item?.colorizeicon : item?.icon} alt="" />
-                </div>
-                <div className="titles">
-                  <article>{item?.title}</article>
-                  <span>{item?.account}</span>
-                </div>
-              </a>
+                  href={`mailto:${item.url ? item.url : ""}`}
+                  className="link-item"
+                  key={i}
+                  onMouseEnter={() => handleHover(i)}
+                  onMouseLeave={() => handleLeave(i)}>
+                  <div className="image-wrapper">
+                    <img src={hoverSocial[i] || changeFindus ? item?.colorizeicon : item?.icon} alt="" />
+                  </div>
+                  <div className="titles">
+                    <article>{item?.title}</article>
+                    <span>{item?.account}</span>
+                  </div>
+                </a>
               ) : (
                 <Link
-                to={item.url ? item.url : ""}
-                className="link-item"
-                key={i}
-                onMouseEnter={() => handleHover(i)}
-                onMouseLeave={() => handleLeave(i)}>
-                <div className="image-wrapper">
-                  <img src={hoverSocial[i] || changeFindus ? item?.colorizeicon : item?.icon} alt="" />
-                </div>
-                <div className="titles">
-                  <article>{item?.title}</article>
-                  <span>{item?.account}</span>
-                </div>
-              </Link>
+                  to={item.url ? item.url : ""}
+                  className="link-item"
+                  key={i}
+                  onMouseEnter={() => handleHover(i)}
+                  onMouseLeave={() => handleLeave(i)}>
+                  <div className="image-wrapper">
+                    <img src={hoverSocial[i] || changeFindus ? item?.colorizeicon : item?.icon} alt="" />
+                  </div>
+                  <div className="titles">
+                    <article>{item?.title}</article>
+                    <span>{item?.account}</span>
+                  </div>
+                </Link>
               )
             ))}
           </div>

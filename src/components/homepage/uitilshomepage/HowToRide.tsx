@@ -7,6 +7,8 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { useTranslateApi } from "../../../context/GetTranslateContext";
+import { EnumLangType } from "../../pages/WhyRidePage";
+import { paths } from "../../../App";
 
 type HowToRideType = {
   id: number;
@@ -90,38 +92,38 @@ const HowToRide = () => {
       id="howtoridescrolling"
       style={{
         background:
-          location.pathname === "/whyride" ||
-          location.pathname === "/blog" ||
-          location.pathname === "/about" ||
-          location.pathname === "/bepartner"
+          location.pathname === paths.whyride[selectedLanguage as EnumLangType] ||
+          location.pathname === paths.blog[selectedLanguage as EnumLangType] ||
+          location.pathname === paths.about[selectedLanguage as EnumLangType] ||
+          location.pathname === paths.be_partner[selectedLanguage as EnumLangType]
             ? "transparent"
             : "",
         marginTop:
           location.pathname === "/" ||
-          location.pathname === "/whyride" ||
-          location.pathname === "/blog" ||
-          (location.pathname === "/bepartner" && !controlSizeMin)
+          location.pathname === paths.whyride[selectedLanguage as EnumLangType] ||
+          location.pathname === paths.blog[selectedLanguage as EnumLangType] ||
+          (location.pathname === paths.be_partner[selectedLanguage as EnumLangType] && !controlSizeMin)
             ? "60px"
-            : location.pathname === '/about' && controlSize ? '0' : 
-            location.pathname === '/about' && !controlSize ? '50px' : ''
+            : location.pathname === paths.about[selectedLanguage as EnumLangType] && controlSize ? '0' : 
+            location.pathname === paths.about[selectedLanguage as EnumLangType] && !controlSize ? '50px' : ''
             ,
-        paddingTop: location.pathname === "/about" && controlSize ? "24px" : "",
-        paddingBottom: location.pathname === '/about' && controlSize ? '70px' : "",
+        paddingTop: location.pathname === paths.about[selectedLanguage as EnumLangType] && controlSize ? "24px" : "",
+        paddingBottom: location.pathname === paths.about[selectedLanguage as EnumLangType] && controlSize ? '70px' : "",
         marginBottom:
           location.pathname === "/" ||
-          location.pathname === "/whyride" ||
-          location.pathname === "/blog" ||
-          (location.pathname === "/bepartner" && !controlSizeMin)
+          location.pathname === paths.whyride[selectedLanguage as EnumLangType] ||
+          location.pathname === paths.blog[selectedLanguage as EnumLangType] ||
+          (location.pathname === paths.be_partner[selectedLanguage as EnumLangType] && !controlSizeMin)
             ? "60px"
-            : location.pathname === "/about" && controlSize
+            : location.pathname === paths.about[selectedLanguage as EnumLangType] && controlSize
             ? "0px"
-            : location.pathname === '/about' && !controlSize ? '60px' : '',
+            : location.pathname === paths.about[selectedLanguage as EnumLangType] && !controlSize ? '60px' : '',
         backgroundColor:
-          location.pathname === "/whyride" && controlSizeMin
+          location.pathname === paths.whyride[selectedLanguage as EnumLangType] && controlSizeMin
             ? "rgba(255, 247, 241, 1)"
             : location.pathname === "/"
             ? "#FFF7F1"
-            : location.pathname === "/about" && controlSize
+            : location.pathname === paths.about[selectedLanguage as EnumLangType] && controlSize
             ? "#FFF7F1"
             : "",
       }}>
@@ -131,8 +133,8 @@ const HowToRide = () => {
             <h5
               style={{
                 display:
-                  (location.pathname === "/about" && window.innerWidth <= 1200) ||
-                  (location.pathname === "/bepartner" && window.innerWidth <= 1200)
+                  (location.pathname === paths.about[selectedLanguage as EnumLangType] && window.innerWidth <= 1200) ||
+                  (location.pathname === paths.be_partner[selectedLanguage as EnumLangType] && window.innerWidth <= 1200)
                     ? "none"
                     : "block",
                 textTransform: "uppercase",
@@ -142,7 +144,7 @@ const HowToRide = () => {
             <div dangerouslySetInnerHTML={{ __html: item?.description }}/>
           </div>
 
-          <div className="right" style={{ marginTop: location.pathname === "/about" && controlSize ? "49px" : "" }}>
+          <div className="right" style={{ marginTop: location.pathname === paths.about[selectedLanguage as EnumLangType] && controlSize ? "49px" : "" }}>
             <div className="video-wrapper">
               <video ref={videoRef} src={item.video} controls={playing || controlSize ? true : false} />
               <GoPlay className="play-icon" style={{ display: playing ? "none" : "" }} onClick={() => handlePlay()} />

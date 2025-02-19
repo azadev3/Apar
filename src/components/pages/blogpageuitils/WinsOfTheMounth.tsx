@@ -13,6 +13,8 @@ import axios from "axios";
 import { api, option } from "../../../Api";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../../context/GetTranslateContext";
+import { EnumLangType } from "../WhyRidePage";
+import { paths } from "../../../App";
 
 type LatestNewsType = {
   id: number;
@@ -130,7 +132,7 @@ const WinsOfTheMounth = () => {
 
       {getMoreBtn && (
         <div className="buttonb">
-          <Link to="/blog" className="more-btn">
+          <Link to={paths.blog[selectedLanguage as EnumLangType]} className="more-btn">
           <span style={{textTransform: 'capitalize'}}>{translatesWord['more_button']}</span>
           <img src="../moreicon.png" alt="" />
           </Link>

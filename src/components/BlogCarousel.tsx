@@ -10,6 +10,8 @@ import { useLang } from "../context/SelectedLanguage";
 import { api, option } from "../Api";
 import { useTranslateApi } from "../context/GetTranslateContext";
 import { BlogType } from "./homepage/uitilshomepage/Blog";
+import { paths } from "../App";
+import { EnumLangType } from "./pages/WhyRidePage";
 
 const BlogCarousel = () => {
   const { translatesWord } = useTranslateApi();
@@ -53,17 +55,17 @@ const BlogCarousel = () => {
     }
   }, [blogsData]);
 
-  const getSingleBlogId = async (blogid: number) => {
-    const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
-    try {
-      if (response.data) {
-      } else {
-        console.log(response.status);
-      }
-    } catch (error) {
-      console.log(error, "erorr");
-    }
-  };
+  // const getSingleBlogId = async (blogid: number) => {
+  //   const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
+  //   try {
+  //     if (response.data) {
+  //     } else {
+  //       console.log(response.status);
+  //     }
+  //   } catch (error) {
+  //     console.log(error, "erorr");
+  //   }
+  // };
 
   const navigate = useNavigate();
 
@@ -101,7 +103,7 @@ const BlogCarousel = () => {
               <SwiperSlide
                 key={i}
                 onClick={() => {
-                  getSingleBlogId(item?.id), navigate(`/blog_single/${i}`);
+                  navigate(`/${selectedLanguage}/${item?.slug[selectedLanguage as keyof typeof item.slug]}`);
                 }}>
                 <div className="image-wrapper">
                   <img src={item.image} alt="" style={{ filter: getMoreBtn ? "grayscale(0)" : "" }} />
@@ -119,9 +121,9 @@ const BlogCarousel = () => {
 
       {getMoreBtn && (
         <div className="buttonb">
-          <Link to="/blog" className="more-btn">
-          <span style={{textTransform: 'capitalize'}}>{translatesWord['more_button']}</span>
-          <img src="../moreicon.png" alt="" />
+          <Link to={paths.blog[selectedLanguage as EnumLangType]} className="more-btn">
+            <span style={{ textTransform: 'capitalize' }}>{translatesWord['more_button']}</span>
+            <img src="../moreicon.png" alt="" />
           </Link>
         </div>
       )}

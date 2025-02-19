@@ -13,6 +13,8 @@ import axios from "axios";
 import { api, option } from "../../../Api";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../../context/GetTranslateContext";
+import { EnumLangType } from "../WhyRidePage";
+import { paths } from "../../../App";
 
 type LatestNewsType = {
   id: number;
@@ -20,6 +22,11 @@ type LatestNewsType = {
   description: string;
   created_at: string;
   image: string;
+  slug: {
+    az: string;
+    en: string;
+    ru: string
+  }
 };
 
 const LatestNews = () => {
@@ -66,22 +73,22 @@ const LatestNews = () => {
 
   const navigate = useNavigate();
 
-  const getSingleLatestNewId = async (blogid: number) => {
-    const response = await axios.get(`https://coming.166tech.az/api/news_single/${blogid}`);
-    try {
-      if (response.data) {
-      } else {
-        console.log(response.status);
-      }
-    } catch (error) {
-      console.log(error, "erorr");
-    }
-  };
+  // const getSingleLatestNewId = async (blogid: number) => {
+  //   const response = await axios.get(`https://coming.166tech.az/api/news_single/${blogid}`);
+  //   try {
+  //     if (response.data) {
+  //     } else {
+  //       console.log(response.status);
+  //     }
+  //   } catch (error) {
+  //     console.log(error, "erorr");
+  //   }
+  // };
 
   return (
     <div className="latest-news-section">
       <div className="title-latest-news">
-        <h1>{translatesWord['latest_news_title']}</h1>
+        <h5>{translatesWord['latest_news_title']}</h5>
       </div>
 
       <div className="swiper-area">
@@ -110,8 +117,8 @@ const LatestNews = () => {
             <SwiperSlide
               key={i}
               onClick={() => {
-                getSingleLatestNewId(item.id);
-                navigate(`/news_single/${i}`);
+                // getSingleLatestNewId(item.id);
+                navigate(`/${paths.news_single[selectedLanguage as keyof typeof paths.news_single]}/${selectedLanguage}/${item.slug[selectedLanguage as keyof typeof item.slug]}`);
               }}>
               <div className="image-wrapper">
                 <img src={item.image} alt="" style={{ filter: getMoreBtn ? "grayscale(0)" : "" }} />
@@ -129,9 +136,9 @@ const LatestNews = () => {
 
       {getMoreBtn && (
         <div className="buttonb">
-          <Link to="/blog" className="more-btn">
-          <span style={{textTransform: 'capitalize'}}>{translatesWord['more_button']}</span>
-          <img src="../moreicon.png" alt="" />
+          <Link to={paths.blog[selectedLanguage as EnumLangType]} className="more-btn">
+            <span style={{ textTransform: 'capitalize' }}>{translatesWord['more_button']}</span>
+            <img src="../moreicon.png" alt="" />
           </Link>
         </div>
       )}

@@ -8,6 +8,9 @@ import { api, option } from "../../Api";
 import axios from "axios";
 import { useTranslateApi } from "../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import { EnumLangType } from "./WhyRidePage";
+import { paths } from "../../App";
 
 type ExperienceType = {
   id: number;
@@ -25,7 +28,20 @@ type CollectiveType = {
 };
 
 const AboutPage = () => {
+  const { lang } = useParams<{ lang: EnumLangType }>();
   const { selectedLanguage } = useLang();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (selectedLanguage && selectedLanguage !== lang) {
+      const newPath = paths.about[selectedLanguage as keyof typeof paths.about];
+      if (newPath) {
+        navigate(newPath, { replace: true });
+      }
+    }
+  }, [lang, selectedLanguage, navigate]);
+
+
   const [collective, setCollective] = React.useState<CollectiveType[]>([]);
 
   const { data: ourCollectiveData } = useQuery({

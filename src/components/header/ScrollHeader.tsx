@@ -5,10 +5,14 @@ import { HeaderLogoType, HeaderTitleType } from "./Header";
 import { Link, useLocation } from "react-router-dom";
 import { AccordingChangeColorToLocation } from "./ChangeHeaderLinkColor";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import { useLang } from "../../context/SelectedLanguage";
+import { EnumLangType } from "../pages/WhyRidePage";
+import { paths } from "../../App";
 
 const ScrollHeader = () => {
   const { logo } = useLogo();
   const { translatesWord } = useTranslateApi();
+  const { selectedLanguage } = useLang();
 
   const HeaderItem: HeaderTitleType[] = [
     {
@@ -19,27 +23,27 @@ const ScrollHeader = () => {
     {
       id: 2,
       title: `${translatesWord["why_ride_nav"]}`,
-      to: "/whyride",
+      to: paths.whyride[selectedLanguage as EnumLangType],
     },
     {
       id: 3,
       title: `${translatesWord["blog_nav"]}`,
-      to: "/blog",
+      to: paths.blog[selectedLanguage as EnumLangType],
     },
     {
       id: 4,
       title: `${translatesWord["about_nav"]}`,
-      to: "/about",
+      to: paths.about[selectedLanguage as EnumLangType],
     },
     {
       id: 5,
       title: `${translatesWord["partner_nav"]}`,
-      to: "/bepartner",
+      to: paths.be_partner[selectedLanguage as EnumLangType],
     },
     {
       id: 6,
       title: `${translatesWord["contact_nav"]}`,
-      to: "/contact",
+      to: paths.contact[selectedLanguage as EnumLangType],
     },
   ];
 
@@ -75,7 +79,7 @@ const ScrollHeader = () => {
             to={item.to}
             className="header-item"
             onMouseEnter={(e) => {
-              item.id === 1 ? setDropdownVehicles((prev) => !prev) : () => {};
+              item.id === 1 ? setDropdownVehicles((prev) => !prev) : () => { };
               item.id === 1 ? e.preventDefault() : "";
             }}
             onMouseLeave={() => setDropdownVehicles(false)}
@@ -102,15 +106,15 @@ const ScrollHeader = () => {
         {dropdownVehicles && (
           <div className="vehicles-dropdown" ref={vehiclesDivRef}>
             <Link
-              to="/e-bcycle"
+              to={paths.e_bcycle[selectedLanguage as EnumLangType]}
               className="e-bcycle-title"
-              style={{ color: location.pathname === "/e-bcycle" ? "#ff6600" : "" }}>
+              style={{ color: location.pathname === paths.e_bcycle[selectedLanguage as EnumLangType] ? "#ff6600" : "" }}>
               {translatesWord["ebcycle_dropdown"]}
             </Link>
             <Link
-              to="/bcycle"
+              to={paths.bcycle[selectedLanguage as EnumLangType]}
               className="bcycle-title"
-              style={{ color: location.pathname === "/bcycle" ? "#ff6600" : "" }}>
+              style={{ color: location.pathname === paths.bcycle[selectedLanguage as EnumLangType] ? "#ff6600" : "" }}>
               {translatesWord["bcycle_dropdown"]}
             </Link>
           </div>

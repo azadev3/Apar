@@ -21,6 +21,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { HeaderLogoType } from "../header/Header";
 import { useLogo } from "../../context/GetLogoContext";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import { EnumLangType } from "./WhyRidePage";
+import { paths } from "../../App";
 
 type AdversimentType = {
   id: number;
@@ -37,6 +40,21 @@ type MoneyAndTimeType = {
 };
 
 const BePartnerPage = () => {
+  const { lang } = useParams<{ lang: EnumLangType }>();
+  const navigate = useNavigate();
+  const { selectedLanguage } = useLang();
+
+  React.useEffect(() => {
+    if (selectedLanguage && selectedLanguage !== lang) {
+      const newPath = paths.be_partner[selectedLanguage as keyof typeof paths.be_partner];
+      if (newPath) {
+        navigate(newPath, { replace: true });
+      }
+    }
+  }, [lang, selectedLanguage, navigate]);
+
+
+
   //if 768 small screens set new BlogPage section
   const [changeBlogpage, setChangeBlogPage] = React.useState<boolean>(false);
 
@@ -57,7 +75,6 @@ const BePartnerPage = () => {
     };
   }, []);
 
-  const { selectedLanguage } = useLang();
   const [partnerData, setPartnerData] = React.useState<PartnersType[]>([]);
   const [adversiment, setAdversiment] = React.useState<AdversimentType[]>([]);
   const [timeMoneyData, setTimeMoneyData] = React.useState<MoneyAndTimeType[]>([]);

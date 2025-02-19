@@ -5,8 +5,13 @@ import { useScrolling } from "../../context/ScrollHeader";
 import { useMobile } from "../../context/MobilMenu";
 import { useLogo } from "../../context/GetLogoContext";
 import { HeaderLogoType } from "./Header";
+import { paths } from "../../App";
+import { EnumLangType } from "../pages/WhyRidePage";
+import { useLang } from "../../context/SelectedLanguage";
 
 const Mobileheader = () => {
+
+  const { selectedLanguage } = useLang();
   const { isScrolled, upScrollHeader } = useScrolling();
   const { setMobileMenu } = useMobile();
 
@@ -36,9 +41,9 @@ const Mobileheader = () => {
         style={{
           color:
             isScrolled ||
-            location.pathname === "/whyride" ||
-            location.pathname === "/about" ||
-            location.pathname === "/contact"
+            location.pathname === paths.whyride[selectedLanguage as EnumLangType] ||
+            location.pathname === paths.about[selectedLanguage as EnumLangType] ||
+            location.pathname === paths.contact[selectedLanguage as EnumLangType]
               ? "#000000"
               : "#fff",
         }}

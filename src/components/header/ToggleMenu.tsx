@@ -10,6 +10,8 @@ import axios from "axios";
 import { SocialType } from "../pages/ContactPage";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslateApi } from "../../context/GetTranslateContext";
+import { paths } from "../../App";
+import { EnumLangType } from "../pages/WhyRidePage";
 
 const ToggleMenu = () => {
   const { setMobileMenu } = useMobile();
@@ -27,27 +29,27 @@ const ToggleMenu = () => {
     {
       id: 2,
       title: `${translatesWord['why_ride_nav']}`,
-      to: "/whyride",
+      to: paths.whyride[selectedLanguage as EnumLangType],
     },
     {
       id: 3,
       title: `${translatesWord['blog_nav']}`,
-      to: "/blog",
+      to: paths.blog[selectedLanguage as EnumLangType],
     },
     {
       id: 4,
       title: `${translatesWord['about_nav']}`,
-      to: "/about",
+      to: paths.about[selectedLanguage as EnumLangType],
     },
     {
       id: 5,
       title: `${translatesWord['partner_nav']}`,
-      to: "/bepartner",
+      to: paths.be_partner[selectedLanguage as EnumLangType],
     },
     {
       id: 6,
       title: `${translatesWord['contact_nav']}`,
-      to: "/contact",
+      to: paths.contact[selectedLanguage as EnumLangType],
     },
   ];
 
@@ -104,11 +106,11 @@ const ToggleMenu = () => {
             ))}
             {vehiclesMenu && (
               <div className="vehicles-menu">
-                <Link to="/e-bcycle" className="links" onClick={() => setMobileMenu(false)}>
+                <Link to={paths.e_bcycle[selectedLanguage as EnumLangType]} className="links" onClick={() => setMobileMenu(false)}>
                   <span className="rectangle"></span>
                   {translatesWord['ebcycle_dropdown']}
                 </Link>
-                <Link to="/bcycle" className="links" onClick={() => setMobileMenu(false)}>
+                <Link to={paths.bcycle[selectedLanguage as EnumLangType]} className="links" onClick={() => setMobileMenu(false)}>
                   <span className="rectangle"></span>
                   {translatesWord['bcycle_dropdown']}
                 </Link>

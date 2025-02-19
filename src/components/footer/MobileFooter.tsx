@@ -9,6 +9,8 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { option } from "../../Api";
 import { SocialType } from "../pages/ContactPage";
+import { EnumLangType } from "../pages/WhyRidePage";
+import { paths } from "../../App";
 
 const MobileFooter: React.FC = () => {
   const { translatesWord } = useTranslateApi();
@@ -24,7 +26,7 @@ const MobileFooter: React.FC = () => {
     {
       id: 2,
       title: `${translatesWord["why_ride_nav"]}`,
-      to: "/whyride",
+      to: paths.whyride[selectedLanguage as EnumLangType],
     },
     {
       id: 3,
@@ -37,12 +39,12 @@ const MobileFooter: React.FC = () => {
     {
       id: 1,
       title: `${translatesWord["partner_nav"]}`,
-      to: "/bepartner",
+      to: paths.be_partner[selectedLanguage as EnumLangType],
     },
     {
       id: 2,
       title: `${translatesWord["contact_nav"]}`,
-      to: "/contact",
+      to: paths.contact[selectedLanguage as EnumLangType],
     },
   ];
 
@@ -50,12 +52,12 @@ const MobileFooter: React.FC = () => {
     {
       id: 1,
       title: `${translatesWord["about_nav"]}`,
-      to: "/about",
+      to: paths.about[selectedLanguage as EnumLangType],
     },
     {
       id: 2,
       title: `${translatesWord["blog_nav"]}`,
-      to: "/blog",
+      to: paths.blog[selectedLanguage as EnumLangType],
     },
   ];
 
@@ -101,7 +103,7 @@ const MobileFooter: React.FC = () => {
                 if (item.id === 3) {
                   getScroll2();
                 } else if (item.id === 2) {
-                  navigate("/whyride");
+                  navigate(paths.whyride[selectedLanguage as EnumLangType]);
                 }
               }}>
               {item.title}

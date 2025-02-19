@@ -6,6 +6,8 @@ import axios from "axios";
 import { api, option } from "../../../Api";
 import { useTranslateApi } from "../../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
+import { EnumLangType } from "../../pages/WhyRidePage";
+import { paths } from "../../../App";
 
 const FeelTheDifference = () => {
   const { selectedLanguage } = useLang();
@@ -25,7 +27,7 @@ const FeelTheDifference = () => {
       setData(ebcycleData_aa);
     }
   }, [ebcycleData_aa]);
-  
+
   const { translatesWord } = useTranslateApi();
 
   const [reelImg, setReelImg] = React.useState<boolean>(false);
@@ -53,7 +55,7 @@ const FeelTheDifference = () => {
       <div className="text-content-area-feel-the-difference">
         <div className="top-text">
           <h4 style={{ textTransform: "uppercase" }}>
-           {translatesWord['feel_the_difference']}
+            {translatesWord['feel_the_difference']}
           </h4>
         </div>
 
@@ -66,7 +68,7 @@ const FeelTheDifference = () => {
         {ebcycledata.map(
           (item: EbcycleType, i: number) =>
             i === 0 && (
-              <Link to="/e-bcycle" className="e-bcycle" key={i}>
+              <Link to={paths.e_bcycle[selectedLanguage as EnumLangType]} className="e-bcycle" key={i}>
                 <img src={item.image} alt="" style={{ filter: reelImg ? "grayscale(0)" : "" }} />
                 <h6>{item.title}</h6>
               </Link>
@@ -76,7 +78,7 @@ const FeelTheDifference = () => {
         {ebcycledata.map(
           (item: EbcycleType, i: number) =>
             i === 1 && (
-              <Link key={i} to="/bcycle" className="bcycle">
+              <Link key={i} to={paths.bcycle[selectedLanguage as EnumLangType]} className="bcycle">
                 <img src={item.image} alt="" style={{ filter: reelImg ? "grayscale(0)" : "" }} />
                 <h6>{item.title}</h6>
               </Link>

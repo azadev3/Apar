@@ -5,7 +5,7 @@ import LatestNews from "./blogpageuitils/LatestNews";
 import Howtorideflag from "./whyridepageuitils/Howtorideflag";
 import HowToRide from "../homepage/uitilshomepage/HowToRide";
 import DownloadApp from "../homepage/uitilshomepage/DownloadApp";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
 // Import Swiper styles
@@ -16,6 +16,7 @@ import { useTranslateApi } from "../../context/GetTranslateContext";
 import { useQuery } from "@tanstack/react-query";
 import BlogCarousel from "../BlogCarousel";
 import Loader from "../../Loader";
+import { paths } from "../../App";
 
 export type Images = {
   id: number;
@@ -31,6 +32,11 @@ export type Boxtype = {
   view: number;
   order: number;
   images?: Images[];
+  slug: {
+    az: string;
+    en: string;
+    ru: string;
+  }
 };
 
 export type SidebarType = {
@@ -48,14 +54,36 @@ type TopBlogsType = {
   image: string;
   created_at: string;
   images: Images[];
+  slug: {
+    az: string;
+    en: string;
+    ru: string;
+  }
 }
 
+export const routeBlogTitle = {
+  az: 'bloq',
+  en: 'blog',
+  ru: 'blogrus'
+}
+
+
 const BlogPage = () => {
+  const { lang } = useParams<{ lang: 'az' | 'en' | 'ru'; }>();
+  const { translatesWord } = useTranslateApi();
   const navigate = useNavigate();
-
   const { selectedLanguage } = useLang();
-  const [blogs, setBlogs] = React.useState<Boxtype[]>([]);
 
+  React.useEffect(() => {
+    if (selectedLanguage && selectedLanguage !== lang) {
+      const newPath = paths.blog[selectedLanguage as keyof typeof paths.blog];
+      if (newPath) {
+        navigate(newPath, { replace: true });
+      }
+    }
+  }, [selectedLanguage, navigate, lang]);
+
+  const [blogs, setBlogs] = React.useState<Boxtype[]>([]);
   const { data: blogsDatass, isLoading } = useQuery({
     queryKey: ["blogsDatass", selectedLanguage],
     queryFn: async () => {
@@ -71,8 +99,6 @@ const BlogPage = () => {
 
   //if 768 small screens set new BlogPage section
   const [changeBlogpage, setChangeBlogPage] = React.useState<boolean>(false);
-  const { translatesWord } = useTranslateApi();
-
   React.useEffect(() => {
     const controlSize = () => {
       if (window.innerWidth <= 1290) {
@@ -89,18 +115,6 @@ const BlogPage = () => {
       window.removeEventListener("resize", controlSize);
     };
   }, []);
-
-  const getSingleBlogId = async (blogid: number) => {
-    const response = await axios.get(`https://coming.166tech.az/api/blog_single/${blogid}`);
-    try {
-      if (response.data) {
-      } else {
-        console.log(response.status);
-      }
-    } catch (error) {
-      console.log(error, "erorr");
-    }
-  };
 
   const [topBlogs, setTopBlogs] = React.useState<TopBlogsType[]>([]);
 
@@ -152,8 +166,8 @@ const BlogPage = () => {
                               alt=""
                               style={{ cursor: "pointer" }}
                               onClick={() => {
-                                getSingleBlogId(box.id);
-                                navigate(`/blog_single/${i}`);
+                                // getSingleBlogId(box.id);
+                                navigate(`/${selectedLanguage}/${box?.slug[selectedLanguage as keyof typeof box.slug]}`);
                               }}
                             />
                           </div>
@@ -183,8 +197,7 @@ const BlogPage = () => {
                       <div className="item-box">
                         <SwiperSlide
                           onClick={() => {
-                            getSingleBlogId(box.id);
-                            navigate(`/blog_single/${j}`);
+                            navigate(`/${selectedLanguage}/${box?.slug[selectedLanguage as keyof typeof box.slug]}`);
                           }}
                           className="item"
                           key={j}>
@@ -225,8 +238,8 @@ const BlogPage = () => {
                               alt=""
                               style={{ cursor: "pointer" }}
                               onClick={() => {
-                                getSingleBlogId(box.id);
-                                navigate(`/blog_single/${i}`);
+                                // getSingleBlogId(box.id);
+                                navigate(`/${selectedLanguage}/${box?.slug[selectedLanguage as keyof typeof box.slug]}`);
                               }}
                             />
                           </div>
@@ -252,12 +265,11 @@ const BlogPage = () => {
                 <aside className="sidebar">
                   <h4>{translatesWord["top_blogs_title"]}</h4>
                   {topBlogs && topBlogs?.length > 0 ? topBlogs?.map((box: TopBlogsType, i: number) => (
-                    <div key={i} className="sidebar-item">
+                    <Link
+                    style={{ textDecoration: 'none' }}
+                    to={`/${selectedLanguage}/${box?.slug[selectedLanguage as keyof typeof box.slug]}`}
+                    key={i} className="sidebar-item">
                       <div
-                        onClick={() => {
-                          getSingleBlogId(box.id);
-                          navigate(`/blog_single/${i+1}`);
-                        }}
                         className="item"
                         key={i}>
                         <div className="left">
@@ -272,7 +284,7 @@ const BlogPage = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   )) : ""}
                 </aside>
               </div>
