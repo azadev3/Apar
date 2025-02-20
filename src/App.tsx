@@ -22,6 +22,12 @@ import { ToastContainer, Zoom } from "react-toastify";
 import { useLang } from "./context/SelectedLanguage";
 
 export const paths = {
+  homepage: {
+    default: "/",
+    az: "/az",
+    en: "/en",
+    ru: "/ru",
+  },
   whyride: {
     az: "/az/niyə-apar",
     en: "/en/why-ride",
@@ -121,17 +127,21 @@ const App = () => {
       {/* MOBILE MENU */}
       {mobileMenu && <ToggleMenu />}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <React.Fragment>
-              <Topheader />
-              <Header />
-              <Homepage />
-              <Footer />
-            </React.Fragment>
-          }
-        />
+
+        {Object.values(paths.homepage).map((path: any) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <React.Fragment>
+                <Topheader />
+                <Header />
+                <Homepage />
+                <Footer />
+              </React.Fragment>
+            }
+          />
+        ))}
 
         <Route
           path={paths.e_bcycle.az}
